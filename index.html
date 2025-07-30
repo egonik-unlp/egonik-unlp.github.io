@@ -9,17 +9,28 @@
     integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
   <link href="css/style.css" rel="stylesheet">
   <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-  <link data-trunk rel="css" href="./css/style.css" />
+  <link rel="stylesheet" href="/style-734199e9f3030ee1.css" integrity="sha384-ADK622fsHwFShCtcm7L/AVuG14ozJqyxpzHl5W2cl1eCp+yQz3B7UtjQ+KzskmTO"/>
   <style type="text/tailwindcss">
     @theme {
         --color-clifford: #da373d;
       }
     </style>
-  <link data-trunk rel="copy-dir" href="assets" />
-</head>
+  
+<link rel="modulepreload" href="/gv-app-c9842b5e117fa206.js" crossorigin="anonymous" integrity="sha384-fqr0Qvo03QTrA2Zj4Ybmllu8zMpi/NZw25lXpUZs+rNPAYUOEQ0ZOPngMVUNYuq4"><link rel="preload" href="/gv-app-c9842b5e117fa206_bg.wasm" crossorigin="anonymous" integrity="sha384-pfp480lPPo9DL0/oN7/PUwXV2vmdQeb98zts3nFXStEktNwgzsXFuMpfN91Dj6d6" as="fetch" type="application/wasm"></head>
 
 <body class="container">
 
-</body>
+
+<script type="module">
+import init, * as bindings from '/gv-app-c9842b5e117fa206.js';
+const wasm = await init({ module_or_path: '/gv-app-c9842b5e117fa206_bg.wasm' });
+
+
+window.wasmBindings = bindings;
+
+
+dispatchEvent(new CustomEvent("TrunkApplicationStarted", {detail: {wasm}}));
+
+</script></body>
 
 </html>
