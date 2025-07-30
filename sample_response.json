@@ -1,1 +1,247 @@
-/home/gonik/Documents/git/goodvibes-org/api_gen2/gv-app/sample_response.json
+{
+  "duration_seconds": 0.870705,
+  "ingredientes": [
+    {
+      "doc": "WHOLE DRY MILK",
+      "id": 3694,
+      "info": "-",
+      "score": 0.9779906,
+      "score_db": 0.0
+    },
+    {
+      "doc": "LEVAN/FRUCTOSE/GLUCOSE/SUCROSE",
+      "id": 18890,
+      "info": "-",
+      "score": 0.9124468,
+      "score_db": 0.0
+    },
+    {
+      "doc": "HYDROLYZED STRAWBERRY FRUIT",
+      "id": 14849,
+      "info": "-",
+      "score": 0.9296094,
+      "score_db": 0.0
+    },
+    {
+      "doc": "HYDROLYZED RASPBERRY FRUIT",
+      "id": 13744,
+      "info": "-",
+      "score": 0.9327441,
+      "score_db": 0.0
+    },
+    {
+      "doc": "VACCINIUM CORYMBOSUM (BLUEBERRY) FRUIT WATER",
+      "id": 26514,
+      "info": "-",
+      "score": 0.9150349,
+      "score_db": 0.0
+    },
+    {
+      "doc": "ISODECYL COCOATE",
+      "id": 4931,
+      "info": "-",
+      "score": 0.8710605,
+      "score_db": 0.0
+    },
+    {
+      "doc": "WATER",
+      "id": 81,
+      "info": "-",
+      "score": 1.0000001,
+      "score_db": 0.0
+    },
+    {
+      "doc": "MILK PROTEIN",
+      "id": 2144,
+      "info": "-",
+      "score": 0.95455426,
+      "score_db": 0.0
+    },
+    {
+      "doc": "CORN STARCH MODIFIED",
+      "id": 8529,
+      "info": "Ingrediente generalmente considerado seguro para su uso en productos de Belleza y Cuidado Personal.",
+      "score": 0.99755067,
+      "score_db": 0.0
+    },
+    {
+      "doc": "NATURAL FRAGANCE",
+      "id": 30541,
+      "info": "El contacto directo con ciertas fragancias naturales inespec\u00edficas puede sensibilizar la piel.",
+      "score": 0.9065257,
+      "score_db": 3.0
+    },
+    {
+      "doc": "GHATTI GUM",
+      "id": 1300,
+      "info": "-",
+      "score": 0.91612655,
+      "score_db": 0.0
+    },
+    {
+      "doc": "DEFINED CELL CULTURE MEDIA 17",
+      "id": 17847,
+      "info": "-",
+      "score": 0.90459156,
+      "score_db": 0.0
+    },
+    {
+      "doc": "CARRAGEENAN",
+      "id": 1485,
+      "info": "Ingrediente generalmente considerado seguro para su uso en productos de Belleza y Cuidado Personal, en las condiciones actuales de concentraci\u00f3n y pr\u00e1cticas de uso.",
+      "score": 1.0,
+      "score_db": 1.0
+    },
+    {
+      "doc": "SODIUM CITRATE",
+      "id": 3187,
+      "info": "Ingrediente generalmente considerado seguro para su uso en productos de Belleza y Cuidado Personal, en las condiciones actuales de concentraci\u00f3n y pr\u00e1cticas de uso.",
+      "score": 0.99999994,
+      "score_db": 1.0
+    },
+    {
+      "doc": "CITRIC ACID",
+      "id": 1483,
+      "info": "Ingrediente generalmente considerado seguro para su uso en productos de Belleza y Cuidado Personal, en las condiciones actuales de concentraci\u00f3n y pr\u00e1cticas de uso.",
+      "score": 1.0,
+      "score_db": 1.0
+    },
+    {
+      "doc": "POTASSIUM SORBATE",
+      "id": 5994,
+      "info": "Existen restricciones en cuanto a la concentraci\u00f3n m\u00e1xima permitida y el tipo de formulaciones en los que puede utilizarse este ingrediente.",
+      "score": 1.0,
+      "score_db": 1.1
+    },
+    {
+      "doc": "SUCRALOSE",
+      "id": 853,
+      "info": "Ingrediente potencialmente cancer\u00edgeno, con capacidad de alterar la informaci\u00f3n gen\u00e9tica de un organismo biol\u00f3gico, peligroso para la vida acu\u00e1tica y con efectos duraderos en el ambiente.",
+      "score": 0.964506,
+      "score_db": 3.4
+    }
+  ],
+  "ingredientes_sobre_90": [
+    {
+      "doc": "WHOLE DRY MILK",
+      "id": 3694,
+      "info": "-",
+      "score": 0.9779906,
+      "score_db": 0.0
+    },
+    {
+      "doc": "LEVAN/FRUCTOSE/GLUCOSE/SUCROSE",
+      "id": 18890,
+      "info": "-",
+      "score": 0.9124468,
+      "score_db": 0.0
+    },
+    {
+      "doc": "HYDROLYZED STRAWBERRY FRUIT",
+      "id": 14849,
+      "info": "-",
+      "score": 0.9296094,
+      "score_db": 0.0
+    },
+    {
+      "doc": "HYDROLYZED RASPBERRY FRUIT",
+      "id": 13744,
+      "info": "-",
+      "score": 0.9327441,
+      "score_db": 0.0
+    },
+    {
+      "doc": "VACCINIUM CORYMBOSUM (BLUEBERRY) FRUIT WATER",
+      "id": 26514,
+      "info": "-",
+      "score": 0.9150349,
+      "score_db": 0.0
+    },
+    {
+      "doc": "ISODECYL COCOATE",
+      "id": 4931,
+      "info": "-",
+      "score": 0.8710605,
+      "score_db": 0.0
+    },
+    {
+      "doc": "WATER",
+      "id": 81,
+      "info": "-",
+      "score": 1.0000001,
+      "score_db": 0.0
+    },
+    {
+      "doc": "MILK PROTEIN",
+      "id": 2144,
+      "info": "-",
+      "score": 0.95455426,
+      "score_db": 0.0
+    },
+    {
+      "doc": "CORN STARCH MODIFIED",
+      "id": 8529,
+      "info": "Ingrediente generalmente considerado seguro para su uso en productos de Belleza y Cuidado Personal.",
+      "score": 0.99755067,
+      "score_db": 0.0
+    },
+    {
+      "doc": "NATURAL FRAGANCE",
+      "id": 30541,
+      "info": "El contacto directo con ciertas fragancias naturales inespec\u00edficas puede sensibilizar la piel.",
+      "score": 0.9065257,
+      "score_db": 3.0
+    },
+    {
+      "doc": "GHATTI GUM",
+      "id": 1300,
+      "info": "-",
+      "score": 0.91612655,
+      "score_db": 0.0
+    },
+    {
+      "doc": "DEFINED CELL CULTURE MEDIA 17",
+      "id": 17847,
+      "info": "-",
+      "score": 0.90459156,
+      "score_db": 0.0
+    },
+    {
+      "doc": "CARRAGEENAN",
+      "id": 1485,
+      "info": "Ingrediente generalmente considerado seguro para su uso en productos de Belleza y Cuidado Personal, en las condiciones actuales de concentraci\u00f3n y pr\u00e1cticas de uso.",
+      "score": 1.0,
+      "score_db": 1.0
+    },
+    {
+      "doc": "SODIUM CITRATE",
+      "id": 3187,
+      "info": "Ingrediente generalmente considerado seguro para su uso en productos de Belleza y Cuidado Personal, en las condiciones actuales de concentraci\u00f3n y pr\u00e1cticas de uso.",
+      "score": 0.99999994,
+      "score_db": 1.0
+    },
+    {
+      "doc": "CITRIC ACID",
+      "id": 1483,
+      "info": "Ingrediente generalmente considerado seguro para su uso en productos de Belleza y Cuidado Personal, en las condiciones actuales de concentraci\u00f3n y pr\u00e1cticas de uso.",
+      "score": 1.0,
+      "score_db": 1.0
+    },
+    {
+      "doc": "POTASSIUM SORBATE",
+      "id": 5994,
+      "info": "Existen restricciones en cuanto a la concentraci\u00f3n m\u00e1xima permitida y el tipo de formulaciones en los que puede utilizarse este ingrediente.",
+      "score": 1.0,
+      "score_db": 1.1
+    },
+    {
+      "doc": "SUCRALOSE",
+      "id": 853,
+      "info": "Ingrediente potencialmente cancer\u00edgeno, con capacidad de alterar la informaci\u00f3n gen\u00e9tica de un organismo biol\u00f3gico, peligroso para la vida acu\u00e1tica y con efectos duraderos en el ambiente.",
+      "score": 0.964506,
+      "score_db": 3.4
+    }
+  ],
+  "len": 17,
+  "len90": 17
+}

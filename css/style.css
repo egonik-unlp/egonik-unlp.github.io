@@ -1,0 +1,66 @@
+/* li { */
+/*   border: 1px solid red; */
+/* } */
+/**/
+/* h3 { */
+/**/
+/*   font-family: Arial, Helvetica, sans-serif; */
+/* } */
+/**/
+/* .score { */
+/*   background-color: red; */
+/*   color: palegoldenrod; */
+/* } */
+/**/
+/* .container { */
+/*   display: grid; */
+/*   grid-template-rows: 200px 1fr 50px; */
+/*   grid-template-columns: 1fr 1fr 1fr; */
+/*   min-height: 100vh; */
+/*   grid-template-areas: */
+/*     ". header ." */
+/*     "content content content" */
+/*     "footer footer footer" */
+/* } */
+/**/
+/* .header-app { */
+/*   grid-area: header; */
+/**/
+/* } */
+/**/
+/* .image-container { */
+/*   width: 150px; */
+/*   height: 150px; */
+/*   overflow: hidden; */
+/*   margin: 0 auto; */
+/* } */
+/**/
+/* .image-container img { */
+/*   width: 100%; */
+/*   height: 100%; */
+/*   object-fit: contain; */
+/* } */
+/**/
+/* .submit-box { */
+/*   display: flex; */
+/*   flex-flow: column nowrap; */
+/*   justify-content: center; */
+/*   background-color: gold; */
+/*   grid-area: content; */
+/*   align-items: center; */
+/* } */
+/**/
+/* .search-elements { */
+/*   display: flex; */
+/*   flex-flow: row nowrap; */
+/*   /* justify-content: center; */
+*/
+/* } */
+/**/
+/* div error { */
+/*   background-color: red; */
+/* } */
+/**/
+/* UrlHandler { */
+/*   background-color: green; */
+/* } */
