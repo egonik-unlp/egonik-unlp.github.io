@@ -1,0 +1,57 @@
+{
+  "schemaVersion": 1,
+  "locale": "es-AR",
+  "baseCatalog": "works.json",
+  "labels": {
+    "type": {
+      "journal-article": "Artículo científico",
+      "book-chapter": "Capítulo de libro",
+      "conference-abstract": "Resumen de congreso"
+    },
+    "role": {
+      "first-author": "Primer autor",
+      "co-author": "Coautor"
+    },
+    "categories": {
+      "bioinformatics": "Bioinformática",
+      "computational-biology": "Biología computacional",
+      "environmental-chemistry": "Química ambiental",
+      "machine-learning": "Aprendizaje automático",
+      "materials-science": "Ciencia de materiales",
+      "microbiology": "Microbiología",
+      "nanotechnology": "Nanotecnología",
+      "photochemistry": "Fotoquímica",
+      "review": "Revisión"
+    }
+  },
+  "works": {
+    "doi:10.1039/d5ra09148a": {
+      "displayTitle": "Desarrollo de nanopartículas híbridas basadas en Zr(IV) y ácido perileno-3,4,9,10-tetracarboxílico con actividad fotoredox bajo luz visible",
+      "description": "Este trabajo desarrolla ZIPER, un nanomaterial híbrido de circonio y perileno que absorbe luz visible y promueve procesos fotoredox en agua. Su actividad se demuestra mediante la deshalogenación reductiva de contaminantes clorados modelo."
+    },
+    "sedici:10915/179543": {
+      "displayTitle": "Nanomateriales organometálicos fotoactivos basados en Hf con potenciales aplicaciones en salud",
+      "description": "Este trabajo propone nanomateriales organometálicos de hafnio y TCPP para aplicaciones fotodinámicas. Las estructuras buscan limitar la agregación del fotosensibilizador y conservar su capacidad de generar oxígeno singlete en medios acuosos y a concentraciones elevadas."
+    },
+    "doi:10.1021/acsanm.2c01241": {
+      "displayTitle": "La incorporación de N y O en la cubierta de nanopartículas de silicio permite ajustar su fotoluminiscencia para aplicaciones de imagen",
+      "description": "El estudio muestra cómo el nitrógeno y el oxígeno incorporados en la cubierta de nanopartículas de silicio modifican su fotoluminiscencia. El control resultante sobre la emisión, la dispersabilidad en agua y la fotoestabilidad orienta el diseño de nanomateriales para bioimágenes."
+    },
+    "doi:10.1093/bioinformatics/btac202": {
+      "displayTitle": "Impacto de la diversidad conformacional de proteínas en las predicciones de AlphaFold",
+      "description": "Este estudio evalúa cómo la diversidad conformacional codificada en familias de proteínas afecta las predicciones de AlphaFold. Relaciona información de secuencia, estados estructurales alternativos y comportamiento del modelo para mostrar cuándo una única estructura predicha puede ocultar flexibilidad biológicamente relevante."
+    },
+    "doi:10.1039/9781788019613-00442": {
+      "displayTitle": "Nanomateriales basados en silicio optimizados para aplicaciones biológicas",
+      "description": "Este capítulo revisa cómo sintetizar y diseñar nanomateriales basados en silicio para aplicaciones biológicas. Vincula la derivatización superficial, la estabilidad coloidal, la fotoluminiscencia y la fotosensibilización de especies reactivas de oxígeno con decisiones prácticas de diseño."
+    },
+    "doi:10.1021/acsomega.0c05114": {
+      "displayTitle": "Cambios inducidos por el ambiente en nanotubos de carbono comerciales en suspensiones acuosas y respuesta adaptativa de bacterias en biopelículas",
+      "description": "El trabajo analiza cómo la luz solar y la materia húmica modifican nanotubos de carbono comerciales suspendidos en agua y cómo esos cambios afectan las biopelículas bacterianas. Vincula la transformación ambiental de nanomateriales con respuestas adaptativas microbianas."
+    },
+    "doi:10.1088/1361-6528/abc6dd": {
+      "displayTitle": "Erradicación de biopelículas de Staphylococcus aureus mediante puntos de silicio recubiertos con PEG, inmovilizados en películas de sílice e irradiados con luz",
+      "description": "Los puntos de silicio recubiertos con PEG e incorporados en películas de sílice forman una superficie mojable que limita la adhesión bacteriana y fotosensibiliza oxígeno singlete. Bajo irradiación, la combinación de efectos antiadherentes y fotodinámicos reduce en tres órdenes de magnitud las bacterias viables."
+    }
+  }
+}
