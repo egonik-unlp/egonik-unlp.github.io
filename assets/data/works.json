@@ -1,0 +1,279 @@
+{
+  "schemaVersion": 1,
+  "retrievedAt": "2026-08-07",
+  "author": {
+    "name": "Eduardo Gonik",
+    "googleScholarProfile": "https://scholar.google.com/citations?user=0CAay5kAAAAJ",
+    "googleScholarId": "0CAay5kAAAAJ",
+    "openAlexId": "https://openalex.org/A5070154461",
+    "affiliations": [
+      "Instituto de Investigaciones Fisicoquímicas Teóricas y Aplicadas (INIFTA)",
+      "Universidad Nacional de La Plata (UNLP)",
+      "CONICET"
+    ]
+  },
+  "provenance": {
+    "identitySource": "Google Scholar profile supplied by the author",
+    "bibliographicSources": ["Crossref", "PubMed", "OpenAlex", "publishers", "SEDICI-UNLP"],
+    "citationSource": "OpenAlex",
+    "citationNote": "Citation counts are a dated snapshot and may differ from Google Scholar. They should never be treated as permanent publication metadata."
+  },
+  "works": [
+    {
+      "id": "doi:10.1039/d5ra09148a",
+      "featured": true,
+      "title": "Development of hybrid nanoparticles based on Zr(IV) and perylene-3,4,9,10-tetracarboxylic acid with visible-light photoredox activity",
+      "description": "This work develops ZIPER, a zirconium–perylene hybrid nanomaterial that absorbs visible light and drives photoredox chemistry in water. Its activity is demonstrated through the reductive dehalogenation of model chlorinated pollutants.",
+      "authors": [
+        "R. Daniel Cacciari",
+        "Eduardo Gonik",
+        "Ana M. Beltrán",
+        "Martín D. Mizrahi",
+        "Sergio D. Ezquerra Riega",
+        "Hernán B. Rodríguez",
+        "Mónica C. Gonzalez"
+      ],
+      "year": 2026,
+      "publicationDate": "2026-02-02",
+      "type": "journal-article",
+      "venue": "RSC Advances",
+      "volume": "16",
+      "issue": "7",
+      "pages": "6689–6705",
+      "identifiers": {
+        "doi": "10.1039/d5ra09148a",
+        "pmid": "41635498",
+        "pmcid": "PMC12862888",
+        "openAlex": "W7127184584"
+      },
+      "urls": {
+        "primary": "https://doi.org/10.1039/d5ra09148a",
+        "openAccess": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12862888/"
+      },
+      "categories": ["photochemistry", "materials-science", "nanotechnology"],
+      "domains": ["photoredox-catalysis", "water-remediation", "hybrid-nanomaterials"],
+      "methods": ["solvothermal-synthesis", "spectroscopy", "photocatalysis"],
+      "keywords": ["zirconium", "perylene", "visible light", "dehalogenation"],
+      "role": "co-author",
+      "citations": { "count": 0, "source": "OpenAlex", "asOf": "2026-08-07" },
+      "display": { "priority": 10 }
+    },
+    {
+      "id": "sedici:10915/179543",
+      "featured": true,
+      "title": "Nanomateriales organometálicos fotoactivos basados en Hf con potenciales aplicaciones en salud",
+      "description": "Este trabajo propone nanomateriales organometálicos de hafnio y TCPP para aplicaciones fotodinámicas. Las estructuras buscan limitar la agregación del fotosensibilizador y conservar su capacidad de generar oxígeno singlete en medios acuosos y a concentraciones elevadas.",
+      "authors": ["Eduardo Gonik", "R. Daniel Cacciari", "Mónica C. González"],
+      "year": 2025,
+      "presentationDate": "2024-09",
+      "type": "conference-abstract",
+      "venue": "XVI Jornadas de Tesistas del INIFTA",
+      "pages": "60",
+      "language": "es",
+      "identifiers": {
+        "handle": "10915/179543",
+        "isbn": "978-950-34-2482-7"
+      },
+      "urls": {
+        "primary": "https://sedici.unlp.edu.ar/handle/10915/179543"
+      },
+      "categories": ["photochemistry", "materials-science", "nanotechnology"],
+      "domains": ["photodynamic-therapy", "metal-organic-frameworks", "biomedical-materials"],
+      "methods": ["materials-synthesis", "photophysical-characterization"],
+      "keywords": ["hafnium", "TCPP", "singlet oxygen", "photodynamic therapy"],
+      "role": "first-author",
+      "display": { "priority": 20 }
+    },
+    {
+      "id": "doi:10.1021/acsanm.2c01241",
+      "featured": true,
+      "title": "Incorporation of N and O into the Shell of Silicon Nanoparticles Offers Tunable Photoluminescence for Imaging Uses",
+      "description": "The study shows how nitrogen and oxygen incorporated into silicon-nanoparticle shells tune their photoluminescence. The resulting control over emission, water dispersibility, and photostability supports the design of silicon nanomaterials for bioimaging.",
+      "authors": [
+        "Juan José Romero",
+        "María Laura Dell’Arciprete",
+        "Hernán B. Rodríguez",
+        "Eduardo Gonik",
+        "Daniel Cacciari",
+        "Ana L. Moore",
+        "Mónica C. Gonzalez"
+      ],
+      "year": 2022,
+      "publicationDate": "2022-06-14",
+      "type": "journal-article",
+      "venue": "ACS Applied Nano Materials",
+      "volume": "5",
+      "issue": "6",
+      "pages": "8105–8119",
+      "identifiers": {
+        "doi": "10.1021/acsanm.2c01241",
+        "openAlex": "W4282831804"
+      },
+      "urls": {
+        "primary": "https://doi.org/10.1021/acsanm.2c01241"
+      },
+      "categories": ["photochemistry", "materials-science", "nanotechnology"],
+      "domains": ["silicon-nanoparticles", "bioimaging", "photoluminescence"],
+      "methods": ["nanoparticle-synthesis", "spectroscopy", "surface-characterization"],
+      "keywords": ["silicon nanoparticles", "photoluminescence", "surface chemistry", "bioimaging"],
+      "role": "co-author",
+      "citations": { "count": 8, "source": "OpenAlex", "asOf": "2026-08-07" },
+      "display": { "priority": 30 }
+    },
+    {
+      "id": "doi:10.1093/bioinformatics/btac202",
+      "featured": true,
+      "title": "Impact of protein conformational diversity on AlphaFold predictions",
+      "description": "This study evaluates how the conformational diversity encoded in protein families affects AlphaFold predictions. It connects sequence information, alternative structural states, and model behavior to clarify when a single predicted structure may hide biologically relevant flexibility.",
+      "authors": [
+        "Tadeo E. Saldaño",
+        "Nahuel Escobedo",
+        "Julia Marchetti",
+        "Diego Javier Zea",
+        "Juan Mac Donagh",
+        "Ana Julia Velez Rueda",
+        "Eduardo Gonik",
+        "Agustina García Melani",
+        "Julieta Novomisky Nechcoff",
+        "Martín N. Salas",
+        "Tomás Peters",
+        "Nicolás Demitroff",
+        "Sebastian Fernández-Alberti",
+        "Nicolás Palópoli",
+        "María Silvina Fornasari",
+        "Gustavo Parisi"
+      ],
+      "year": 2022,
+      "publicationDate": "2022-05-13",
+      "type": "journal-article",
+      "venue": "Bioinformatics",
+      "volume": "38",
+      "issue": "10",
+      "pages": "2742–2748",
+      "identifiers": {
+        "doi": "10.1093/bioinformatics/btac202",
+        "pmid": "35561203",
+        "openAlex": "W4225552973",
+        "preprintDoi": "10.1101/2021.10.27.466189"
+      },
+      "urls": {
+        "primary": "https://doi.org/10.1093/bioinformatics/btac202",
+        "code": "https://gitlab.com/sbgunq/publications/af2confdiv-oct2021"
+      },
+      "categories": ["bioinformatics", "machine-learning", "computational-biology"],
+      "domains": ["protein-structure", "alphafold", "conformational-diversity"],
+      "methods": ["structural-bioinformatics", "comparative-analysis", "machine-learning-evaluation"],
+      "keywords": ["AlphaFold", "protein dynamics", "conformational states", "structure prediction"],
+      "role": "co-author",
+      "citations": { "count": 212, "source": "OpenAlex", "asOf": "2026-08-07" },
+      "display": { "priority": 40 }
+    },
+    {
+      "id": "doi:10.1039/9781788019613-00442",
+      "featured": false,
+      "title": "Optimal Silicon-based Nanomaterials for Biological Applications",
+      "description": "This book chapter reviews how silicon-based nanomaterials can be synthesized and engineered for biological applications. It connects surface derivatization, colloidal stability, photoluminescence, and reactive-oxygen photosensitization with practical material design.",
+      "authors": [
+        "María Laura Dell’Arciprete",
+        "Paula Caregnato",
+        "Hernán B. Rodríguez",
+        "Eduardo Gonik",
+        "Damián Rodríguez Sartori",
+        "Mónica C. Gonzalez"
+      ],
+      "year": 2022,
+      "publicationDate": "2022-02-09",
+      "type": "book-chapter",
+      "venue": "Concepts and Design of Materials Nanoarchitectonics",
+      "publisher": "Royal Society of Chemistry",
+      "pages": "442–467",
+      "identifiers": {
+        "doi": "10.1039/9781788019613-00442",
+        "isbn": "978-1-78801-802-9",
+        "openAlex": "W4210863392"
+      },
+      "urls": {
+        "primary": "https://doi.org/10.1039/9781788019613-00442"
+      },
+      "categories": ["materials-science", "nanotechnology", "review"],
+      "domains": ["silicon-nanomaterials", "biological-applications", "photoactive-materials"],
+      "methods": ["literature-review", "materials-design"],
+      "keywords": ["silicon", "nanoarchitectonics", "photoluminescence", "reactive oxygen species"],
+      "role": "co-author",
+      "citations": { "count": 0, "source": "OpenAlex", "asOf": "2026-08-07" },
+      "display": { "priority": 50 }
+    },
+    {
+      "id": "doi:10.1021/acsomega.0c05114",
+      "featured": true,
+      "title": "Environmentally Induced Changes of Commercial Carbon Nanotubes in Aqueous Suspensions. Adaptive Behavior of Bacteria in Biofilms",
+      "description": "The work examines how sunlight and humic matter alter commercial carbon nanotubes suspended in water and how those changes affect bacterial biofilms. It links environmental transformation of nanomaterials with adaptive microbial responses.",
+      "authors": [
+        "Damián Rodríguez Sartori",
+        "Marcos Bertuola",
+        "Alejandro Miñán",
+        "Eduardo Gonik",
+        "Mónica C. Gonzalez",
+        "Mónica Fernández Lorenzo de Mele"
+      ],
+      "year": 2021,
+      "publicationDate": "2021-02-17",
+      "type": "journal-article",
+      "venue": "ACS Omega",
+      "identifiers": {
+        "doi": "10.1021/acsomega.0c05114",
+        "pmid": "33681561",
+        "pmcid": "PMC7931186",
+        "openAlex": "W3131867087"
+      },
+      "urls": {
+        "primary": "https://doi.org/10.1021/acsomega.0c05114",
+        "openAccess": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7931186/"
+      },
+      "categories": ["environmental-chemistry", "nanotechnology", "microbiology"],
+      "domains": ["carbon-nanotubes", "biofilms", "environmental-transformation"],
+      "methods": ["materials-characterization", "microbial-assays", "irradiation-experiments"],
+      "keywords": ["carbon nanotubes", "humic acid", "sunlight", "bacterial adaptation"],
+      "role": "co-author",
+      "citations": { "count": 7, "source": "OpenAlex", "asOf": "2026-08-07" },
+      "display": { "priority": 60 }
+    },
+    {
+      "id": "doi:10.1088/1361-6528/abc6dd",
+      "featured": true,
+      "title": "Staphylococcus aureus biofilm eradication by the synergistic effect exerted by PEG-coated silicon dots immobilized in silica films and light irradiation",
+      "description": "PEG-coated silicon dots embedded in silica films create a water-wettable surface that limits bacterial attachment and photosensitizes singlet oxygen. Under irradiation, the combined anti-adhesion and photodynamic effects reduce viable Staphylococcus aureus by three orders of magnitude.",
+      "authors": [
+        "Eduardo Gonik",
+        "Damián Rodríguez Sartori",
+        "Pedro M. David Gara",
+        "Alejandro Miñán",
+        "Mónica Fernández Lorenzo de Mele",
+        "Mónica C. Gonzalez"
+      ],
+      "year": 2021,
+      "publicationDate": "2021-02-26",
+      "type": "journal-article",
+      "venue": "Nanotechnology",
+      "volume": "32",
+      "issue": "9",
+      "articleNumber": "095105",
+      "identifiers": {
+        "doi": "10.1088/1361-6528/abc6dd",
+        "pmid": "33137803",
+        "openAlex": "W3095971723"
+      },
+      "urls": {
+        "primary": "https://doi.org/10.1088/1361-6528/abc6dd",
+        "pubmed": "https://pubmed.ncbi.nlm.nih.gov/33137803/"
+      },
+      "categories": ["photochemistry", "nanotechnology", "microbiology"],
+      "domains": ["photodynamic-inactivation", "biofilms", "silicon-nanoparticles"],
+      "methods": ["sol-gel-immobilization", "singlet-oxygen-photosensitization", "biofilm-assays"],
+      "keywords": ["Staphylococcus aureus", "silicon dots", "singlet oxygen", "antimicrobial surfaces"],
+      "role": "first-author",
+      "citations": { "count": 4, "source": "OpenAlex", "asOf": "2026-08-07" },
+      "display": { "priority": 70 }
+    }
+  ]
+}
