@@ -6,308 +6,1742 @@
       "featured": true,
       "title": "convert-ffi",
       "description": "A full-stack Leptos app for turning local audio files into a Spotify playlist. The browser reads the file tags, Rust calls a native Zig Spotify client through FFI, and the user reviews the matches before creating the playlist.",
-      "languages": ["Rust", "Zig", "WebAssembly"],
-      "categories": ["systems-programming", "web-development"],
-      "projectTypes": ["web-app", "web-service"],
-      "domains": ["music", "spotify", "ffi"],
+      "languages": [
+        "Rust",
+        "Zig",
+        "WebAssembly"
+      ],
+      "categories": [
+        "systems-programming",
+        "web-development"
+      ],
+      "projectTypes": [
+        "web-app",
+        "web-service"
+      ],
+      "domains": [
+        "music",
+        "spotify",
+        "ffi"
+      ],
       "status": "active",
       "maturity": "usable",
       "role": "creator",
-      "highlights": ["Rust–Zig FFI", "Local metadata parsing", "Spotify playlist creation"],
+      "highlights": [
+        "Rust–Zig FFI",
+        "Local metadata parsing",
+        "Spotify playlist creation"
+      ],
       "links": {
         "demo": "https://convert-ffi.onrender.com"
       },
-      "display": { "priority": 10 }
+      "display": {
+        "priority": 10
+      }
     },
     "spotify-next-track": {
       "featured": true,
       "title": "Infinite Playlist",
       "description": "An endless playlist generated from a song or Spotify playlist. A next-track model trained in the spotify-next-track Lensing project runs in the browser and picks each new song from my listening library.",
-      "languages": ["Python", "Rust", "JavaScript", "WebAssembly"],
-      "categories": ["machine-learning", "web-development", "data-visualization"],
-      "projectTypes": ["web-app", "machine-learning-application"],
-      "domains": ["music", "spotify", "recommendation-systems", "sequence-modeling"],
+      "languages": [
+        "Python",
+        "Rust",
+        "JavaScript",
+        "WebAssembly"
+      ],
+      "categories": [
+        "machine-learning",
+        "web-development",
+        "data-visualization"
+      ],
+      "projectTypes": [
+        "web-app",
+        "machine-learning-application"
+      ],
+      "domains": [
+        "music",
+        "spotify",
+        "recommendation-systems",
+        "sequence-modeling"
+      ],
       "status": "active",
       "maturity": "usable",
       "role": "creator",
-      "highlights": ["Next-track GRU", "Browser ONNX inference", "Cloudflare Worker deployment"],
+      "highlights": [
+        "Next-track GRU",
+        "Browser ONNX inference",
+        "Cloudflare Worker deployment"
+      ],
       "links": {
         "demo": "https://infinite-playlist.eduardo-gonik.workers.dev/"
       },
-      "display": { "priority": 15 }
+      "display": {
+        "priority": 15
+      }
     },
     "convert-invert-site": {
       "featured": true,
       "title": "Convert Invert Site",
       "description": "A complete web interface and service layer for operating Convert Invert from a browser. The project explores a Zig-based backend, worker orchestration, authentication, and an observable deployment stack.",
-      "languages": ["Zig", "JavaScript"],
-      "categories": ["systems-programming", "web-development", "networking"],
-      "projectTypes": ["web-app", "web-service"],
-      "domains": ["music", "media-management", "observability"],
+      "languages": [
+        "Zig",
+        "JavaScript"
+      ],
+      "categories": [
+        "systems-programming",
+        "web-development",
+        "networking"
+      ],
+      "projectTypes": [
+        "web-app",
+        "web-service"
+      ],
+      "domains": [
+        "music",
+        "media-management",
+        "observability"
+      ],
       "status": "active",
       "maturity": "prototype",
       "role": "creator",
-      "highlights": ["Zig backend", "Worker orchestration", "Operational telemetry"],
-      "display": { "priority": 20 }
+      "highlights": [
+        "Zig backend",
+        "Worker orchestration",
+        "Operational telemetry"
+      ],
+      "display": {
+        "priority": 20
+      }
     },
     "app": {
       "featured": true,
       "title": "Pathfinder",
       "description": "An interactive 3D visualization of the musical path between two Spotify tracks. A Rust and WebAssembly routing core finds a journey through listening taste while Cloudflare Workers serves search, previews, and the browser experience.",
-      "languages": ["TypeScript", "Rust", "WebAssembly"],
-      "categories": ["data-visualization", "web-development", "scientific-programming"],
-      "projectTypes": ["web-app", "interactive-visualization"],
-      "domains": ["music", "spotify", "graph-search", "embeddings"],
+      "languages": [
+        "TypeScript",
+        "Rust",
+        "WebAssembly"
+      ],
+      "categories": [
+        "data-visualization",
+        "web-development",
+        "scientific-programming"
+      ],
+      "projectTypes": [
+        "web-app",
+        "interactive-visualization"
+      ],
+      "domains": [
+        "music",
+        "spotify",
+        "graph-search",
+        "embeddings"
+      ],
       "status": "active",
       "maturity": "prototype",
       "role": "creator",
-      "highlights": ["3D visualization", "A* pathfinding", "Rust compiled to WebAssembly"],
-      "display": { "priority": 30 }
+      "highlights": [
+        "3D visualization",
+        "A* pathfinding",
+        "Rust compiled to WebAssembly"
+      ],
+      "display": {
+        "priority": 30
+      }
     },
     "lvv": {
       "featured": true,
       "title": "LVV",
       "description": "A Rust library for converting arbitrary structured data into vector embeddings. It supports configurable transformations, including LLM-assisted preprocessing, before data enters an embedding or retrieval pipeline.",
-      "languages": ["Rust"],
-      "categories": ["systems-programming", "machine-learning", "developer-tools"],
-      "projectTypes": ["library"],
-      "domains": ["embeddings", "llm", "data-processing"],
+      "languages": [
+        "Rust"
+      ],
+      "categories": [
+        "systems-programming",
+        "machine-learning",
+        "developer-tools"
+      ],
+      "projectTypes": [
+        "library"
+      ],
+      "domains": [
+        "embeddings",
+        "llm",
+        "data-processing"
+      ],
       "status": "paused",
       "maturity": "experimental",
       "role": "creator",
-      "highlights": ["Generic input model", "LLM transformations", "Embedding pipelines"],
-      "display": { "priority": 40 }
+      "highlights": [
+        "Generic input model",
+        "LLM transformations",
+        "Embedding pipelines"
+      ],
+      "display": {
+        "priority": 40
+      }
     },
     "craig": {
       "featured": true,
       "title": "Craig",
       "description": "A retrieval-augmented assistant designed for chemistry questions. It combines domain-specific source material with semantic retrieval so answers can be grounded in relevant scientific context.",
-      "languages": ["TypeScript"],
-      "categories": ["machine-learning", "scientific-programming", "web-development"],
-      "projectTypes": ["web-app", "assistant"],
-      "domains": ["chemistry", "rag", "llm", "semantic-search"],
+      "languages": [
+        "TypeScript"
+      ],
+      "categories": [
+        "machine-learning",
+        "scientific-programming",
+        "web-development"
+      ],
+      "projectTypes": [
+        "web-app",
+        "assistant"
+      ],
+      "domains": [
+        "chemistry",
+        "rag",
+        "llm",
+        "semantic-search"
+      ],
       "status": "paused",
       "maturity": "prototype",
       "role": "creator",
-      "highlights": ["Domain-focused retrieval", "Scientific source grounding", "Conversational interface"],
-      "display": { "priority": 50 }
+      "highlights": [
+        "Domain-focused retrieval",
+        "Scientific source grounding",
+        "Conversational interface"
+      ],
+      "display": {
+        "priority": 50
+      }
     },
     "glotaran_converter_lib": {
       "featured": true,
       "title": "Glotaran Converter Library",
       "description": "A Rust library that converts time-resolved fluorescence and laser flash photolysis measurements into Glotaran-compatible datasets. It encodes laboratory-specific parsing and preprocessing into a repeatable workflow.",
-      "languages": ["Rust"],
-      "categories": ["scientific-programming", "data-processing"],
-      "projectTypes": ["library"],
-      "domains": ["spectroscopy", "photochemistry", "glotaran"],
+      "languages": [
+        "Rust"
+      ],
+      "categories": [
+        "scientific-programming",
+        "data-processing"
+      ],
+      "projectTypes": [
+        "library"
+      ],
+      "domains": [
+        "spectroscopy",
+        "photochemistry",
+        "glotaran"
+      ],
       "status": "completed",
       "maturity": "usable",
       "role": "creator",
-      "highlights": ["Instrument-file parsing", "Reproducible conversion", "Glotaran interoperability"],
-      "display": { "priority": 60 }
+      "highlights": [
+        "Instrument-file parsing",
+        "Reproducible conversion",
+        "Glotaran interoperability"
+      ],
+      "display": {
+        "priority": 60
+      }
     },
     "glotaran_converter_cli": {
       "featured": false,
       "title": "Glotaran Converter CLI",
       "description": "A command-line interface for the Glotaran conversion library, providing an ergonomic way to transform fluorescence and laser flash photolysis files without writing Rust code.",
-      "languages": ["Rust"],
-      "categories": ["scientific-programming", "developer-tools"],
-      "projectTypes": ["cli"],
-      "domains": ["spectroscopy", "photochemistry", "glotaran"],
+      "languages": [
+        "Rust"
+      ],
+      "categories": [
+        "scientific-programming",
+        "developer-tools"
+      ],
+      "projectTypes": [
+        "cli"
+      ],
+      "domains": [
+        "spectroscopy",
+        "photochemistry",
+        "glotaran"
+      ],
       "status": "completed",
       "maturity": "usable",
       "role": "creator",
-      "display": { "priority": 70 }
+      "display": {
+        "priority": 70
+      }
     },
     "agilent_ir": {
       "featured": true,
       "title": "Agilent IR Parsers",
       "description": "Tools for working with spectra exported by an Agilent Cary 660 ATR-IR instrument. They parse the instrument output and reconstruct the missing wavenumber axis so measurements are ready for analysis.",
-      "languages": ["Python", "Jupyter Notebook"],
-      "categories": ["scientific-programming", "data-processing"],
-      "projectTypes": ["library", "notebook"],
-      "domains": ["chemistry", "infrared-spectroscopy", "instrumentation"],
+      "languages": [
+        "Python",
+        "Jupyter Notebook"
+      ],
+      "categories": [
+        "scientific-programming",
+        "data-processing"
+      ],
+      "projectTypes": [
+        "library",
+        "notebook"
+      ],
+      "domains": [
+        "chemistry",
+        "infrared-spectroscopy",
+        "instrumentation"
+      ],
       "status": "completed",
       "maturity": "usable",
       "role": "creator",
-      "highlights": ["Instrument-data parsing", "Wavenumber reconstruction", "Laboratory workflow"],
-      "display": { "priority": 80 }
+      "highlights": [
+        "Instrument-data parsing",
+        "Wavenumber reconstruction",
+        "Laboratory workflow"
+      ],
+      "display": {
+        "priority": 80
+      }
     },
     "bilinear": {
       "featured": true,
       "title": "Bilinear Calibration",
       "description": "A Rust implementation of a published bilinear calibration method for chemical analysis. The project translates the numerical procedure described in DOI 10.1021/j100346a034 into reusable scientific software.",
-      "languages": ["Rust"],
-      "categories": ["scientific-programming", "numerical-computing"],
-      "projectTypes": ["library", "research-implementation"],
-      "domains": ["chemistry", "calibration", "data-analysis"],
+      "languages": [
+        "Rust"
+      ],
+      "categories": [
+        "scientific-programming",
+        "numerical-computing"
+      ],
+      "projectTypes": [
+        "library",
+        "research-implementation"
+      ],
+      "domains": [
+        "chemistry",
+        "calibration",
+        "data-analysis"
+      ],
       "status": "completed",
       "maturity": "experimental",
       "role": "creator",
-      "highlights": ["Published-method implementation", "Numerical analysis", "Rust"],
-      "display": { "priority": 90 }
+      "highlights": [
+        "Published-method implementation",
+        "Numerical analysis",
+        "Rust"
+      ],
+      "display": {
+        "priority": 90
+      }
     },
     "xrd_match": {
       "featured": true,
       "title": "XRD Match",
       "description": "A notebook workflow for comparing experimental X-ray diffraction patterns with structures from a CIF database. It supports the identification and exploration of candidate crystalline materials.",
-      "languages": ["Python", "Jupyter Notebook"],
-      "categories": ["scientific-programming", "data-analysis"],
-      "projectTypes": ["notebook", "research-tool"],
-      "domains": ["chemistry", "x-ray-diffraction", "materials-science"],
+      "languages": [
+        "Python",
+        "Jupyter Notebook"
+      ],
+      "categories": [
+        "scientific-programming",
+        "data-analysis"
+      ],
+      "projectTypes": [
+        "notebook",
+        "research-tool"
+      ],
+      "domains": [
+        "chemistry",
+        "x-ray-diffraction",
+        "materials-science"
+      ],
       "status": "paused",
       "maturity": "prototype",
       "role": "creator",
-      "highlights": ["XRD pattern matching", "CIF database search", "Materials analysis"],
-      "display": { "priority": 100 }
+      "highlights": [
+        "XRD pattern matching",
+        "CIF database search",
+        "Materials analysis"
+      ],
+      "display": {
+        "priority": 100
+      }
     },
     "MOFSocialNet.jl": {
       "featured": true,
       "title": "MOFSocialNet.jl",
       "description": "A Julia and notebook-based reproduction of the MOFSocialNet method described by Jalali and collaborators. It explores graph-inspired analysis of metal-organic frameworks from structural data.",
-      "languages": ["Julia", "Jupyter Notebook"],
-      "categories": ["scientific-programming", "data-analysis"],
-      "projectTypes": ["research-reproduction", "notebook"],
-      "domains": ["metal-organic-frameworks", "materials-science", "network-analysis"],
+      "languages": [
+        "Julia",
+        "Jupyter Notebook"
+      ],
+      "categories": [
+        "scientific-programming",
+        "data-analysis"
+      ],
+      "projectTypes": [
+        "research-reproduction",
+        "notebook"
+      ],
+      "domains": [
+        "metal-organic-frameworks",
+        "materials-science",
+        "network-analysis"
+      ],
       "status": "completed",
       "maturity": "experimental",
       "role": "reproduction",
-      "highlights": ["Paper reproduction", "Materials informatics", "Julia"],
-      "display": { "priority": 110 }
+      "highlights": [
+        "Paper reproduction",
+        "Materials informatics",
+        "Julia"
+      ],
+      "display": {
+        "priority": 110
+      }
     },
     "egonik-site": {
       "featured": true,
       "title": "egonik-site",
       "description": "A database-backed personal site built as a full-stack Rust application. Leptos handles server rendering and browser hydration, Actix serves the application, and Diesel loads portfolio and publication data from Postgres.",
-      "languages": ["Rust", "WebAssembly", "SQL"],
-      "categories": ["systems-programming", "web-development"],
-      "projectTypes": ["web-app", "web-service"],
-      "domains": ["portfolio", "content-management"],
+      "languages": [
+        "Rust",
+        "WebAssembly",
+        "SQL"
+      ],
+      "categories": [
+        "systems-programming",
+        "web-development"
+      ],
+      "projectTypes": [
+        "web-app",
+        "web-service"
+      ],
+      "domains": [
+        "portfolio",
+        "content-management"
+      ],
       "status": "active",
       "maturity": "prototype",
       "role": "creator",
-      "highlights": ["Server-side rendering", "Shared Rust UI", "Postgres-backed content"],
-      "display": { "priority": 115 }
+      "highlights": [
+        "Server-side rendering",
+        "Shared Rust UI",
+        "Postgres-backed content"
+      ],
+      "display": {
+        "priority": 115
+      }
     },
     "gases": {
       "featured": false,
       "title": "Molecular Dynamics of Gases",
       "description": "An educational molecular-dynamics simulation of a gas written in Julia. It explores particle interactions and time evolution while serving as a compact scientific-computing exercise.",
-      "languages": ["Julia"],
-      "categories": ["scientific-programming", "simulation", "education"],
-      "projectTypes": ["simulation"],
-      "domains": ["molecular-dynamics", "physics", "chemistry"],
+      "languages": [
+        "Julia"
+      ],
+      "categories": [
+        "scientific-programming",
+        "simulation",
+        "education"
+      ],
+      "projectTypes": [
+        "simulation"
+      ],
+      "domains": [
+        "molecular-dynamics",
+        "physics",
+        "chemistry"
+      ],
       "status": "completed",
       "maturity": "experimental",
       "role": "creator",
-      "display": { "priority": 120 }
+      "display": {
+        "priority": 120
+      }
     },
     "PHcalc.jl": {
       "featured": false,
       "title": "PHcalc.jl",
       "description": "A Julia implementation of Ryan Nelson's pHcalc library for calculating acid-base equilibria and solution pH. It brings an established chemistry workflow into the Julia ecosystem.",
-      "languages": ["Julia"],
-      "categories": ["scientific-programming", "numerical-computing"],
-      "projectTypes": ["library", "port"],
-      "domains": ["chemistry", "acid-base-equilibria"],
+      "languages": [
+        "Julia"
+      ],
+      "categories": [
+        "scientific-programming",
+        "numerical-computing"
+      ],
+      "projectTypes": [
+        "library",
+        "port"
+      ],
+      "domains": [
+        "chemistry",
+        "acid-base-equilibria"
+      ],
       "status": "completed",
       "maturity": "experimental",
       "role": "port-author",
-      "display": { "priority": 140 }
+      "display": {
+        "priority": 140
+      }
     },
     "toy-server": {
       "featured": true,
       "title": "toy-server",
       "description": "A small HTTP server written directly on top of Rust's TcpListener. It parses request lines and headers, routes paths to handlers, and writes HTTP responses without using a web framework.",
-      "languages": ["Rust"],
-      "categories": ["networking", "systems-programming", "education"],
-      "projectTypes": ["server", "learning-project"],
-      "domains": ["http", "tcp", "protocols"],
+      "languages": [
+        "Rust"
+      ],
+      "categories": [
+        "networking",
+        "systems-programming",
+        "education"
+      ],
+      "projectTypes": [
+        "server",
+        "learning-project"
+      ],
+      "domains": [
+        "http",
+        "tcp",
+        "protocols"
+      ],
       "status": "completed",
       "maturity": "experimental",
       "role": "creator",
-      "highlights": ["TCP listener", "HTTP parsing", "Path routing"],
-      "display": { "priority": 150 }
+      "highlights": [
+        "TCP listener",
+        "HTTP parsing",
+        "Path routing"
+      ],
+      "display": {
+        "priority": 150
+      }
     },
     "remote_listener": {
       "featured": false,
       "title": "Remote Listener",
       "description": "A small Rust automation daemon that polls a URL and launches a configured local task when the remote service reports success. It is designed as a lightweight bridge between remote state and local execution.",
-      "languages": ["Rust"],
-      "categories": ["networking", "systems-programming", "automation"],
-      "projectTypes": ["daemon", "cli"],
-      "domains": ["http", "process-management"],
+      "languages": [
+        "Rust"
+      ],
+      "categories": [
+        "networking",
+        "systems-programming",
+        "automation"
+      ],
+      "projectTypes": [
+        "daemon",
+        "cli"
+      ],
+      "domains": [
+        "http",
+        "process-management"
+      ],
       "status": "completed",
       "maturity": "usable",
       "role": "creator",
-      "display": { "priority": 160 }
+      "display": {
+        "priority": 160
+      }
     },
     "dump_ps": {
       "featured": false,
       "title": "Process Snapshot Logger",
       "description": "A Zig utility that captures process-list snapshots and persists them to a database, making it possible to inspect how machine activity changes over time.",
-      "languages": ["Zig"],
-      "categories": ["systems-programming", "observability"],
-      "projectTypes": ["cli", "data-collector"],
-      "domains": ["process-monitoring", "telemetry"],
+      "languages": [
+        "Zig"
+      ],
+      "categories": [
+        "systems-programming",
+        "observability"
+      ],
+      "projectTypes": [
+        "cli",
+        "data-collector"
+      ],
+      "domains": [
+        "process-monitoring",
+        "telemetry"
+      ],
       "status": "completed",
       "maturity": "experimental",
       "role": "creator",
-      "display": { "priority": 170 }
+      "display": {
+        "priority": 170
+      }
     },
     "rllm": {
       "featured": false,
       "title": "RLLM",
       "description": "A work-in-progress Rust tool for selecting and consolidating codebase content into context suitable for language models. It focuses on making large Rust projects easier to inspect and share as text.",
-      "languages": ["Rust"],
-      "categories": ["developer-tools", "systems-programming", "machine-learning"],
-      "projectTypes": ["cli"],
-      "domains": ["llm", "source-code", "context-generation"],
+      "languages": [
+        "Rust"
+      ],
+      "categories": [
+        "developer-tools",
+        "systems-programming",
+        "machine-learning"
+      ],
+      "projectTypes": [
+        "cli"
+      ],
+      "domains": [
+        "llm",
+        "source-code",
+        "context-generation"
+      ],
       "status": "paused",
       "maturity": "experimental",
       "role": "creator",
-      "display": { "priority": 180 }
+      "display": {
+        "priority": 180
+      }
     },
     "flagen": {
       "featured": true,
       "title": "Flagen",
       "description": "A recreational generative-art program written in OCaml. It uses Monte Carlo-style processes to build visual compositions from repeated randomized decisions.",
-      "languages": ["OCaml"],
-      "categories": ["generative-art", "functional-programming"],
-      "projectTypes": ["creative-coding", "application"],
-      "domains": ["monte-carlo", "visual-art"],
+      "languages": [
+        "OCaml"
+      ],
+      "categories": [
+        "generative-art",
+        "functional-programming"
+      ],
+      "projectTypes": [
+        "creative-coding",
+        "application"
+      ],
+      "domains": [
+        "monte-carlo",
+        "visual-art"
+      ],
       "status": "completed",
       "maturity": "experimental",
       "role": "creator",
-      "highlights": ["Generative artwork", "Monte Carlo processes", "OCaml"],
-      "display": { "priority": 190 }
+      "highlights": [
+        "Generative artwork",
+        "Monte Carlo processes",
+        "OCaml"
+      ],
+      "display": {
+        "priority": 190
+      }
     },
     "demoLogits": {
       "featured": true,
       "title": "LLM Sampling Visualizer",
       "description": "An interactive demonstration that makes language-model sampling visible. Each generated token is animated as a choice among top-logprob candidates, turning an abstract probability distribution into an intuitive visual sequence.",
-      "languages": ["JavaScript", "TypeScript"],
-      "categories": ["machine-learning", "data-visualization", "web-development"],
-      "projectTypes": ["web-app", "educational-demo"],
-      "domains": ["llm", "probability", "token-sampling"],
+      "languages": [
+        "JavaScript",
+        "TypeScript"
+      ],
+      "categories": [
+        "machine-learning",
+        "data-visualization",
+        "web-development"
+      ],
+      "projectTypes": [
+        "web-app",
+        "educational-demo"
+      ],
+      "domains": [
+        "llm",
+        "probability",
+        "token-sampling"
+      ],
       "status": "active",
       "maturity": "usable",
       "role": "creator",
-      "highlights": ["Token-level animation", "Top-logprob visualization", "Cloudflare Workers"],
-      "display": { "priority": 200 }
+      "highlights": [
+        "Token-level animation",
+        "Top-logprob visualization",
+        "Cloudflare Workers"
+      ],
+      "display": {
+        "priority": 200
+      }
     },
     "demoCodex": {
       "featured": false,
       "title": "Calorimetry Curve Demo",
       "description": "An interactive teaching tool for estimating the corrected temperature change in neutralization calorimetry curves. It presents the fitting process visually so experimental corrections are easier to understand.",
-      "languages": ["TypeScript"],
-      "categories": ["scientific-programming", "education", "data-visualization"],
-      "projectTypes": ["web-app", "educational-demo"],
-      "domains": ["chemistry", "calorimetry", "curve-fitting"],
+      "languages": [
+        "TypeScript"
+      ],
+      "categories": [
+        "scientific-programming",
+        "education",
+        "data-visualization"
+      ],
+      "projectTypes": [
+        "web-app",
+        "educational-demo"
+      ],
+      "domains": [
+        "chemistry",
+        "calorimetry",
+        "curve-fitting"
+      ],
       "status": "active",
       "maturity": "prototype",
       "role": "creator",
-      "display": { "priority": 210 }
+      "display": {
+        "priority": 210
+      }
+    },
+    "_eem_converter": {
+      "featured": false,
+      "title": "_eem_converter",
+      "description": "Rust utility for converting excitation-emission matrix data.",
+      "languages": [
+        "Rust"
+      ],
+      "status": "active",
+      "role": "creator",
+      "display": {
+        "priority": 220
+      }
+    },
+    "agilent_asp_parser": {
+      "featured": false,
+      "title": "agilent_asp_parser",
+      "description": "Rust parser for Agilent FTIR ASP spectrum files.",
+      "languages": [
+        "Rust"
+      ],
+      "status": "active",
+      "role": "creator",
+      "display": {
+        "priority": 230
+      }
+    },
+    "agilentaspparser": {
+      "featured": false,
+      "title": "agilentaspparser",
+      "description": "Python library for parsing Agilent FTIR ASP spectrum files.",
+      "languages": [
+        "Python"
+      ],
+      "status": "active",
+      "role": "creator",
+      "display": {
+        "priority": 250
+      }
+    },
+    "AOC2022": {
+      "featured": false,
+      "title": "AOC2022",
+      "description": "Advent of Code 2022 solutions in Rust.",
+      "languages": [
+        "Rust"
+      ],
+      "status": "active",
+      "role": "creator",
+      "display": {
+        "priority": 260
+      }
+    },
+    "AOC2024-OCaml": {
+      "featured": false,
+      "title": "AOC2024-OCaml",
+      "description": "Advent of Code 2024 solutions in OCaml.",
+      "languages": [
+        "OCaml"
+      ],
+      "status": "active",
+      "role": "creator",
+      "display": {
+        "priority": 270
+      }
+    },
+    "asp_gui": {
+      "featured": false,
+      "title": "asp_gui",
+      "description": "Rust GUI for parsing and exploring Agilent ASP spectrum files with asp_lib.",
+      "languages": [
+        "Rust"
+      ],
+      "status": "active",
+      "role": "creator",
+      "display": {
+        "priority": 290
+      }
+    },
+    "asp_lib": {
+      "featured": false,
+      "title": "asp_lib",
+      "description": "Rust library for parsing Agilent ASP spectrum files.",
+      "languages": [
+        "Rust"
+      ],
+      "status": "active",
+      "role": "creator",
+      "display": {
+        "priority": 300
+      }
+    },
+    "background_task": {
+      "featured": false,
+      "title": "background_task",
+      "description": "Experimental Rust service for triggering background tasks through an HTTP API.",
+      "languages": [
+        "Rust"
+      ],
+      "status": "active",
+      "role": "creator",
+      "display": {
+        "priority": 310
+      }
+    },
+    "beto": {
+      "featured": false,
+      "title": "beto",
+      "description": "Experimental Rust project.",
+      "languages": [
+        "Rust"
+      ],
+      "status": "active",
+      "role": "creator",
+      "display": {
+        "priority": 320
+      }
+    },
+    "brian_origin": {
+      "featured": false,
+      "title": "brian_origin",
+      "description": "Dataset and analysis notebooks for PCA experiments.",
+      "languages": [
+        "Classic ASP"
+      ],
+      "status": "active",
+      "role": "creator",
+      "display": {
+        "priority": 340
+      }
+    },
+    "catedra": {
+      "featured": false,
+      "title": "catedra",
+      "description": "Teaching notebooks and materials for inorganic and general chemistry.",
+      "languages": [
+        "Jupyter Notebook"
+      ],
+      "status": "active",
+      "role": "creator",
+      "display": {
+        "priority": 350
+      }
+    },
+    "cecilia": {
+      "featured": false,
+      "title": "cecilia",
+      "description": "Chemistry research and data-analysis notebooks.",
+      "languages": [
+        "Jupyter Notebook"
+      ],
+      "status": "active",
+      "role": "creator",
+      "display": {
+        "priority": 360
+      }
+    },
+    "cinetica-Julia": {
+      "featured": false,
+      "title": "cinetica-Julia",
+      "description": "Julia implementations of educational chemical-kinetics examples.",
+      "languages": [
+        "Julia"
+      ],
+      "status": "active",
+      "role": "creator",
+      "display": {
+        "priority": 370
+      }
+    },
+    "convert-host-downloads": {
+      "featured": false,
+      "title": "convert-host-downloads",
+      "description": "File-sharing service for the convert-invert project.",
+      "languages": [
+        "Python"
+      ],
+      "status": "active",
+      "role": "creator",
+      "display": {
+        "priority": 390
+      }
+    },
+    "convert-invert": {
+      "featured": false,
+      "title": "convert-invert",
+      "description": "Sync Spotify playlists to local audio files through the Soulseek network.",
+      "languages": [
+        "Rust"
+      ],
+      "status": "active",
+      "role": "creator",
+      "display": {
+        "priority": 400
+      }
+    },
+    "convert-invert-frontend": {
+      "featured": false,
+      "title": "convert-invert-frontend",
+      "description": "React and Vite dashboard for the convert-invert API.",
+      "languages": [
+        "TypeScript"
+      ],
+      "status": "active",
+      "role": "creator",
+      "display": {
+        "priority": 410
+      }
+    },
+    "convert-site": {
+      "featured": false,
+      "title": "convert-site",
+      "description": "Experimental web interface for the Convert project.",
+      "languages": [
+        "Rust"
+      ],
+      "status": "active",
+      "role": "creator",
+      "display": {
+        "priority": 430
+      }
+    },
+    "convert-songs": {
+      "featured": false,
+      "title": "convert-songs",
+      "description": "Zig example project for working with the Spotify Web API.",
+      "languages": [
+        "Zig"
+      ],
+      "status": "active",
+      "role": "creator",
+      "display": {
+        "priority": 440
+      }
+    },
+    "convert-ui": {
+      "featured": false,
+      "title": "convert-ui",
+      "description": "Rust user interface for the convert-songs library.",
+      "languages": [
+        "Rust"
+      ],
+      "status": "active",
+      "role": "creator",
+      "display": {
+        "priority": 450
+      }
+    },
+    "csv_toolkit": {
+      "featured": false,
+      "title": "csv_toolkit",
+      "description": "Rust toolkit for inspecting and debugging CSV parsing.",
+      "languages": [
+        "Rust"
+      ],
+      "status": "active",
+      "role": "creator",
+      "display": {
+        "priority": 470
+      }
+    },
+    "curso": {
+      "featured": false,
+      "title": "curso",
+      "description": "Ruby on Rails coursework and experiments.",
+      "languages": [
+        "Ruby"
+      ],
+      "status": "active",
+      "role": "creator",
+      "display": {
+        "priority": 480
+      }
+    },
+    "dashboard_ocr": {
+      "featured": false,
+      "title": "dashboard_ocr",
+      "description": "Python experiments for extracting dashboard data with OCR.",
+      "languages": [
+        "Python"
+      ],
+      "status": "active",
+      "role": "creator",
+      "display": {
+        "priority": 490
+      }
+    },
+    "deconv_fit": {
+      "featured": false,
+      "title": "deconv_fit",
+      "description": "Experiments for fitting and deconvolving scientific data.",
+      "languages": [],
+      "status": "active",
+      "role": "creator",
+      "display": {
+        "priority": 500
+      }
+    },
+    "detect-open-realstate-apis": {
+      "featured": false,
+      "title": "detect-open-realstate-apis",
+      "description": "Rust scanner that discovers candidate public APIs on real-estate websites.",
+      "languages": [
+        "Rust"
+      ],
+      "status": "active",
+      "role": "creator",
+      "display": {
+        "priority": 530
+      }
+    },
+    "docking_cecilia": {
+      "featured": false,
+      "title": "docking_cecilia",
+      "description": "Molecular-docking data and analysis scripts.",
+      "languages": [
+        "Python"
+      ],
+      "status": "active",
+      "role": "creator",
+      "display": {
+        "priority": 540
+      }
+    },
+    "dolar_historico": {
+      "featured": false,
+      "title": "dolar_historico",
+      "description": "Notebook scraper for historical Argentine dollar exchange-rate data from Ámbito Financiero.",
+      "languages": [
+        "Jupyter Notebook"
+      ],
+      "status": "active",
+      "role": "creator",
+      "display": {
+        "priority": 550
+      }
+    },
+    "egonik-unlp.github.io": {
+      "featured": false,
+      "title": "egonik-unlp.github.io",
+      "description": "Source code for my personal GitHub Pages site.",
+      "languages": [
+        "Rust"
+      ],
+      "status": "active",
+      "role": "creator",
+      "display": {
+        "priority": 580
+      }
+    },
+    "envfiles": {
+      "featured": false,
+      "title": "envfiles",
+      "description": "Minimal .env file reader for Zig.",
+      "languages": [
+        "Zig"
+      ],
+      "status": "active",
+      "role": "creator",
+      "display": {
+        "priority": 590
+      }
+    },
+    "fit-anim": {
+      "featured": false,
+      "title": "fit-anim",
+      "description": "Interactive visualization of curve-fitting animations.",
+      "languages": [
+        "TypeScript"
+      ],
+      "status": "active",
+      "role": "creator",
+      "display": {
+        "priority": 600
+      }
+    },
+    "fluid-dynamics-demo": {
+      "featured": false,
+      "title": "fluid-dynamics-demo",
+      "description": "TypeScript and Bun experiments for visualizing fluid dynamics.",
+      "languages": [
+        "TypeScript"
+      ],
+      "status": "active",
+      "role": "creator",
+      "display": {
+        "priority": 620
+      }
+    },
+    "glotaran_converter": {
+      "featured": false,
+      "title": "glotaran_converter",
+      "description": "Rust converter for preparing LFP and TRES data for Glotaran.",
+      "languages": [
+        "Rust"
+      ],
+      "status": "active",
+      "role": "creator",
+      "display": {
+        "priority": 640
+      }
+    },
+    "glotaran_gui": {
+      "featured": false,
+      "title": "glotaran_gui",
+      "description": "Graphical interface for converting spectroscopy data to Glotaran formats.",
+      "languages": [
+        "Rust"
+      ],
+      "status": "active",
+      "role": "creator",
+      "display": {
+        "priority": 670
+      }
+    },
+    "glotaran_preprocessing": {
+      "featured": false,
+      "title": "glotaran_preprocessing",
+      "description": "Notebooks for preprocessing spectroscopy data for Glotaran analysis.",
+      "languages": [
+        "Jupyter Notebook"
+      ],
+      "status": "active",
+      "role": "creator",
+      "display": {
+        "priority": 680
+      }
+    },
+    "go-albums": {
+      "featured": false,
+      "title": "go-albums",
+      "description": "Notebook workflow for retrieving album artwork from top Spotify listens.",
+      "languages": [
+        "Jupyter Notebook"
+      ],
+      "status": "active",
+      "role": "creator",
+      "display": {
+        "priority": 690
+      }
+    },
+    "google_fit": {
+      "featured": false,
+      "title": "google_fit",
+      "description": "Personal Google Fit data exports and analysis.",
+      "languages": [],
+      "status": "active",
+      "role": "creator",
+      "display": {
+        "priority": 700
+      }
+    },
+    "image_poster": {
+      "featured": false,
+      "title": "image_poster",
+      "description": "Python CLI that pipes images to the GV API as base64-encoded requests.",
+      "languages": [
+        "Python"
+      ],
+      "status": "active",
+      "role": "creator",
+      "display": {
+        "priority": 710
+      }
+    },
+    "import-lib": {
+      "featured": false,
+      "title": "import-lib",
+      "description": "Minimal example of consuming a Zig library.",
+      "languages": [
+        "Zig"
+      ],
+      "status": "active",
+      "role": "creator",
+      "display": {
+        "priority": 720
+      }
+    },
+    "intro_bot": {
+      "featured": false,
+      "title": "intro_bot",
+      "description": "Experimental Python bot.",
+      "languages": [
+        "Python"
+      ],
+      "status": "active",
+      "role": "creator",
+      "display": {
+        "priority": 730
+      }
+    },
+    "label_recognition": {
+      "featured": false,
+      "title": "label_recognition",
+      "description": "Python experiments for recognizing labels in images.",
+      "languages": [
+        "Python"
+      ],
+      "status": "active",
+      "role": "creator",
+      "display": {
+        "priority": 740
+      }
+    },
+    "massive": {
+      "featured": false,
+      "title": "massive",
+      "description": "Experimental full-stack Rust application built with Leptos and Axum.",
+      "languages": [
+        "Rust"
+      ],
+      "status": "active",
+      "role": "creator",
+      "display": {
+        "priority": 760
+      }
+    },
+    "ml_personal": {
+      "featured": false,
+      "title": "ml_personal",
+      "description": "Notebooks and exercises from the UNSAM machine-learning course.",
+      "languages": [
+        "Jupyter Notebook"
+      ],
+      "status": "active",
+      "role": "creator",
+      "display": {
+        "priority": 770
+      }
+    },
+    "mof_xrd": {
+      "featured": false,
+      "title": "mof_xrd",
+      "description": "Experiments for analyzing X-ray diffraction data from metal-organic frameworks.",
+      "languages": [],
+      "status": "active",
+      "role": "creator",
+      "display": {
+        "priority": 780
+      }
+    },
+    "mongoproject": {
+      "featured": false,
+      "title": "mongoproject",
+      "description": "Learning project for MongoDB with Docker Compose.",
+      "languages": [
+        "Python"
+      ],
+      "status": "active",
+      "role": "creator",
+      "display": {
+        "priority": 800
+      }
+    },
+    "montecarlo_pi": {
+      "featured": false,
+      "title": "montecarlo_pi",
+      "description": "Minimal Monte Carlo π estimation experiment in Rust.",
+      "languages": [
+        "Rust"
+      ],
+      "status": "active",
+      "role": "creator",
+      "display": {
+        "priority": 810
+      }
+    },
+    "my-nvim-config": {
+      "featured": false,
+      "title": "my-nvim-config",
+      "description": "My Neovim configuration, based on LazyVim.",
+      "languages": [
+        "Lua"
+      ],
+      "status": "active",
+      "role": "creator",
+      "display": {
+        "priority": 820
+      }
+    },
+    "my-spotify-data": {
+      "featured": false,
+      "title": "my-spotify-data",
+      "description": "Personal Spotify data exports and analysis.",
+      "languages": [],
+      "status": "active",
+      "role": "creator",
+      "display": {
+        "priority": 830
+      }
+    },
+    "nanofot_sitio": {
+      "featured": false,
+      "title": "nanofot_sitio",
+      "description": "Hugo website for the Nanofot research group.",
+      "languages": [
+        "TeX"
+      ],
+      "status": "active",
+      "role": "creator",
+      "display": {
+        "priority": 840
+      }
+    },
+    "plotter_eem": {
+      "featured": false,
+      "title": "plotter_eem",
+      "description": "Python tools for plotting excitation-emission matrices.",
+      "languages": [
+        "Python"
+      ],
+      "status": "active",
+      "role": "creator",
+      "display": {
+        "priority": 860
+      }
+    },
+    "proyecto_eframe": {
+      "featured": false,
+      "title": "proyecto_eframe",
+      "description": "Rust GUI experiment built with eframe and egui.",
+      "languages": [
+        "Rust"
+      ],
+      "status": "active",
+      "role": "creator",
+      "display": {
+        "priority": 870
+      }
+    },
+    "prueba_go": {
+      "featured": false,
+      "title": "prueba_go",
+      "description": "Go language experiments and examples.",
+      "languages": [
+        "Go"
+      ],
+      "status": "active",
+      "role": "creator",
+      "display": {
+        "priority": 880
+      }
+    },
+    "pruebas_gleam": {
+      "featured": false,
+      "title": "pruebas_gleam",
+      "description": "Experiments and exercises in the Gleam programming language.",
+      "languages": [
+        "Gleam"
+      ],
+      "status": "active",
+      "role": "creator",
+      "display": {
+        "priority": 890
+      }
+    },
+    "QuenchingLFP": {
+      "featured": false,
+      "title": "QuenchingLFP",
+      "description": "Julia tools and notebooks for analyzing quenching in laser flash photolysis experiments.",
+      "languages": [
+        "Julia"
+      ],
+      "status": "active",
+      "role": "creator",
+      "display": {
+        "priority": 900
+      }
+    },
+    "random_projects": {
+      "featured": false,
+      "title": "random_projects",
+      "description": "Collection of small Python projects and notebooks.",
+      "languages": [
+        "Jupyter Notebook"
+      ],
+      "status": "active",
+      "role": "creator",
+      "display": {
+        "priority": 910
+      }
+    },
+    "return-list-connects": {
+      "featured": false,
+      "title": "return-list-connects",
+      "description": "Simple Axum server that reports the IP address of connecting clients.",
+      "languages": [
+        "Rust"
+      ],
+      "status": "active",
+      "role": "creator",
+      "display": {
+        "priority": 930
+      }
+    },
+    "rllmz": {
+      "featured": false,
+      "title": "rllmz",
+      "description": "Minimal Zig tool that combines project source code into a single text file.",
+      "languages": [
+        "Zig"
+      ],
+      "status": "active",
+      "role": "creator",
+      "display": {
+        "priority": 950
+      }
+    },
+    "rust_MD": {
+      "featured": false,
+      "title": "rust_MD",
+      "description": "Basic two-dimensional molecular-dynamics simulation in Rust.",
+      "languages": [
+        "Rust"
+      ],
+      "status": "active",
+      "role": "creator",
+      "display": {
+        "priority": 960
+      }
+    },
+    "rust_screen_background": {
+      "featured": false,
+      "title": "rust_screen_background",
+      "description": "Randomized image generator written in Rust.",
+      "languages": [
+        "Rust"
+      ],
+      "status": "active",
+      "role": "creator",
+      "display": {
+        "priority": 970
+      }
+    },
+    "schaposnik": {
+      "featured": false,
+      "title": "schaposnik",
+      "description": "Final project for the course “Introducción a los métodos del conocimiento científico.”",
+      "languages": [],
+      "status": "active",
+      "role": "creator",
+      "display": {
+        "priority": 980
+      }
+    },
+    "scrape_free_proxy": {
+      "featured": false,
+      "title": "scrape_free_proxy",
+      "description": "Scraper that collects proxy URLs from free-proxy.cz.",
+      "languages": [
+        "HTML"
+      ],
+      "status": "active",
+      "role": "creator",
+      "display": {
+        "priority": 990
+      }
+    },
+    "scrapping-conicet": {
+      "featured": false,
+      "title": "scrapping-conicet",
+      "description": "Python scraper for CONICET citation data.",
+      "languages": [
+        "Python"
+      ],
+      "status": "active",
+      "role": "creator",
+      "display": {
+        "priority": 1000
+      }
+    },
+    "server": {
+      "featured": false,
+      "title": "server",
+      "description": "Experimental HTTP server.",
+      "languages": [],
+      "status": "active",
+      "role": "creator",
+      "display": {
+        "priority": 1010
+      }
+    },
+    "server-shell": {
+      "featured": false,
+      "title": "server-shell",
+      "description": "Zig launcher for opening SSH sessions in Ghostty.",
+      "languages": [
+        "Zig"
+      ],
+      "status": "active",
+      "role": "creator",
+      "display": {
+        "priority": 1020
+      }
+    },
+    "simpleapi": {
+      "featured": false,
+      "title": "simpleapi",
+      "description": "Example Python API for learning Docker workflows.",
+      "languages": [
+        "Python"
+      ],
+      "status": "active",
+      "role": "creator",
+      "display": {
+        "priority": 1030
+      }
+    },
+    "site-gustavo-gonik": {
+      "featured": false,
+      "title": "site-gustavo-gonik",
+      "description": "Astro and Cloudflare Workers landing page for Gustavo Gonik’s art appraisal and consulting services.",
+      "languages": [
+        "JavaScript"
+      ],
+      "status": "active",
+      "role": "creator",
+      "display": {
+        "priority": 1040
+      }
+    },
+    "songVizClaude": {
+      "featured": false,
+      "title": "songVizClaude",
+      "description": "Vibecoded browser-based music visualizer.",
+      "languages": [
+        "JavaScript"
+      ],
+      "status": "active",
+      "role": "creator",
+      "display": {
+        "priority": 1050
+      }
+    },
+    "spotify-data": {
+      "featured": false,
+      "title": "spotify-data",
+      "description": "Rust tools for analyzing Spotify listening data.",
+      "languages": [
+        "Rust"
+      ],
+      "status": "active",
+      "role": "creator",
+      "display": {
+        "priority": 1060
+      }
+    },
+    "spotify-to-youtube": {
+      "featured": false,
+      "title": "spotify-to-youtube",
+      "description": "Go tool that converts Spotify playlists into YouTube playlists.",
+      "languages": [
+        "Go"
+      ],
+      "status": "active",
+      "role": "creator",
+      "display": {
+        "priority": 1070
+      }
+    },
+    "SpotifyData": {
+      "featured": false,
+      "title": "SpotifyData",
+      "description": "Notebooks for analyzing Spotify listening data.",
+      "languages": [
+        "Jupyter Notebook"
+      ],
+      "status": "active",
+      "role": "creator",
+      "display": {
+        "priority": 1080
+      }
+    },
+    "sqrpshr": {
+      "featured": false,
+      "title": "sqrpshr",
+      "description": "HTML and CSS coursework from Coderhouse.",
+      "languages": [
+        "HTML"
+      ],
+      "status": "active",
+      "role": "creator",
+      "display": {
+        "priority": 1090
+      }
+    },
+    "tiny-server": {
+      "featured": false,
+      "title": "tiny-server",
+      "description": "Tiny Go server for hosting local HTML files during development.",
+      "languages": [
+        "Go"
+      ],
+      "status": "active",
+      "role": "creator",
+      "display": {
+        "priority": 1100
+      }
+    },
+    "tom-ping": {
+      "featured": false,
+      "title": "tom-ping",
+      "description": "Python network-monitoring experiment.",
+      "languages": [
+        "Python"
+      ],
+      "status": "active",
+      "role": "creator",
+      "display": {
+        "priority": 1110
+      }
+    },
+    "tom_heroku_db": {
+      "featured": false,
+      "title": "tom_heroku_db",
+      "description": "Python experiments for working with a Heroku-hosted database.",
+      "languages": [
+        "Python"
+      ],
+      "status": "active",
+      "role": "creator",
+      "display": {
+        "priority": 1120
+      }
+    },
+    "touch_off": {
+      "featured": false,
+      "title": "touch_off",
+      "description": "Small Go utility for disabling a touchscreen under X11.",
+      "languages": [
+        "Go"
+      ],
+      "status": "active",
+      "role": "creator",
+      "display": {
+        "priority": 1130
+      }
+    },
+    "tp_curso_ml": {
+      "featured": false,
+      "title": "tp_curso_ml",
+      "description": "Final project for the UNSAM machine-learning course.",
+      "languages": [
+        "Jupyter Notebook"
+      ],
+      "status": "active",
+      "role": "creator",
+      "display": {
+        "priority": 1150
+      }
+    },
+    "vic-zig": {
+      "featured": false,
+      "title": "vic-zig",
+      "description": "Zig reimplementation of remote_listener.",
+      "languages": [
+        "Zig"
+      ],
+      "status": "active",
+      "role": "creator",
+      "display": {
+        "priority": 1160
+      }
+    },
+    "website": {
+      "featured": false,
+      "title": "website",
+      "description": "Experimental personal website built in Rust.",
+      "languages": [
+        "Rust"
+      ],
+      "status": "active",
+      "role": "creator",
+      "display": {
+        "priority": 1170
+      }
+    },
+    "xml": {
+      "featured": false,
+      "title": "xml",
+      "description": "Rust experiments for parsing and processing XML.",
+      "languages": [
+        "Rust"
+      ],
+      "status": "active",
+      "role": "creator",
+      "display": {
+        "priority": 1180
+      }
+    },
+    "zig-rust": {
+      "featured": false,
+      "title": "zig-rust",
+      "description": "Minimal Rust–Zig interoperability example using a C FFI.",
+      "languages": [
+        "Zig"
+      ],
+      "status": "active",
+      "role": "creator",
+      "display": {
+        "priority": 1200
+      }
+    },
+    "Ziglings---egonik-unlp": {
+      "featured": false,
+      "title": "Ziglings---egonik-unlp",
+      "description": "My solutions to the Ziglings exercises.",
+      "languages": [
+        "Zig"
+      ],
+      "status": "active",
+      "role": "creator",
+      "display": {
+        "priority": 1210
+      }
+    },
+    "gv_xml_ui": {
+      "featured": false,
+      "title": "gv_xml_ui",
+      "description": "UI implementation for gv_xml project",
+      "languages": [],
+      "status": "active",
+      "role": "contributor",
+      "display": {
+        "priority": 710
+      }
+    },
+    "julia_notebook_env": {
+      "featured": false,
+      "title": "julia_notebook_env",
+      "description": "Simple docker image containing  jupyter and julia. ",
+      "languages": [],
+      "status": "active",
+      "role": "contributor",
+      "display": {
+        "priority": 750
+      }
+    },
+    "training-git": {
+      "featured": false,
+      "title": "training-git",
+      "description": "Practice with Git for Snappler summer training 2021.",
+      "languages": [],
+      "status": "active",
+      "role": "contributor",
+      "display": {
+        "priority": 1180
+      }
     }
   }
 }
