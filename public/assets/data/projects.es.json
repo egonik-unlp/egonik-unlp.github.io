@@ -54,6 +54,7 @@
       "research-reproduction": "Reproducción de investigación",
       "research-tool": "Herramienta de investigación",
       "scanner": "Escáner",
+      "server": "Servidor",
       "simulation": "Simulación",
       "web-app": "Aplicación web",
       "web-service": "Servicio web"
@@ -119,10 +120,9 @@
     "PHcalc.jl": {
       "description": "Una implementación en Julia de la biblioteca pHcalc de Ryan Nelson para calcular equilibrios ácido-base y pH de soluciones. Lleva un flujo establecido de química al ecosistema Julia."
     },
-    "detect-open-realstate-apis": {
-      "displayTitle": "Detector de APIs inmobiliarias",
-      "description": "Un escáner en Rust que analiza sitios inmobiliarios en busca de APIs públicas no documentadas. Agrupa endpoints candidatos, estima proveedores y niveles de confianza, permite probar rutas probables y exporta informes CSV revisables.",
-      "highlights": ["Descubrimiento de endpoints", "Puntuación de confianza", "Informes CSV"]
+    "toy-server": {
+      "description": "Un pequeño servidor HTTP escrito directamente sobre TcpListener de Rust. Interpreta la línea de petición y los encabezados, dirige cada ruta a su manejador y escribe las respuestas sin utilizar un framework web.",
+      "highlights": ["Escucha TCP", "Interpretación de HTTP", "Enrutamiento por ruta"]
     },
     "remote_listener": {
       "description": "Un pequeño servicio de automatización en Rust que consulta periódicamente una URL y ejecuta una tarea local cuando el servicio remoto responde correctamente. Funciona como un puente liviano entre el estado remoto y la ejecución local."
