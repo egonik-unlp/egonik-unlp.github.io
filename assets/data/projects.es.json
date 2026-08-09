@@ -1,0 +1,145 @@
+{
+  "schemaVersion": 1,
+  "locale": "es-AR",
+  "baseCatalog": "projects.json",
+  "labels": {
+    "status": {
+      "active": "Activo",
+      "paused": "En pausa",
+      "completed": "Completado"
+    },
+    "maturity": {
+      "experimental": "Experimental",
+      "prototype": "Prototipo",
+      "usable": "Utilizable"
+    },
+    "role": {
+      "creator": "Creador",
+      "port-author": "Autor de la adaptación",
+      "reproduction": "Reproducción de investigación"
+    },
+    "categories": {
+      "automation": "Automatización",
+      "data-analysis": "Análisis de datos",
+      "data-processing": "Procesamiento de datos",
+      "data-visualization": "Visualización de datos",
+      "developer-tools": "Herramientas para desarrollo",
+      "education": "Educación",
+      "functional-programming": "Programación funcional",
+      "generative-art": "Arte generativo",
+      "machine-learning": "Aprendizaje automático",
+      "networking": "Redes",
+      "numerical-computing": "Computación numérica",
+      "observability": "Observabilidad",
+      "scientific-programming": "Programación científica",
+      "simulation": "Simulación",
+      "systems-programming": "Programación de sistemas",
+      "web-development": "Desarrollo web"
+    },
+    "projectTypes": {
+      "application": "Aplicación",
+      "assistant": "Asistente",
+      "cli": "Herramienta de línea de comandos",
+      "creative-coding": "Programación creativa",
+      "daemon": "Servicio en segundo plano",
+      "data-collector": "Recolector de datos",
+      "educational-demo": "Demostración educativa",
+      "interactive-visualization": "Visualización interactiva",
+      "learning-project": "Proyecto de aprendizaje",
+      "library": "Biblioteca",
+      "notebook": "Cuaderno interactivo",
+      "port": "Adaptación",
+      "research-implementation": "Implementación de investigación",
+      "research-reproduction": "Reproducción de investigación",
+      "research-tool": "Herramienta de investigación",
+      "scanner": "Escáner",
+      "simulation": "Simulación",
+      "web-app": "Aplicación web",
+      "web-service": "Servicio web"
+    }
+  },
+  "repositories": {
+    "convert-invert": {
+      "description": "Un sistema autoalojado que transforma listas de Spotify en una biblioteca musical local mediante la búsqueda y descarga de canciones en la red Soulseek. Combina sincronización de listas, trabajadores distribuidos y una interfaz web de control.",
+      "highlights": ["Sincronización de listas", "Descargas distribuidas", "Despliegue full stack"]
+    },
+    "convert-invert-site": {
+      "description": "Una interfaz web completa y una capa de servicios para operar Convert Invert desde el navegador. El proyecto explora un backend en Zig, orquestación de trabajadores, autenticación y un entorno de despliegue observable.",
+      "highlights": ["Backend en Zig", "Orquestación de trabajadores", "Telemetría operativa"]
+    },
+    "app": {
+      "displayTitle": "Pathfinder",
+      "description": "Una visualización 3D interactiva del recorrido musical entre dos canciones de Spotify. Un núcleo de enrutamiento en Rust y WebAssembly encuentra un camino entre gustos musicales, mientras Cloudflare Workers ofrece búsqueda, previsualizaciones y la experiencia web.",
+      "highlights": ["Visualización 3D", "Búsqueda de caminos A*", "Rust compilado a WebAssembly"]
+    },
+    "lvv": {
+      "description": "Una biblioteca en Rust para convertir datos estructurados arbitrarios en vectores de representación. Admite transformaciones configurables, incluido el preprocesamiento asistido por modelos de lenguaje, antes de incorporar los datos a un flujo de embeddings o recuperación.",
+      "highlights": ["Modelo de entrada genérico", "Transformaciones con LLM", "Flujos de embeddings"]
+    },
+    "craig": {
+      "description": "Un asistente con generación aumentada por recuperación diseñado para consultas de química. Combina fuentes específicas del dominio con recuperación semántica para fundamentar las respuestas en contexto científico relevante.",
+      "highlights": ["Recuperación especializada", "Respuestas basadas en fuentes científicas", "Interfaz conversacional"]
+    },
+    "glotaran_converter_lib": {
+      "description": "Una biblioteca en Rust que convierte mediciones de fluorescencia resuelta en el tiempo y fotólisis de destello láser a conjuntos de datos compatibles con Glotaran. Transforma el procesamiento específico del laboratorio en un flujo reproducible.",
+      "highlights": ["Lectura de archivos instrumentales", "Conversión reproducible", "Interoperabilidad con Glotaran"]
+    },
+    "glotaran_converter_cli": {
+      "description": "Una interfaz de línea de comandos para la biblioteca de conversión de Glotaran. Permite transformar archivos de fluorescencia y fotólisis de destello láser de manera práctica y sin escribir código Rust."
+    },
+    "agilent_ir": {
+      "description": "Herramientas para trabajar con espectros exportados por un equipo Agilent Cary 660 ATR-IR. Interpretan la salida instrumental y reconstruyen el eje de número de onda faltante para dejar las mediciones listas para su análisis.",
+      "highlights": ["Lectura de datos instrumentales", "Reconstrucción del número de onda", "Flujo de laboratorio"]
+    },
+    "bilinear": {
+      "description": "Una implementación en Rust de un método publicado de calibración bilineal para análisis químico. El proyecto traduce el procedimiento numérico descrito en el DOI 10.1021/j100346a034 a software científico reutilizable.",
+      "highlights": ["Implementación de un método publicado", "Análisis numérico", "Rust"]
+    },
+    "xrd_match": {
+      "description": "Un flujo de trabajo en notebooks para comparar patrones experimentales de difracción de rayos X con estructuras de una base de datos CIF. Facilita la identificación y exploración de materiales cristalinos candidatos.",
+      "highlights": ["Comparación de patrones XRD", "Búsqueda en bases CIF", "Análisis de materiales"]
+    },
+    "MOFSocialNet.jl": {
+      "description": "Una reproducción en Julia y notebooks del método MOFSocialNet descrito por Jalali y colaboradores. Explora un análisis inspirado en grafos de redes metal-orgánicas a partir de datos estructurales.",
+      "highlights": ["Reproducción de un artículo", "Informática de materiales", "Julia"]
+    },
+    "gases": {
+      "description": "Una simulación educativa de dinámica molecular de un gas escrita en Julia. Explora interacciones entre partículas y evolución temporal como ejercicio compacto de computación científica."
+    },
+    "rust_MD": {
+      "displayTitle": "Dinámica molecular 2D en Rust",
+      "description": "Una simulación compacta de dinámica molecular bidimensional creada para explorar simultáneamente la simulación de partículas y la programación científica en Rust."
+    },
+    "PHcalc.jl": {
+      "description": "Una implementación en Julia de la biblioteca pHcalc de Ryan Nelson para calcular equilibrios ácido-base y pH de soluciones. Lleva un flujo establecido de química al ecosistema Julia."
+    },
+    "detect-open-realstate-apis": {
+      "displayTitle": "Detector de APIs inmobiliarias",
+      "description": "Un escáner en Rust que analiza sitios inmobiliarios en busca de APIs públicas no documentadas. Agrupa endpoints candidatos, estima proveedores y niveles de confianza, permite probar rutas probables y exporta informes CSV revisables.",
+      "highlights": ["Descubrimiento de endpoints", "Puntuación de confianza", "Informes CSV"]
+    },
+    "remote_listener": {
+      "description": "Un pequeño servicio de automatización en Rust que consulta periódicamente una URL y ejecuta una tarea local cuando el servicio remoto responde correctamente. Funciona como un puente liviano entre el estado remoto y la ejecución local."
+    },
+    "dump_ps": {
+      "displayTitle": "Registro de procesos",
+      "description": "Una utilidad en Zig que captura instantáneas de la lista de procesos y las guarda en una base de datos, permitiendo observar cómo cambia la actividad de una máquina a lo largo del tiempo."
+    },
+    "rllm": {
+      "description": "Una herramienta experimental en Rust para seleccionar y reunir contenido de un repositorio en un contexto apto para modelos de lenguaje. Está orientada a facilitar la inspección y el intercambio textual de proyectos grandes en Rust."
+    },
+    "flagen": {
+      "description": "Un programa recreativo de arte generativo escrito en OCaml. Utiliza procesos similares a Monte Carlo para construir composiciones visuales a partir de decisiones aleatorias repetidas.",
+      "highlights": ["Arte generativo", "Procesos de Monte Carlo", "OCaml"]
+    },
+    "demoLogits": {
+      "displayTitle": "Visualizador de muestreo de LLM",
+      "description": "Una demostración interactiva que vuelve visible el muestreo de un modelo de lenguaje. Cada token generado se anima como una elección entre los candidatos con mayor probabilidad, convirtiendo una distribución abstracta en una secuencia visual intuitiva.",
+      "highlights": ["Animación token por token", "Visualización de probabilidades", "Cloudflare Workers"]
+    },
+    "demoCodex": {
+      "displayTitle": "Demostración de curvas calorimétricas",
+      "description": "Una herramienta educativa interactiva para estimar el cambio de temperatura corregido en curvas de calorimetría de neutralización. Presenta visualmente el proceso de ajuste para facilitar la comprensión de las correcciones experimentales."
+    }
+  }
+}
