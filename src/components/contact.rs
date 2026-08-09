@@ -1,7 +1,7 @@
 use leptos::prelude::*;
 
 // TODO: replace with Eduardo's real LinkedIn URL.
-const LINKEDIN_URL: &str = "https://www.linkedin.com/in/";
+const LINKEDIN_URL: &str = "https://www.linkedin.com/in/eduardo-gonik-bbb757133/";
 
 #[component]
 pub fn Contact() -> impl IntoView {

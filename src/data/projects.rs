@@ -68,7 +68,7 @@ pub fn projects() -> Vec<Project> {
                 from the taste-fit prediction instance. Rust compiled to WebAssembly runs the search \
                 in the browser, behind a React + Three.js front-end and a Cloudflare Worker backend.",
             tech: &["Rust/WASM", "React", "Three.js", "ONNX", "Cloudflare Workers"],
-            links: &[Link { label: "GitHub", url: "https://github.com/egonik-unlp/app" }],
+            links: &[Link { label: "GitHub", url: "https://github.com/egonik-unlp/app" }, Link{label: "Live Site", url: "https://pathfinder.eduardo-gonik.workers.dev/"}],
             category: Category::AiMl,
             private: true,
         },
@@ -136,7 +136,8 @@ pub fn projects() -> Vec<Project> {
                 tracks up on Spotify and builds playlists — with the OAuth2 flow, token management \
                 and API client all implemented by hand. A study in systems work without a framework.",
             tech: &["Zig", "OAuth2", "Spotify API", "ID3"],
-            links: &[Link { label: "GitHub", url: "https://github.com/egonik-unlp/convert-songs" }],
+            links: &[Link { label: "GitHub", url: "https://github.com/egonik-unlp/convert-songs" }, Link{label: "Live Site", url: "https://convert-ffi.onrender.com"}],
+
             category: Category::Systems,
             private: false,
         },
