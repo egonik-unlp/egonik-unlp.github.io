@@ -60,8 +60,8 @@ fn HomePage() -> impl IntoView {
         <Nav/>
         <main>
             <Hero/>
-            <Projects/>
             <Skills/>
+            <Projects/>
             <Research/>
         </main>
         <Contact/>
