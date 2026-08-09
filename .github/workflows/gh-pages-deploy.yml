@@ -36,6 +36,11 @@ jobs:
         with:
           tool: cargo-leptos
 
+      - name: Install Dart Sass
+        run: |
+          npm install --no-save --no-package-lock sass@1.102.0
+          echo "$GITHUB_WORKSPACE/node_modules/.bin" >> "$GITHUB_PATH"
+
       - name: Check formatting
         run: cargo fmt --check
 
