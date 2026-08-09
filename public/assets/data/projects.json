@@ -215,18 +215,18 @@
       "role": "port-author",
       "display": { "priority": 140 }
     },
-    "detect-open-realstate-apis": {
+    "toy-server": {
       "featured": true,
-      "title": "Real-Estate API Detector",
-      "description": "A Rust scanner that analyzes real-estate websites for signs of undocumented public APIs. It groups candidate endpoints, estimates providers and confidence, optionally probes likely routes, and exports reviewable CSV reports.",
+      "title": "toy-server",
+      "description": "A small HTTP server written directly on top of Rust's TcpListener. It parses request lines and headers, routes paths to handlers, and writes HTTP responses without using a web framework.",
       "languages": ["Rust"],
-      "categories": ["networking", "data-processing", "developer-tools"],
-      "projectTypes": ["cli", "scanner"],
-      "domains": ["web-discovery", "http", "real-estate"],
-      "status": "active",
-      "maturity": "prototype",
+      "categories": ["networking", "systems-programming", "education"],
+      "projectTypes": ["server", "learning-project"],
+      "domains": ["http", "tcp", "protocols"],
+      "status": "completed",
+      "maturity": "experimental",
       "role": "creator",
-      "highlights": ["Endpoint discovery", "Confidence scoring", "CSV reporting"],
+      "highlights": ["TCP listener", "HTTP parsing", "Path routing"],
       "display": { "priority": 150 }
     },
     "remote_listener": {

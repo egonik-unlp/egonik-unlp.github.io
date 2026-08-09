@@ -94,17 +94,17 @@ pub fn projects() -> Vec<Project> {
             private: false,
         },
         Project {
-            title: "Real-estate API discovery",
-            tagline: "A crawler for finding APIs used by real-estate websites.",
-            description: "A Rust crawler collects possible API endpoints from real-estate sites and \
-                writes them to CSV. A small TypeScript classifier then checks the candidates in \
-                batches. The confirmed sources are used to collect listings for price models.",
-            tech: &["Rust", "tokio", "reqwest", "TypeScript", "LangChain.js", "Zod"],
+            title: "toy-server",
+            tagline: "A small HTTP server written directly on top of TCP.",
+            description: "A learning project that accepts connections with Rust's TcpListener, \
+                parses HTTP request lines and headers, routes paths to handlers, and writes HTTP \
+                responses without using a web framework.",
+            tech: &["Rust", "TCP", "HTTP"],
             links: &[Link {
                 label: "GitHub",
-                url: "https://github.com/egonik-unlp/detect-open-realstate-apis",
+                url: "https://github.com/egonik-unlp/toy-server",
             }],
-            category: Category::AiMl,
+            category: Category::Systems,
             private: false,
         },
         // ---- Systems & Backend -------------------------------------------
