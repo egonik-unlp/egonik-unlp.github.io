@@ -1,0 +1,16 @@
+services:
+  - type: web
+    name: website
+    runtime: docker
+    dockerfilePath: ./Dockerfile
+    envVars:
+      - key: LEPTOS_SITE_ADDR
+        value: 0.0.0.0:10000
+      - key: LEPTOS_OUTPUT_NAME
+        value: website
+      - key: LEPTOS_SITE_ROOT
+        value: site
+      - key: LEPTOS_SITE_PKG_DIR
+        value: pkg
+      - key: RUST_LOG
+        value: info
