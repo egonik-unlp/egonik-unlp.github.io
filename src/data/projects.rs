@@ -45,13 +45,11 @@ pub fn projects() -> Vec<Project> {
         // ---- AI & Machine Learning ---------------------------------------
         Project {
             title: "Lensing",
-            tagline: "A prediction-lab framework that reshapes itself around your data.",
-            description: "Point Lensing at a Qdrant corpus of embedded documents, declare a target \
-                in domain.toml, and the whole lab bends to fit: dataset levers, a predictor zoo, an \
-                Axum server with a React \"Control Room\" UI, and ONNX export all take your domain's \
-                shape. A Zig build runner drives four toolchains at once. Instances built on it \
-                predict Argentine real-estate prices (in production at Snappler), flag listing \
-                anomalies, and model Spotify taste-fit.",
+            tagline: "A framework for running prediction experiments on different datasets.",
+            description: "Lensing builds datasets from Qdrant, trains models in Rust, Python and \
+                Julia, compares their results, and exports selected models to ONNX. I use it for \
+                real-estate and Spotify experiments. An Axum server and React interface keep the \
+                runs, metrics and model registry in one place.",
             tech: &[
                 "Rust", "burn", "Python", "PyTorch", "Julia", "Flux.jl", "scikit-learn", "Qdrant",
                 "ONNX", "Axum", "React", "Zig",
@@ -62,11 +60,10 @@ pub fn projects() -> Vec<Project> {
         },
         Project {
             title: "Pathfinder",
-            tagline: "A 3D musical journey through your Spotify taste-space.",
-            description: "The application layer of the Lensing ecosystem: a visualizer that plots a \
-                path between songs through a learned taste-space, consuming an ONNX scorer exported \
-                from the taste-fit prediction instance. Rust compiled to WebAssembly runs the search \
-                in the browser, behind a React + Three.js front-end and a Cloudflare Worker backend.",
+            tagline: "A 3D route between two songs in my Spotify listening data.",
+            description: "Pathfinder uses a model exported from Lensing to find a sequence between \
+                two tracks. The route search runs in Rust compiled to WebAssembly, the visualization \
+                uses React and Three.js, and a Cloudflare Worker handles the small backend.",
             tech: &["Rust/WASM", "React", "Three.js", "ONNX", "Cloudflare Workers"],
             links: &[Link { label: "GitHub", url: "https://github.com/egonik-unlp/app" }, Link{label: "Live Site", url: "https://pathfinder.eduardo-gonik.workers.dev/"}],
             category: Category::AiMl,
@@ -74,11 +71,10 @@ pub fn projects() -> Vec<Project> {
         },
         Project {
             title: "lvv",
-            tagline: "An embedding pipeline from raw datasets to a vector database.",
-            description: "A Rust pipeline that embeds datasets with LLMs (Ollama or OpenAI) and \
-                loads them into a Qdrant vector database, with on-disk caching and a job queue. \
-                Pluggable sources (CSV, Postgres) and sinks — the ingestion layer that builds the \
-                corpora models learn from.",
+            tagline: "A Rust pipeline for loading datasets into a vector database.",
+            description: "lvv reads data from CSV files or Postgres, creates embeddings with Ollama \
+                or OpenAI, and writes them to Qdrant. It includes a job queue and a disk cache so \
+                interrupted imports do not have to start again.",
             tech: &["Rust", "Qdrant", "OpenAI", "Ollama", "Postgres", "tokio"],
             links: &[Link { label: "GitHub", url: "https://github.com/egonik-unlp/lvv" }],
             category: Category::AiMl,
@@ -86,11 +82,10 @@ pub fn projects() -> Vec<Project> {
         },
         Project {
             title: "craig",
-            tagline: "A retrieval-augmented chemistry assistant.",
-            description: "A RAG assistant over a physical-chemistry textbook: it ingests the PDF, \
-                builds embeddings into Qdrant/Chroma, and answers questions with retrieved context \
-                over an HTTP API and a Telegram bot — instrumented end-to-end with Langfuse / \
-                OpenTelemetry tracing.",
+            tagline: "A chemistry question-answering experiment using retrieval.",
+            description: "craig indexes a physical-chemistry textbook in Qdrant or Chroma and uses \
+                the retrieved passages when answering questions. It exposes an HTTP API and a \
+                Telegram bot, with Langfuse and OpenTelemetry traces for inspecting responses.",
             tech: &[
                 "TypeScript", "LangChain", "LlamaIndex", "Qdrant", "Chroma", "OpenAI", "Langfuse",
             ],
@@ -100,12 +95,10 @@ pub fn projects() -> Vec<Project> {
         },
         Project {
             title: "Real-estate API discovery",
-            tagline: "Scrape the open web, then let an LLM judge what's real.",
-            description: "A two-stage data-acquisition pipeline: a Rust async crawler scans \
-                real-estate sites for candidate public API endpoints and emits scored CSV reports, \
-                then a cost-aware LLM classifier (LangChain.js with structured Zod output, batching \
-                and caching) grades each endpoint from \"confirmed agency API\" to \"not an API\". \
-                The clean listings feed the price and anomaly models.",
+            tagline: "A crawler for finding APIs used by real-estate websites.",
+            description: "A Rust crawler collects possible API endpoints from real-estate sites and \
+                writes them to CSV. A small TypeScript classifier then checks the candidates in \
+                batches. The confirmed sources are used to collect listings for price models.",
             tech: &["Rust", "tokio", "reqwest", "TypeScript", "LangChain.js", "Zod"],
             links: &[Link {
                 label: "GitHub",
@@ -116,51 +109,64 @@ pub fn projects() -> Vec<Project> {
         },
         // ---- Systems & Backend -------------------------------------------
         Project {
-            title: "convert-invert",
-            tagline: "A Spotify → Soulseek bridge, built like production infrastructure.",
-            description: "A synchronization engine that matches Spotify playlist tracks against the \
-                Soulseek P2P network and downloads the best candidate, chosen by a Levenshtein-based \
-                judge. A multi-worker pool over Postgres and Redis, API-key auth with rate limiting, \
-                and full OpenTelemetry / Jaeger tracing — deployed and running on my home server.",
-            tech: &[
-                "Rust", "Actix", "Diesel", "Postgres", "Redis", "OpenTelemetry", "Jaeger", "Docker",
+            title: "convert-ffi",
+            tagline: "A full-stack Rust interface backed by a native Zig library.",
+            description: "The browser reads metadata from local audio files, then a Leptos and Axum \
+                application sends the track details through Rust FFI to a Zig Spotify client. The \
+                user can review the matches and create a playlist. Audio files stay in the browser.",
+            tech: &["Rust", "Leptos", "Axum", "Zig", "FFI", "Spotify API", "WebAssembly"],
+            links: &[
+                Link { label: "GitHub", url: "https://github.com/egonik-unlp/convert-ffi" },
+                Link { label: "Live Site", url: "https://convert-ffi.onrender.com" },
             ],
-            links: &[Link { label: "GitHub", url: "https://github.com/egonik-unlp/convert-invert" }],
             category: Category::Systems,
             private: false,
         },
         Project {
             title: "convert-songs",
-            tagline: "Spotify playlists from a folder of MP3s — hand-built in Zig.",
-            description: "A from-scratch Zig CLI that walks a music folder, parses ID3 tags, looks \
-                tracks up on Spotify and builds playlists — with the OAuth2 flow, token management \
-                and API client all implemented by hand. A study in systems work without a framework.",
+            tagline: "A Zig CLI that turns a folder of music into a Spotify playlist.",
+            description: "convert-songs reads ID3 tags, searches Spotify for each track, and creates \
+                a playlist from the matches. The OAuth flow, token handling and API client are \
+                implemented directly in Zig.",
             tech: &["Zig", "OAuth2", "Spotify API", "ID3"],
-            links: &[Link { label: "GitHub", url: "https://github.com/egonik-unlp/convert-songs" }, Link{label: "Live Site", url: "https://convert-ffi.onrender.com"}],
+            links: &[Link { label: "GitHub", url: "https://github.com/egonik-unlp/convert-songs" }],
 
+            category: Category::Systems,
+            private: false,
+        },
+        Project {
+            title: "Infinite Playlist",
+            tagline: "An endless playlist generated from a song or Spotify playlist.",
+            description: "Infinite Playlist is a client for the spotify-next-track Lensing project. \
+                A GRU model picks each next song from my library and runs in the browser through \
+                ONNX Runtime. A Cloudflare Worker resolves Spotify links and handles tracks that \
+                are not already in the model's catalog.",
+            tech: &["Python", "PyTorch", "ONNX", "Rust/WASM", "JavaScript", "Cloudflare Workers"],
+            links: &[Link {
+                label: "Live Site",
+                url: "https://infinite-playlist.eduardo-gonik.workers.dev/",
+            }],
+            category: Category::AiMl,
+            private: true,
+        },
+        Project {
+            title: "egonik-site",
+            tagline: "A database-backed personal site written in Rust.",
+            description: "A full-stack Leptos application with server rendering and client-side \
+                hydration. Actix serves the site, Diesel reads portfolio and publication data from \
+                Postgres, and the same Rust components are used on the server and in WebAssembly.",
+            tech: &["Rust", "Leptos", "Actix", "Diesel", "Postgres", "WebAssembly", "Docker"],
+            links: &[Link { label: "GitHub", url: "https://github.com/egonik-unlp/egonik-site" }],
             category: Category::Systems,
             private: false,
         },
         // ---- Visual & Creative -------------------------------------------
         Project {
-            title: "songViz",
-            tagline: "A 3D spectrogram you can mix in real time.",
-            description: "A browser audio visualizer that decodes local tracks, computes their FFT \
-                with the Web Audio API, and renders a scrolling 3D spectrogram terrain in Three.js. \
-                Mix mode blends two tracks with per-track 3-band EQ and an equal-power crossfader, \
-                each drawn as its own colour-mapped wireframe.",
-            tech: &["JavaScript", "Three.js", "Web Audio API", "Vite"],
-            links: &[Link { label: "GitHub", url: "https://github.com/egonik-unlp/songVizClaude" }],
-            category: Category::Visual,
-            private: false,
-        },
-        Project {
             title: "flagen",
-            tagline: "Generative art from Monte-Carlo processes.",
-            description: "A recreational numerical-computing project in OCaml: parallel random \
-                walkers accumulate over a large canvas via a log-integral Monte-Carlo process, \
-                producing 2D and 3D surface artwork alongside raw matrices. Built on the Owl \
-                numerical library.",
+            tagline: "A small generative-art program based on random walks.",
+            description: "flagen uses parallel random walkers and a Monte Carlo process to build \
+                images and height maps. It is written in OCaml with the Owl numerical library and \
+                exports both rendered images and raw matrices.",
             tech: &["OCaml", "Owl", "Monte Carlo", "Python"],
             links: &[Link { label: "GitHub", url: "https://github.com/egonik-unlp/flagen" }],
             category: Category::Visual,

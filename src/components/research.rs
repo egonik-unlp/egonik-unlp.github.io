@@ -56,10 +56,10 @@ const TOOLING: &[Tool] = &[
         repo: Some("https://github.com/egonik-unlp/glotaran_converter_lib"),
     },
     Tool {
-        title: "Molecular dynamics",
-        body: "Small 2D molecular-dynamics simulations written to learn the physics and the \
-               languages — one in Rust, one in Julia.",
-        repo: Some("https://github.com/egonik-unlp/rust_MD"),
+        title: "MOF network analysis",
+        body: "A Julia notebook that reproduces the MOFSocialNet method for comparing \
+               metal-organic frameworks as a network.",
+        repo: Some("https://github.com/egonik-unlp/MOFSocialNet.jl"),
     },
     Tool {
         title: "Crystallography",

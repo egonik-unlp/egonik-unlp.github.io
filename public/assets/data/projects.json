@@ -2,19 +2,39 @@
   "schemaVersion": 1,
   "owner": "egonik-unlp",
   "repositories": {
-    "convert-invert": {
+    "convert-ffi": {
       "featured": true,
-      "title": "Convert Invert",
-      "description": "A self-hosted system that turns Spotify playlists into a local music library by finding and downloading matching tracks through the Soulseek network. It combines playlist synchronization, distributed workers, and a web-based control surface.",
-      "languages": ["Rust", "TypeScript"],
-      "categories": ["networking", "systems-programming", "web-development"],
-      "projectTypes": ["application", "web-service"],
-      "domains": ["music", "spotify", "soulseek", "media-management"],
+      "title": "convert-ffi",
+      "description": "A full-stack Leptos app for turning local audio files into a Spotify playlist. The browser reads the file tags, Rust calls a native Zig Spotify client through FFI, and the user reviews the matches before creating the playlist.",
+      "languages": ["Rust", "Zig", "WebAssembly"],
+      "categories": ["systems-programming", "web-development"],
+      "projectTypes": ["web-app", "web-service"],
+      "domains": ["music", "spotify", "ffi"],
       "status": "active",
       "maturity": "usable",
       "role": "creator",
-      "highlights": ["Playlist synchronization", "Distributed downloads", "Full-stack deployment"],
+      "highlights": ["Rust–Zig FFI", "Local metadata parsing", "Spotify playlist creation"],
+      "links": {
+        "demo": "https://convert-ffi.onrender.com"
+      },
       "display": { "priority": 10 }
+    },
+    "spotify-next-track": {
+      "featured": true,
+      "title": "Infinite Playlist",
+      "description": "An endless playlist generated from a song or Spotify playlist. A next-track model trained in the spotify-next-track Lensing project runs in the browser and picks each new song from my listening library.",
+      "languages": ["Python", "Rust", "JavaScript", "WebAssembly"],
+      "categories": ["machine-learning", "web-development", "data-visualization"],
+      "projectTypes": ["web-app", "machine-learning-application"],
+      "domains": ["music", "spotify", "recommendation-systems", "sequence-modeling"],
+      "status": "active",
+      "maturity": "usable",
+      "role": "creator",
+      "highlights": ["Next-track GRU", "Browser ONNX inference", "Cloudflare Worker deployment"],
+      "links": {
+        "demo": "https://infinite-playlist.eduardo-gonik.workers.dev/"
+      },
+      "display": { "priority": 15 }
     },
     "convert-invert-site": {
       "featured": true,
@@ -155,6 +175,20 @@
       "highlights": ["Paper reproduction", "Materials informatics", "Julia"],
       "display": { "priority": 110 }
     },
+    "egonik-site": {
+      "featured": true,
+      "title": "egonik-site",
+      "description": "A database-backed personal site built as a full-stack Rust application. Leptos handles server rendering and browser hydration, Actix serves the application, and Diesel loads portfolio and publication data from Postgres.",
+      "languages": ["Rust", "WebAssembly", "SQL"],
+      "categories": ["systems-programming", "web-development"],
+      "projectTypes": ["web-app", "web-service"],
+      "domains": ["portfolio", "content-management"],
+      "status": "active",
+      "maturity": "prototype",
+      "role": "creator",
+      "highlights": ["Server-side rendering", "Shared Rust UI", "Postgres-backed content"],
+      "display": { "priority": 115 }
+    },
     "gases": {
       "featured": false,
       "title": "Molecular Dynamics of Gases",
@@ -167,19 +201,6 @@
       "maturity": "experimental",
       "role": "creator",
       "display": { "priority": 120 }
-    },
-    "rust_MD": {
-      "featured": false,
-      "title": "2D Molecular Dynamics in Rust",
-      "description": "A compact two-dimensional molecular-dynamics simulation created to explore both particle simulation and scientific programming in Rust.",
-      "languages": ["Rust"],
-      "categories": ["scientific-programming", "systems-programming", "simulation"],
-      "projectTypes": ["simulation", "learning-project"],
-      "domains": ["molecular-dynamics", "physics"],
-      "status": "completed",
-      "maturity": "experimental",
-      "role": "creator",
-      "display": { "priority": 130 }
     },
     "PHcalc.jl": {
       "featured": false,

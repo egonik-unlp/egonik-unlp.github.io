@@ -47,6 +47,7 @@
       "interactive-visualization": "Visualización interactiva",
       "learning-project": "Proyecto de aprendizaje",
       "library": "Biblioteca",
+      "machine-learning-application": "Aplicación de aprendizaje automático",
       "notebook": "Cuaderno interactivo",
       "port": "Adaptación",
       "research-implementation": "Implementación de investigación",
@@ -59,9 +60,14 @@
     }
   },
   "repositories": {
-    "convert-invert": {
-      "description": "Un sistema autoalojado que transforma listas de Spotify en una biblioteca musical local mediante la búsqueda y descarga de canciones en la red Soulseek. Combina sincronización de listas, trabajadores distribuidos y una interfaz web de control.",
-      "highlights": ["Sincronización de listas", "Descargas distribuidas", "Despliegue full stack"]
+    "convert-ffi": {
+      "description": "Una aplicación full stack en Leptos para convertir archivos de audio locales en una lista de Spotify. El navegador lee las etiquetas, Rust llama a un cliente de Spotify escrito en Zig mediante FFI y el usuario revisa las coincidencias antes de crear la lista.",
+      "highlights": ["FFI entre Rust y Zig", "Lectura local de metadatos", "Creación de listas en Spotify"]
+    },
+    "spotify-next-track": {
+      "displayTitle": "Infinite Playlist",
+      "description": "Una lista infinita generada a partir de una canción o lista de Spotify. Un modelo de próxima canción entrenado en el proyecto Lensing spotify-next-track se ejecuta en el navegador y elige cada tema nuevo de mi biblioteca musical.",
+      "highlights": ["GRU para próxima canción", "Inferencia ONNX en el navegador", "Despliegue en Cloudflare Workers"]
     },
     "convert-invert-site": {
       "description": "Una interfaz web completa y una capa de servicios para operar Convert Invert desde el navegador. El proyecto explora un backend en Zig, orquestación de trabajadores, autenticación y un entorno de despliegue observable.",
@@ -103,12 +109,12 @@
       "description": "Una reproducción en Julia y notebooks del método MOFSocialNet descrito por Jalali y colaboradores. Explora un análisis inspirado en grafos de redes metal-orgánicas a partir de datos estructurales.",
       "highlights": ["Reproducción de un artículo", "Informática de materiales", "Julia"]
     },
+    "egonik-site": {
+      "description": "Un sitio personal respaldado por una base de datos y construido como aplicación full stack en Rust. Leptos se ocupa del renderizado en servidor y la hidratación, Actix sirve la aplicación y Diesel carga los proyectos y publicaciones desde Postgres.",
+      "highlights": ["Renderizado en servidor", "Interfaz compartida en Rust", "Contenido almacenado en Postgres"]
+    },
     "gases": {
       "description": "Una simulación educativa de dinámica molecular de un gas escrita en Julia. Explora interacciones entre partículas y evolución temporal como ejercicio compacto de computación científica."
-    },
-    "rust_MD": {
-      "displayTitle": "Dinámica molecular 2D en Rust",
-      "description": "Una simulación compacta de dinámica molecular bidimensional creada para explorar simultáneamente la simulación de partículas y la programación científica en Rust."
     },
     "PHcalc.jl": {
       "description": "Una implementación en Julia de la biblioteca pHcalc de Ryan Nelson para calcular equilibrios ácido-base y pH de soluciones. Lleva un flujo establecido de química al ecosistema Julia."
