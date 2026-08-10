@@ -56,7 +56,7 @@ pub fn projects() -> Vec<Project> {
             ],
             links: &[Link { label: "GitHub", url: "https://github.com/egonik-unlp/lensing" }],
             category: Category::AiMl,
-            private: true,
+            private: false,
         },
         Project {
             title: "Pathfinder",
@@ -67,7 +67,7 @@ pub fn projects() -> Vec<Project> {
             tech: &["Rust/WASM", "React", "Three.js", "ONNX", "Cloudflare Workers"],
             links: &[Link { label: "GitHub", url: "https://github.com/egonik-unlp/app" }, Link{label: "Live Site", url: "https://pathfinder.eduardo-gonik.workers.dev/"}],
             category: Category::AiMl,
-            private: true,
+            private: false,
         },
         Project {
             title: "lvv",
@@ -147,7 +147,7 @@ pub fn projects() -> Vec<Project> {
                 url: "https://infinite-playlist.eduardo-gonik.workers.dev/",
             }],
             category: Category::AiMl,
-            private: true,
+            private: false,
         },
         Project {
             title: "egonik-site",
