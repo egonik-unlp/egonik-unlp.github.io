@@ -156,7 +156,13 @@ pub fn projects() -> Vec<Project> {
                 hydration. Actix serves the site, Diesel reads portfolio and publication data from \
                 Postgres, and the same Rust components are used on the server and in WebAssembly.",
             tech: &["Rust", "Leptos", "Actix", "Diesel", "Postgres", "WebAssembly", "Docker"],
-            links: &[Link { label: "GitHub", url: "https://github.com/egonik-unlp/egonik-site" }],
+            links: &[
+                Link { label: "GitHub", url: "https://github.com/egonik-unlp/egonik-site" },
+                Link {
+                    label: "Live Site",
+                    url: "https://site-production-20aa.up.railway.app/#code",
+                },
+            ],
             category: Category::Systems,
             private: false,
         },
