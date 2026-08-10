@@ -44,6 +44,7 @@ pub fn Projects() -> impl IntoView {
 fn work_row(p: Project, i: usize) -> impl IntoView {
     let is_flag = p.title == "Lensing";
     let delay = format!("{}", i * 70);
+    let number = format!("{:02}", i + 1);
 
     let links = p
         .links
@@ -66,6 +67,7 @@ fn work_row(p: Project, i: usize) -> impl IntoView {
 
     view! {
         <article class="work-row" class:is-flagship=is_flag data-reveal="" data-reveal-delay=delay>
+            <span class="work-index" aria-hidden="true">{number}</span>
             <div class="work-head">
                 <h3 class="work-name">{p.title}</h3>
                 {p.private.then(|| view! { <span class="badge">"private"</span> })}
