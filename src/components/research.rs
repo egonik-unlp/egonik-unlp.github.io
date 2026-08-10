@@ -75,8 +75,31 @@ const TOOLING: &[Tool] = &[
     },
 ];
 
+const TOOLING_ES: &[Tool] = &[
+    Tool {
+        title: "Herramientas de espectroscopía",
+        body: "Conversores y parsers que transforman la salida de instrumentos en datos analizables: archivos LFP/TRES para Glotaran y archivos .asp de Agilent FTIR.",
+        repo: Some("https://github.com/egonik-unlp/glotaran_converter_lib"),
+    },
+    Tool {
+        title: "Análisis de redes de MOFs",
+        body: "Un notebook en Julia que reproduce el método MOFSocialNet para comparar estructuras metal-orgánicas como una red.",
+        repo: Some("https://github.com/egonik-unlp/MOFSocialNet.jl"),
+    },
+    Tool {
+        title: "Cristalografía",
+        body: "Comparación de patrones de difracción de rayos X medidos contra una base de datos estructural basada en archivos CIF.",
+        repo: Some("https://github.com/egonik-unlp/xrd_match"),
+    },
+    Tool {
+        title: "IA × química",
+        body: "craig, un asistente con recuperación aumentada sobre un libro de fisicoquímica: el punto de encuentro entre investigación e ingeniería.",
+        repo: Some("https://github.com/egonik-unlp/craig"),
+    },
+];
+
 #[component]
-pub fn Research() -> impl IntoView {
+pub fn Research(spanish: bool) -> impl IntoView {
     let pubs = PUBS
         .iter()
         .map(|p| {
@@ -92,7 +115,7 @@ pub fn Research() -> impl IntoView {
         })
         .collect::<Vec<_>>();
 
-    let tooling = TOOLING
+    let tooling = if spanish { TOOLING_ES } else { TOOLING }
         .iter()
         .map(|it| {
             view! {
@@ -104,7 +127,7 @@ pub fn Research() -> impl IntoView {
                         .map(|url| {
                             view! {
                                 <a class="inline-link" href=url target="_blank" rel="noopener noreferrer">
-                                    "Code" <span aria-hidden="true">" ↗"</span>
+                                    {if spanish { "Código" } else { "Code" }} <span aria-hidden="true">" ↗"</span>
                                 </a>
                             }
                         })}
@@ -117,25 +140,29 @@ pub fn Research() -> impl IntoView {
         <section id="research" class="section">
             <div class="container narrow">
                 <div class="section-head" data-reveal="">
-                    <h2 class="section-title">"Research & " <span class="lit">"scientific computing"</span></h2>
+                    <h2 class="section-title">
+                        {if spanish { "Investigación y " } else { "Research & " }}
+                        <span class="lit">{if spanish { "computación científica" } else { "scientific computing" }}</span>
+                    </h2>
                     <p class="section-lede">
-                        "Before — and alongside — the engineering, I'm a Physical-Chemistry PhD \
-                         researcher at INIFTA and INTECH in La Plata, working on the photophysics of \
-                         silicon-based and hybrid nanomaterials for imaging and antimicrobial uses. \
-                         A lot of my code grew out of the lab."
+                        {if spanish {
+                            "Antes —y a la par— de la ingeniería, soy investigador doctoral en Fisicoquímica en INIFTA e INTECH, La Plata. Trabajo en la fotofísica de nanomateriales basados en silicio e híbridos para aplicaciones de imagen y antimicrobianas. Mucho de mi código nació en el laboratorio."
+                        } else {
+                            "Before — and alongside — the engineering, I'm a Physical-Chemistry PhD researcher at INIFTA and INTECH in La Plata, working on the photophysics of silicon-based and hybrid nanomaterials for imaging and antimicrobial uses. A lot of my code grew out of the lab."
+                        }}
                     </p>
                 </div>
 
                 <div data-reveal="">
-                    <p class="sub-label">"Selected publications"</p>
+                    <p class="sub-label">{if spanish { "Publicaciones seleccionadas" } else { "Selected publications" }}</p>
                     <ul class="pub-list">{pubs}</ul>
                     <a class="inline-link" href=SCHOLAR_URL target="_blank" rel="noopener noreferrer">
-                        "Full list on Google Scholar" <span aria-hidden="true">" ↗"</span>
+                        {if spanish { "Lista completa en Google Scholar" } else { "Full list on Google Scholar" }} <span aria-hidden="true">" ↗"</span>
                     </a>
                 </div>
 
                 <div data-reveal="">
-                    <p class="sub-label">"Research tooling"</p>
+                    <p class="sub-label">{if spanish { "Herramientas de investigación" } else { "Research tooling" }}</p>
                     <ul class="tool-list">{tooling}</ul>
                 </div>
             </div>

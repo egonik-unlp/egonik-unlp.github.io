@@ -1,5 +1,5 @@
 use leptos::prelude::*;
-use leptos_meta::{provide_meta_context, MetaTags, Stylesheet, Title};
+use leptos_meta::{provide_meta_context, Html, MetaTags, Stylesheet, Title};
 use leptos_router::components::{Route, Router, Routes};
 use leptos_router::StaticSegment;
 
@@ -49,6 +49,7 @@ pub fn App() -> impl IntoView {
         <Router>
             <Routes fallback=|| view! { <p class="container">"Page not found."</p> }>
                 <Route path=StaticSegment("") view=HomePage/>
+                <Route path=StaticSegment("es") view=SpanishHomePage/>
             </Routes>
         </Router>
     }
@@ -56,19 +57,41 @@ pub fn App() -> impl IntoView {
 
 #[component]
 fn HomePage() -> impl IntoView {
+    page(false)
+}
+
+#[component]
+fn SpanishHomePage() -> impl IntoView {
+    page(true)
+}
+
+fn page(spanish: bool) -> impl IntoView {
+    let footer_role = if spanish {
+        "Eduardo Gonik / Ingeniería de datos e IA"
+    } else {
+        "Eduardo Gonik / Data & AI Engineering"
+    };
+    let built_with = if spanish {
+        "Hecho en Rust · 2026"
+    } else {
+        "Built in Rust · 2026"
+    };
+
     view! {
-        <Nav/>
+        <Html {..} lang=if spanish { "es" } else { "en" }/>
+        <Title text=if spanish { "Eduardo Gonik — Ingeniero de datos e IA" } else { "Eduardo Gonik — Data & AI Engineer" }/>
+        <Nav spanish/>
         <main>
-            <Hero/>
-            <Skills/>
-            <Projects/>
-            <Research/>
+            <Hero spanish/>
+            <Skills spanish/>
+            <Projects spanish/>
+            <Research spanish/>
         </main>
-        <Contact/>
+        <Contact spanish/>
         <footer class="site-footer">
             <div class="container footer-inner">
-                <span>"Eduardo Gonik / Data & AI Engineering"</span>
-                <span>"Built in Rust · 2026"</span>
+                <span>{footer_role}</span>
+                <span>{built_with}</span>
             </div>
         </footer>
     }
