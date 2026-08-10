@@ -67,8 +67,8 @@ fn HomePage() -> impl IntoView {
         <Contact/>
         <footer class="site-footer">
             <div class="container footer-inner">
-                <span>"© 2026 Eduardo Gonik"</span>
-                <span>"Rust · Leptos · Axum"</span>
+                <span>"Eduardo Gonik / Data & AI Engineering"</span>
+                <span>"Built in Rust · 2026"</span>
             </div>
         </footer>
     }

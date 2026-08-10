@@ -2,6 +2,43 @@
   "schemaVersion": 1,
   "owner": "egonik-unlp",
   "repositories": {
+    "lensing": {
+      "featured": true,
+      "title": "Lensing",
+      "description": "A framework for building datasets from Qdrant, training and comparing prediction models across Rust, Python, and Julia, and exporting selected models to ONNX. An Axum service and React interface keep experiments, metrics, and the model registry together.",
+      "languages": [
+        "JavaScript",
+        "Rust",
+        "Python",
+        "Julia"
+      ],
+      "categories": [
+        "machine-learning",
+        "developer-tools",
+        "web-development"
+      ],
+      "projectTypes": [
+        "machine-learning-platform",
+        "web-app"
+      ],
+      "domains": [
+        "prediction",
+        "experiment-tracking",
+        "model-registry",
+        "onnx"
+      ],
+      "status": "active",
+      "maturity": "prototype",
+      "role": "creator",
+      "highlights": [
+        "Cross-language model training",
+        "Experiment comparison",
+        "ONNX model export"
+      ],
+      "display": {
+        "priority": 5
+      }
+    },
     "convert-ffi": {
       "featured": true,
       "title": "convert-ffi",
