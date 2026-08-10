@@ -8,11 +8,14 @@ pub enum Category {
 }
 
 impl Category {
-    pub fn label(&self) -> &'static str {
-        match self {
-            Category::AiMl => "ai & machine learning",
-            Category::Systems => "systems & backend",
-            Category::Visual => "visual & creative",
+    pub fn label(&self, spanish: bool) -> &'static str {
+        match (self, spanish) {
+            (Category::AiMl, false) => "ai & machine learning",
+            (Category::Systems, false) => "systems & backend",
+            (Category::Visual, false) => "visual & creative",
+            (Category::AiMl, true) => "ia y aprendizaje automático",
+            (Category::Systems, true) => "sistemas y backend",
+            (Category::Visual, true) => "visual y creativo",
         }
     }
 
@@ -40,8 +43,8 @@ pub struct Project {
     pub private: bool,
 }
 
-pub fn projects() -> Vec<Project> {
-    vec![
+pub fn projects(spanish: bool) -> Vec<Project> {
+    let mut projects = vec![
         // ---- AI & Machine Learning ---------------------------------------
         Project {
             title: "Lensing",
@@ -178,5 +181,57 @@ pub fn projects() -> Vec<Project> {
             category: Category::Visual,
             private: false,
         },
-    ]
+    ];
+
+    if spanish {
+        let translations = [
+            (
+                "Un framework para ejecutar experimentos de predicción sobre distintos conjuntos de datos.",
+                "Lensing construye datasets desde Qdrant, entrena modelos en Rust, Python y Julia, compara sus resultados y exporta los modelos seleccionados a ONNX. Lo uso en experimentos inmobiliarios y de Spotify. Un servidor Axum y una interfaz React reúnen las ejecuciones, métricas y el registro de modelos.",
+            ),
+            (
+                "Una ruta 3D entre dos canciones de mi historial de Spotify.",
+                "Pathfinder usa un modelo exportado desde Lensing para encontrar una secuencia entre dos canciones. La búsqueda de rutas corre en Rust compilado a WebAssembly, la visualización usa React y Three.js, y un Cloudflare Worker se ocupa del pequeño backend.",
+            ),
+            (
+                "Un pipeline en Rust para cargar datasets en una base de datos vectorial.",
+                "lvv lee datos desde archivos CSV o Postgres, crea embeddings con Ollama u OpenAI y los escribe en Qdrant. Incluye una cola de trabajos y caché en disco para que las importaciones interrumpidas no tengan que empezar de nuevo.",
+            ),
+            (
+                "Un experimento de preguntas y respuestas de química basado en recuperación.",
+                "craig indexa un libro de fisicoquímica en Qdrant o Chroma y usa los pasajes recuperados para responder preguntas. Expone una API HTTP y un bot de Telegram, con trazas de Langfuse y OpenTelemetry para inspeccionar las respuestas.",
+            ),
+            (
+                "Un pequeño servidor HTTP escrito directamente sobre TCP.",
+                "Un proyecto de aprendizaje que acepta conexiones con TcpListener de Rust, interpreta líneas y cabeceras HTTP, enruta paths a handlers y escribe respuestas HTTP sin usar un framework web.",
+            ),
+            (
+                "Una interfaz full-stack en Rust respaldada por una biblioteca nativa en Zig.",
+                "El navegador lee los metadatos de archivos de audio locales y una aplicación Leptos y Axum envía los datos de las canciones, mediante FFI de Rust, a un cliente de Spotify en Zig. La persona puede revisar las coincidencias y crear una playlist. Los archivos de audio permanecen en el navegador.",
+            ),
+            (
+                "Una CLI en Zig que convierte una carpeta de música en una playlist de Spotify.",
+                "convert-songs lee etiquetas ID3, busca cada canción en Spotify y crea una playlist con las coincidencias. El flujo OAuth, la gestión de tokens y el cliente de la API están implementados directamente en Zig.",
+            ),
+            (
+                "Una playlist infinita generada desde una canción o playlist de Spotify.",
+                "Infinite Playlist es un cliente para el proyecto Lensing spotify-next-track. Un modelo GRU elige cada canción siguiente desde mi biblioteca y corre en el navegador mediante ONNX Runtime. Un Cloudflare Worker resuelve enlaces de Spotify y gestiona canciones que todavía no están en el catálogo del modelo.",
+            ),
+            (
+                "Un sitio personal con base de datos escrito en Rust.",
+                "Una aplicación full-stack en Leptos con renderizado en servidor e hidratación en el cliente. Actix sirve el sitio, Diesel lee el portfolio y las publicaciones desde Postgres, y los mismos componentes en Rust se usan en el servidor y en WebAssembly.",
+            ),
+            (
+                "Un pequeño programa de arte generativo basado en caminos aleatorios.",
+                "flagen usa caminantes aleatorios en paralelo y un proceso de Monte Carlo para construir imágenes y mapas de altura. Está escrito en OCaml con la biblioteca numérica Owl y exporta tanto imágenes renderizadas como matrices crudas.",
+            ),
+        ];
+
+        for (project, (tagline, description)) in projects.iter_mut().zip(translations) {
+            project.tagline = tagline;
+            project.description = description;
+        }
+    }
+
+    projects
 }

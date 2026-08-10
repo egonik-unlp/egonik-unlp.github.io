@@ -77,10 +77,22 @@ const GROUPS: &[Group] = &[
 ];
 
 #[component]
-pub fn Skills() -> impl IntoView {
+pub fn Skills(spanish: bool) -> impl IntoView {
     let rows = GROUPS
         .iter()
         .map(|g| {
+            let name = if spanish {
+                match g.name {
+                    "Languages" => "Lenguajes",
+                    "Data" => "Datos",
+                    "Systems & Backend" => "Sistemas y backend",
+                    "Frontend" => "Frontend",
+                    "Infra & Deploy" => "Infraestructura y despliegue",
+                    name => name,
+                }
+            } else {
+                g.name
+            };
             let items = g
                 .items
                 .iter()
@@ -88,7 +100,7 @@ pub fn Skills() -> impl IntoView {
                 .collect::<Vec<_>>();
             view! {
                 <div class="legend-row" data-reveal="">
-                    <div class="legend-name">{g.name}</div>
+                    <div class="legend-name">{name}</div>
                     <ul class="legend-tags">{items}</ul>
                 </div>
             }
@@ -99,7 +111,10 @@ pub fn Skills() -> impl IntoView {
         <section id="skills" class="section section-surface">
             <div class="container">
                 <div class="section-head" data-reveal="">
-                    <h2 class="section-title">"Skills & " <span class="lit">"tools"</span></h2>
+                    <h2 class="section-title">
+                        {if spanish { "Habilidades y " } else { "Skills & " }}
+                        <span class="lit">{if spanish { "herramientas" } else { "tools" }}</span>
+                    </h2>
                 </div>
                 <div class="legend">{rows}</div>
             </div>
