@@ -469,6 +469,9 @@
         "Shared Rust UI",
         "Postgres-backed content"
       ],
+      "links": {
+        "demo": "https://site-production-20aa.up.railway.app/#code"
+      },
       "display": {
         "priority": 115
       }
