@@ -46,10 +46,10 @@ jobs:
       - name: Build site
         run: cargo leptos build --release
 
-      # GitHub Pages cannot run the Axum SSR process. Render the only route once
+      # GitHub Pages cannot run the Axum SSR process. Render each public route
       # during CI, then publish that HTML together with the hydration bundle and
       # static assets produced by cargo-leptos.
-      - name: Render static homepage
+      - name: Render static routes
         env:
           LEPTOS_SITE_ADDR: 127.0.0.1:3000
           LEPTOS_SITE_ROOT: target/site
@@ -59,11 +59,14 @@ jobs:
           trap 'kill "$server_pid"' EXIT
           for attempt in {1..30}; do
             if curl --fail --silent --show-error http://127.0.0.1:3000/ --output target/site/index.html; then
-              exit 0
+              break
             fi
             sleep 1
           done
-          exit 1
+          test -s target/site/index.html
+          mkdir -p target/site/es
+          curl --fail --silent --show-error http://127.0.0.1:3000/es --output target/site/es/index.html
+          test -s target/site/es/index.html
 
       - name: Configure Pages
         if: github.ref == 'refs/heads/main'

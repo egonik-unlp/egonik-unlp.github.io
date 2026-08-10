@@ -36,10 +36,10 @@ docker run --rm -p 3000:3000 eg-site
 Deployable via Portainer on the home server (or any Docker host). Note: the SSR
 server is a running process — it can't be published to GitHub Pages as static files.
 
-The GitHub Pages workflow handles this by rendering the single homepage route during
-CI and publishing that HTML with the hydration bundle and static assets. The legacy
-JSON resources remain available at `/assets/data/projects.json` and
-`/assets/data/works.json`.
+The GitHub Pages workflow handles this by rendering the English (`/`) and Spanish
+(`/es`) routes during CI and publishing both HTML entry points with the hydration
+bundle and static assets. The legacy JSON resources remain available at
+`/assets/data/projects.json` and `/assets/data/works.json`.
 
 ## Design
 

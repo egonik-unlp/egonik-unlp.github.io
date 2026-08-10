@@ -1,5 +1,5 @@
 use leptos::prelude::*;
-use leptos_meta::{provide_meta_context, Html, MetaTags, Stylesheet, Title};
+use leptos_meta::{provide_meta_context, Html, Meta, MetaTags, Stylesheet, Title};
 use leptos_router::components::{Route, Router, Routes};
 use leptos_router::StaticSegment;
 
@@ -14,14 +14,10 @@ use crate::components::skills::Skills;
 pub fn shell(options: LeptosOptions) -> impl IntoView {
     view! {
         <!DOCTYPE html>
-        <html lang="en">
+        <html>
             <head>
                 <meta charset="utf-8"/>
                 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-                <meta
-                    name="description"
-                    content="Eduardo Gonik — Data & AI Engineer. Embedding pipelines, vector search, prediction frameworks and the full-stack apps that serve them."
-                />
                 <meta name="theme-color" content="#12121a"/>
                 <link rel="icon" href="/favicon.svg" type="image/svg+xml"/>
                 <script>"document.documentElement.classList.add('js')"</script>
@@ -76,10 +72,16 @@ fn page(spanish: bool) -> impl IntoView {
     } else {
         "Built in Rust · 2026"
     };
+    let description = if spanish {
+        "Eduardo Gonik — Ingeniero de datos e IA. Pipelines de embeddings, búsqueda vectorial, sistemas de predicción y las aplicaciones full-stack que los llevan a producción."
+    } else {
+        "Eduardo Gonik — Data & AI Engineer. Embedding pipelines, vector search, prediction frameworks and the full-stack apps that serve them."
+    };
 
     view! {
         <Html {..} lang=if spanish { "es" } else { "en" }/>
         <Title text=if spanish { "Eduardo Gonik — Ingeniero de datos e IA" } else { "Eduardo Gonik — Data & AI Engineer" }/>
+        <Meta name="description" content=description/>
         <Nav spanish/>
         <main>
             <Hero spanish/>
