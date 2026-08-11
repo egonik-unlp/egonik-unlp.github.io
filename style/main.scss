@@ -320,102 +320,177 @@ a { color: inherit; text-decoration: none; }
     max-width: 60ch;
 }
 
-// ═══ SELECTED WORK — editorial index (not a card grid) ═════════════════════
-.work-group { margin-top: clamp(2.4rem, 5vw, 3.4rem); }
+// ═══ WORK — one line per project, two readings ══════════════════════════════
+// The layer label is the whole explanation: no legend, no glossary, no diagram.
+
+.views {
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+    flex-wrap: wrap;
+    margin-top: 1.4rem;
+}
+.seg {
+    display: flex;
+    border: 1px solid var(--line);
+    border-radius: 2px;
+    overflow: hidden;
+    background: var(--paper);
+
+    button {
+        font-family: var(--fs-mono);
+        font-size: 0.78rem;
+        letter-spacing: 0.03em;
+        padding: 0.38rem 0.85rem;
+        border: 0;
+        background: transparent;
+        color: var(--ink-soft);
+        cursor: pointer;
+        transition: background 0.2s var(--ease), color 0.2s var(--ease);
+    }
+    button + button { border-left: 1px solid var(--line); }
+    button:hover { color: var(--ink); }
+    button[aria-pressed="true"] {
+        background: var(--gold);
+        color: oklch(0.19 0.03 273);
+        font-weight: 500;
+    }
+}
+
+.work-group { margin-top: clamp(2rem, 4.5vw, 3rem); }
 .group-label {
     display: flex;
     align-items: center;
     gap: 0.8rem;
     font-family: var(--fs-mono);
-    font-size: 0.82rem;
-    color: var(--ink-soft);
-    margin-bottom: 0.5rem;
+    font-size: 0.86rem;
+    color: var(--ink);
+    margin-bottom: 0.1rem;
 }
 .group-label::before { content: "◆"; color: var(--gold); font-size: 0.7rem; }
-.group-label::after {
-    content: "";
-    flex: 1;
-    height: 1px;
-    background: var(--line);
-}
+.group-label .after { flex: 1; height: 1px; background: var(--line); }
 
-.work-row {
+.rows { display: flex; flex-direction: column; }
+.row {
     display: grid;
-    grid-template-columns: minmax(0, 7fr) minmax(0, 11fr);
-    gap: clamp(0.6rem, 3vw, 3rem);
-    padding: clamp(1.5rem, 3vw, 2.2rem) 0;
-    border-top: 1px solid var(--line);
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0.15rem 1.4rem;
+    padding: 0.72rem 0;
+    border-top: 1px solid var(--line-soft);
     position: relative;
-    transition: background 0.3s var(--ease);
+    transition: background 0.25s var(--ease);
 }
-.work-row:last-child { border-bottom: 1px solid var(--line); }
-.work-row::before {
+.rows .row:last-child { border-bottom: 1px solid var(--line-soft); }
+.row::before {
     content: "";
     position: absolute;
     left: calc(var(--gutter) * -1);
     right: calc(var(--gutter) * -1);
-    top: 0; bottom: 0;
-    background: color-mix(in oklch, var(--gold) 6%, transparent);
+    top: 0;
+    bottom: 0;
+    background: color-mix(in oklch, var(--gold) 7%, transparent);
     opacity: 0;
-    transition: opacity 0.3s var(--ease);
+    transition: opacity 0.25s var(--ease);
     z-index: -1;
     pointer-events: none;
 }
-.work-row:hover::before { opacity: 1; }
+.row:hover::before { opacity: 1; }
 
-.work-row.is-flagship .work-name { font-size: clamp(1.6rem, 1.2rem + 1.4vw, 2.3rem); }
+// Wide: name / sentence / tools share one baseline. Narrow: they stack.
+@media (min-width: 820px) {
+    .row {
+        grid-template-columns: minmax(0, 6fr) minmax(0, 12fr) minmax(0, 5.4fr);
+        align-items: baseline;
+        padding: 0.62rem 0;
+    }
+    .r-tech { text-align: right; }
+}
 
-.work-head { display: flex; flex-direction: column; gap: 0.7rem; }
-.work-name {
+.r-name {
     font-family: var(--fs-display);
     font-weight: 700;
-    font-size: clamp(1.35rem, 1.1rem + 1vw, 1.7rem);
-    letter-spacing: -0.02em;
-    line-height: 1.05;
-    transition: color 0.25s var(--ease);
+    font-size: 1.02rem;
+    letter-spacing: -0.017em;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 0.3rem 0.45rem;
 }
-.work-row:hover .work-name { color: var(--gold-deep); }
-.badge {
-    align-self: flex-start;
+.r-name .more {
     font-family: var(--fs-mono);
-    font-size: 0.66rem;
-    letter-spacing: 0.06em;
+    font-weight: 400;
+    font-size: 0.68rem;
+    color: var(--ink-soft);
+    cursor: help;
+}
+.tick {
+    font-family: var(--fs-mono);
+    font-weight: 400;
+    font-size: 0.64rem;
+    letter-spacing: 0.05em;
     color: var(--ink-soft);
     border: 1px solid var(--line);
     border-radius: 2px;
-    padding: 0.12rem 0.5rem;
+    padding: 0.02rem 0.35rem;
+    white-space: nowrap;
 }
-.work-link {
-    align-self: flex-start;
-    font-family: var(--fs-mono);
-    font-size: 0.85rem;
+.tick.live {
     color: var(--gold-deep);
-    display: inline-flex;
-    align-items: center;
-    gap: 0.35rem;
+    border-color: color-mix(in oklch, var(--gold) 60%, var(--line));
 }
-.work-link .arr { transition: transform 0.25s var(--ease); }
-.work-row:hover .work-link .arr { transform: translate(3px, -3px); }
 
-.work-body { }
-.work-tagline { font-weight: 600; font-size: 1.08rem; margin-bottom: 0.5rem; }
-.work-desc { color: var(--ink-soft); }
-.tech {
-    list-style: none;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.4rem 0.5rem;
-    padding: 0;
-    margin: 1rem 0 0;
-}
-.tech li {
-    font-family: var(--fs-mono);
-    font-size: 0.73rem;
+.r-line {
     color: var(--ink-soft);
-    padding: 0.1rem 0;
+    font-size: 0.97rem;
+
+    a {
+        color: var(--gold-deep);
+        font-family: var(--fs-mono);
+        font-size: 0.78rem;
+        white-space: nowrap;
+        margin-left: 0.35rem;
+    }
+    a .arr { display: inline-block; transition: transform 0.25s var(--ease); }
 }
-.tech li::after { content: "·"; margin-left: 0.5rem; color: var(--line); }
-.tech li:last-child::after { content: ""; }
+.row:hover .r-line a .arr { transform: translate(3px, -3px); }
+
+.r-tech {
+    font-family: var(--fs-mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.02em;
+    color: var(--ink-soft);
+    opacity: 0.85;
+}
+
+// The question reading of the same index.
+.q-group { margin-top: clamp(1.9rem, 4vw, 2.7rem); }
+.q-title {
+    font-family: var(--fs-display);
+    font-weight: 700;
+    font-size: clamp(1.2rem, 1.05rem + 0.9vw, 1.65rem);
+    line-height: 1.12;
+    letter-spacing: -0.026em;
+    max-width: 38ch;
+    text-wrap: balance;
+}
+.q-answer {
+    margin-top: 0.5rem;
+    max-width: 66ch;
+    color: var(--ink-soft);
+    font-size: 0.99rem;
+}
+.q-answer::before {
+    content: "answer";
+    font-family: var(--fs-mono);
+    font-size: 0.63rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--gold-deep);
+    margin-right: 0.55rem;
+    border-bottom: 1px solid var(--gold);
+    padding-bottom: 0.1rem;
+}
+.q-group .rows { margin-top: 0.85rem; }
 
 // ═══ SKILLS — instrument legend ════════════════════════════════════════════
 .legend { border-top: 1px solid var(--line); }
@@ -558,7 +633,6 @@ a { color: inherit; text-decoration: none; }
 // ═══ RESPONSIVE ════════════════════════════════════════════════════════════
 @media (max-width: 720px) {
     .brand-name { display: none; }
-    .work-row { grid-template-columns: 1fr; gap: 1rem; }
     .legend-row { grid-template-columns: 1fr; gap: 0.6rem; }
     .contact-links a { grid-template-columns: 6rem 1fr auto; }
     .hero-inner { padding-block: 7rem 5rem; }
