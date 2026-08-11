@@ -140,10 +140,55 @@ html[lang="es"] .section-title::before { content: "SECCIÓN /"; }
 .work-row:hover .work-link .arr { transform: translate(3px, -3px); }
 .work-tagline { margin-bottom: .55rem; font-weight: 650; font-size: 1.05rem; }
 .work-desc { max-width: 62ch; color: var(--ink-soft); }
-.work-row:hover .work-desc, .work-row:hover .tech li, .work-row:hover .badge { color: var(--on-field-soft); }
+.work-row:hover .work-desc, .work-row:hover .tech li, .work-row:hover .badge,
+.work-row:hover .more { color: var(--on-field-soft); }
 .tech, .legend-tags { display: flex; flex-wrap: wrap; gap: .4rem; margin: 1rem 0 0; padding: 0; list-style: none; }
 .tech li { color: var(--ink-soft); font: .68rem var(--mono); }
 .tech li:not(:last-child)::after { content: " /"; color: var(--signal-dark); }
+
+// The work index reads two ways over the same rows: by layer (default) and by
+// question. Twenty-seven rows means each one is a single sentence, so the rows
+// here run tighter than the case-file rows this treatment came from.
+.section-aside { display: grid; align-self: end; gap: 1.5rem; }
+.section-aside .section-lede { align-self: start; padding-top: 0; }
+.views { display: flex; width: max-content; border: 1px solid var(--line); }
+.views button {
+    padding: .5rem .9rem;
+    border: 0;
+    background: transparent;
+    color: var(--ink-soft);
+    font: 600 .68rem var(--mono);
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: color .2s var(--ease), background .2s var(--ease);
+}
+.views button + button { border-left: 1px solid var(--line); }
+.views button:hover { color: var(--ink); }
+.views button[aria-pressed="true"] { background: var(--ink); color: var(--paper); }
+
+#work .group-label { grid-template-columns: auto 1fr; }
+#work .work-row { padding-block: clamp(.95rem, 1.8vw, 1.4rem); }
+#work .work-name { font-size: clamp(1.08rem, 1rem + .45vw, 1.32rem); font-weight: 650; }
+#work .work-head { flex-direction: row; flex-wrap: wrap; align-items: baseline; gap: .45rem .7rem; }
+#work .work-desc { max-width: 68ch; }
+#work .tech { margin-top: .5rem; }
+.more { color: var(--ink-soft); font: .66rem var(--mono); cursor: help; }
+.badge.is-live { color: var(--signal-dark); }
+.work-row:hover .badge.is-live { color: var(--signal); }
+
+// A question states its answer; the eyebrow matches the section device.
+.q-group .q-title { max-width: 34ch; margin-bottom: .7rem; font-size: clamp(1.35rem, 1.15rem + .9vw, 2rem); font-weight: 620; }
+.q-group .q-answer { max-width: 68ch; margin-bottom: 1.9rem; color: var(--ink-soft); }
+.q-group .q-answer::before {
+    display: block;
+    margin-bottom: .5rem;
+    color: var(--signal-dark);
+    font: 600 .64rem var(--mono);
+    letter-spacing: .12em;
+    content: "ANSWER /";
+}
+html[lang="es"] .q-group .q-answer::before { content: "RESPUESTA /"; }
 
 .legend { border-top: 2px solid var(--ink); }
 .legend-row { display: grid; grid-template-columns: minmax(12rem, .65fr) 1.35fr; gap: 2rem; align-items: baseline; padding: 1.45rem 0; border-bottom: 1px solid var(--line); }

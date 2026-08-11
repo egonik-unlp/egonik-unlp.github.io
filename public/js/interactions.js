@@ -19,14 +19,23 @@
         nav.classList.add("is-solid");
     }
 
-    // Reveal on scroll (staggered within a group).
-    var items = Array.prototype.slice.call(document.querySelectorAll("[data-reveal]"));
-    function revealAll() {
-        items.forEach(function (el) { el.classList.add("is-visible"); });
+    // Reveal on scroll (staggered within a group). Queried live, because the work
+    // index re-renders its rows when you switch between reading it by layer and
+    // by question — rows inserted after load must be revealed too, or they stay
+    // at opacity 0 forever.
+    function pending() {
+        return Array.prototype.slice.call(document.querySelectorAll("[data-reveal]"));
     }
+    function revealAll() {
+        pending().forEach(function (el) { el.classList.add("is-visible"); });
+    }
+    var items = pending();
     if (!items.length) return;
 
-    if (!("IntersectionObserver" in window)) { revealAll(); return; }
+    if (!("IntersectionObserver" in window) || !("MutationObserver" in window)) {
+        revealAll();
+        return;
+    }
 
     var obs = new IntersectionObserver(
         function (entries, o) {
@@ -41,7 +50,21 @@
         },
         { rootMargin: "0px 0px -8% 0px", threshold: 0.08 }
     );
-    items.forEach(function (el) { obs.observe(el); });
+    function watch(el) {
+        if (!el.classList.contains("is-visible")) obs.observe(el);
+    }
+    items.forEach(watch);
+
+    // Anything added later — a re-rendered row — gets observed the same way.
+    new MutationObserver(function (records) {
+        records.forEach(function (record) {
+            Array.prototype.forEach.call(record.addedNodes, function (node) {
+                if (node.nodeType !== 1) return;
+                if (node.hasAttribute("data-reveal")) watch(node);
+                Array.prototype.forEach.call(node.querySelectorAll("[data-reveal]"), watch);
+            });
+        });
+    }).observe(document.body, { childList: true, subtree: true });
 
     // Safety net: never leave content hidden.
     window.addEventListener("load", function () {
