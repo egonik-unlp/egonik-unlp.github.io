@@ -397,6 +397,19 @@ pub const PROJECTS: &[Project] = &[
         layer: Layer::See,
         question: None,
     },
+    Project {
+        name: t("My future site", "Mi próximo sitio"),
+        line: t(
+            "My fullstack rust website with leptos ssr",
+            "Mi sitio en rust fullstack usando leptos ssr",
+        ),
+        tech: &["Rust", "Leptos", "WebAssembly", "Actix","Tokio" ],
+        ticks: &[],
+        tail: &[],
+        link: github("https://github.com/egonik-unlp/egonik-site"),
+        layer: Layer::See,
+        question: None,
+    },
     // ── what you use ────────────────────────────────────────────────────────
     Project {
         name: t("Lensing", "Lensing"),
