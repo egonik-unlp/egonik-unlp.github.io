@@ -455,7 +455,7 @@ pub const PROJECTS: &[Project] = &[
         tech: &["Rust", "Leptos", "Zig", "FFI"],
         ticks: &[Tick::Live],
         tail: &[],
-        link: open("https://convert-ffi.onrender.com"),
+        link: open("https://convert-ffi-latest.onrender.com/"),
         layer: Layer::Use,
         question: Some(Question::Collection),
     },
