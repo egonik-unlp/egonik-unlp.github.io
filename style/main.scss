@@ -134,6 +134,9 @@ html[lang="es"] .section-title::before { content: "SECCIÓN /"; }
 .work-name { font-size: clamp(1.4rem, 1.1rem + 1vw, 2rem); font-weight: 650; }
 .is-flagship .work-name { font-size: clamp(1.8rem, 1.4rem + 1.2vw, 2.6rem); }
 .badge { padding: .15rem .45rem; border: 1px solid currentColor; color: var(--ink-soft); font: .62rem var(--mono); text-transform: uppercase; }
+.work-links { display: flex; flex-wrap: wrap; align-items: baseline; gap: .35rem 1rem; }
+.work-links .work-link + .work-link { position: relative; }
+.work-links .work-link + .work-link::before { content: "/"; position: absolute; left: -.55rem; color: var(--signal-dark); }
 .work-link, .inline-link { display: inline-flex; gap: .3rem; color: var(--blue); font: 500 .76rem var(--mono); }
 .work-row:hover .work-link { color: var(--signal); }
 .work-link .arr { transition: transform .2s var(--ease); }

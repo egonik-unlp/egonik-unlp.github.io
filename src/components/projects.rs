@@ -132,7 +132,6 @@ fn group(label: &'static str, items: Vec<&'static Project>, spanish: bool) -> im
         </div>
     }
 }
-
 fn question_group(q: Question, items: Vec<&'static Project>, spanish: bool) -> impl IntoView {
     let rows = items
         .into_iter()
@@ -174,13 +173,20 @@ fn work_row(p: &'static Project, i: usize, spanish: bool) -> impl IntoView {
         }
     });
 
-    let link = p.link.map(|l| {
-        view! {
-            <a class="work-link" href=l.url target="_blank" rel="noopener noreferrer">
-                {l.label.get(spanish)}
-                <span class="arr" aria-hidden="true">" ↗"</span>
-            </a>
-        }
+    let links = (!p.links.is_empty()).then(|| {
+        let items = p
+            .links
+            .iter()
+            .map(|l| {
+                view! {
+                    <a class="work-link" href=l.url target="_blank" rel="noopener noreferrer">
+                        {l.label.get(spanish)}
+                        <span class="arr" aria-hidden="true">" ↗"</span>
+                    </a>
+                }
+            })
+            .collect_view();
+        view! { <nav class="work-links" aria-label=p.name.get(spanish)>{items}</nav> }
     });
 
     let tech = p
@@ -195,7 +201,7 @@ fn work_row(p: &'static Project, i: usize, spanish: bool) -> impl IntoView {
             <div class="work-head">
                 <h4 class="work-name">{p.name.get(spanish)} {tail}</h4>
                 {ticks}
-                {link}
+                {links}
             </div>
             <div class="work-body">
                 <p class="work-desc">{p.line.get(spanish)}</p>

@@ -273,18 +273,30 @@ pub struct Link {
     pub url: &'static str,
 }
 
-const fn open(url: &'static str) -> Option<Link> {
-    Some(Link {
+/// The live thing itself.
+const fn open(url: &'static str) -> Link {
+    Link {
         label: t("Open", "Abrir"),
         url,
-    })
+    }
 }
 
-const fn github(url: &'static str) -> Option<Link> {
-    Some(Link {
+/// The source.
+const fn github(url: &'static str) -> Link {
+    Link {
         label: t("GitHub", "GitHub"),
         url,
-    })
+    }
+}
+
+/// Anything else — a paper, a package, a write-up. Label it in both languages.
+/// Unused until a row needs it; kept so adding one stays a one-line edit.
+#[allow(dead_code)]
+const fn link(en: &'static str, es: &'static str, url: &'static str) -> Link {
+    Link {
+        label: t(en, es),
+        url,
+    }
 }
 
 #[derive(Clone, Copy)]
@@ -296,7 +308,9 @@ pub struct Project {
     pub ticks: &'static [Tick],
     /// Repositories folded into this row, shown as a quiet "+n".
     pub tail: &'static [&'static str],
-    pub link: Option<Link>,
+    /// Every way in: the live thing, the source, a paper. Empty when there is
+    /// nowhere public to send anyone.
+    pub links: &'static [Link],
     pub layer: Layer,
     pub question: Option<Question>,
 }
@@ -314,7 +328,7 @@ pub const PROJECTS: &[Project] = &[
         tech: &["ONNX Runtime Web", "Rust/WASM", "Cloudflare Workers"],
         ticks: &[Tick::Live],
         tail: &[],
-        link: open("https://infinite-playlist.eduardo-gonik.workers.dev"),
+        links: &[open("https://infinite-playlist.eduardo-gonik.workers.dev")],
         layer: Layer::See,
         question: Some(Question::HearNext),
     },
@@ -328,7 +342,7 @@ pub const PROJECTS: &[Project] = &[
         tech: &["Rust/WASM", "React", "Three.js", "ONNX"],
         ticks: &[Tick::Live],
         tail: &[],
-        link: open("https://pathfinder.eduardo-gonik.workers.dev/"),
+        links: &[open("https://pathfinder.eduardo-gonik.workers.dev/")],
         layer: Layer::See,
         question: Some(Question::HearNext),
     },
@@ -341,7 +355,7 @@ pub const PROJECTS: &[Project] = &[
         tech: &["JavaScript", "Cloudflare Workers"],
         ticks: &[Tick::Live],
         tail: &[],
-        link: open("https://demo-logits.eduardo-gonik.workers.dev"),
+        links: &[open("https://demo-logits.eduardo-gonik.workers.dev")],
         layer: Layer::See,
         question: Some(Question::PickWord),
     },
@@ -354,7 +368,7 @@ pub const PROJECTS: &[Project] = &[
         tech: &["JavaScript", "Web Audio", "Three.js"],
         ticks: &[],
         tail: &[],
-        link: github("https://github.com/egonik-unlp/songVizClaude"),
+        links: &[github("https://github.com/egonik-unlp/songVizClaude")],
         layer: Layer::See,
         question: Some(Question::MachineDraws),
     },
@@ -367,7 +381,7 @@ pub const PROJECTS: &[Project] = &[
         tech: &["OCaml", "Owl", "Monte Carlo"],
         ticks: &[],
         tail: &["rust_screen_background"],
-        link: github("https://github.com/egonik-unlp/flagen"),
+        links: &[github("https://github.com/egonik-unlp/flagen")],
         layer: Layer::See,
         question: Some(Question::MachineDraws),
     },
@@ -380,7 +394,7 @@ pub const PROJECTS: &[Project] = &[
         tech: &["TypeScript"],
         ticks: &[Tick::Teaching],
         tail: &["fit-anim"],
-        link: github("https://github.com/egonik-unlp/demoCodex"),
+        links: &[github("https://github.com/egonik-unlp/demoCodex")],
         layer: Layer::See,
         question: None,
     },
@@ -392,8 +406,8 @@ pub const PROJECTS: &[Project] = &[
         ),
         tech: &["Rust", "Leptos", "WebAssembly", "Axum"],
         ticks: &[],
-        tail: &["website", "massive", "egonik-site", "proyecto_eframe"],
-        link: github("https://github.com/egonik-unlp/egonik-unlp.github.io"),
+        tail: &["website", "massive",  "proyecto_eframe"],
+        links: &[github("https://github.com/egonik-unlp/egonik-unlp.github.io")],
         layer: Layer::See,
         question: None,
     },
@@ -406,7 +420,10 @@ pub const PROJECTS: &[Project] = &[
         tech: &["Rust", "Leptos", "WebAssembly", "Actix","Tokio" ],
         ticks: &[],
         tail: &[],
-        link: github("https://github.com/egonik-unlp/egonik-site"),
+        links: &[
+            open("https://site-production-20aa.up.railway.app/"),
+            github("https://github.com/egonik-unlp/egonik-site"),
+        ],
         layer: Layer::See,
         question: None,
     },
@@ -426,7 +443,7 @@ pub const PROJECTS: &[Project] = &[
             "turbine-alarm-forecast",
             "lensing-workspace",
         ],
-        link: github("https://github.com/egonik-unlp/lensing"),
+        links: &[github("https://github.com/egonik-unlp/lensing")],
         layer: Layer::Use,
         question: Some(Question::Toolkit),
     },
@@ -440,7 +457,7 @@ pub const PROJECTS: &[Project] = &[
         tech: &["TypeScript", "LangChain", "Qdrant", "Langfuse"],
         ticks: &[],
         tail: &[],
-        link: github("https://github.com/egonik-unlp/craig"),
+        links: &[github("https://github.com/egonik-unlp/craig")],
         layer: Layer::Use,
         question: Some(Question::Textbook),
     },
@@ -455,7 +472,7 @@ pub const PROJECTS: &[Project] = &[
         tech: &["Rust", "Leptos", "Zig", "FFI"],
         ticks: &[Tick::Live],
         tail: &[],
-        link: open("https://convert-ffi-latest.onrender.com/"),
+        links: &[open("https://convert-ffi-latest.onrender.com/")],
         layer: Layer::Use,
         question: Some(Question::Collection),
     },
@@ -479,7 +496,7 @@ pub const PROJECTS: &[Project] = &[
             "flim",
             "flim_tsv",
         ],
-        link: github("https://github.com/egonik-unlp/glotaran_converter_lib"),
+        links: &[github("https://github.com/egonik-unlp/glotaran_converter_lib")],
         layer: Layer::Use,
         question: Some(Question::Instrument),
     },
@@ -504,7 +521,7 @@ pub const PROJECTS: &[Project] = &[
             "lanacion-challenge",
             "tax_parser",
         ],
-        link: None,
+        links: &[],
         layer: Layer::Use,
         question: None,
     },
@@ -519,7 +536,7 @@ pub const PROJECTS: &[Project] = &[
         tech: &["Rust", "burn", "PyTorch", "Julia", "Qdrant"],
         ticks: &[],
         tail: &[],
-        link: github("https://github.com/egonik-unlp/spotify-next-track"),
+        links: &[github("https://github.com/egonik-unlp/spotify-next-track")],
         layer: Layer::Works,
         question: Some(Question::HearNext),
     },
@@ -533,7 +550,7 @@ pub const PROJECTS: &[Project] = &[
         tech: &["Python", "xgboost", "CatBoost", "burn"],
         ticks: &[Tick::Private],
         tail: &[],
-        link: None,
+        links: &[],
         layer: Layer::Works,
         question: Some(Question::HearNext),
     },
@@ -546,7 +563,7 @@ pub const PROJECTS: &[Project] = &[
         tech: &["Python", "Jupyter"],
         ticks: &[],
         tail: &["mof_xrd", "docking_cecilia", "cecilia", "labo"],
-        link: github("https://github.com/egonik-unlp/xrd_match"),
+        links: &[github("https://github.com/egonik-unlp/xrd_match")],
         layer: Layer::Works,
         question: Some(Question::Material),
     },
@@ -561,7 +578,7 @@ pub const PROJECTS: &[Project] = &[
         tech: &["Julia", "Jupyter"],
         ticks: &[],
         tail: &["bilinear", "PHcalc.jl"],
-        link: github("https://github.com/egonik-unlp/MOFSocialNet.jl"),
+        links: &[github("https://github.com/egonik-unlp/MOFSocialNet.jl")],
         layer: Layer::Works,
         question: Some(Question::FromPaper),
     },
@@ -574,7 +591,7 @@ pub const PROJECTS: &[Project] = &[
         tech: &["Julia", "Rust"],
         ticks: &[],
         tail: &["gases", "rust_MD", "fluid-dynamics-demo", "montecarlo_pi"],
-        link: None,
+        links: &[],
         layer: Layer::Works,
         question: None,
     },
@@ -587,7 +604,7 @@ pub const PROJECTS: &[Project] = &[
         tech: &["Julia"],
         ticks: &[Tick::Teaching],
         tail: &["catedra", "catedra2", "schaposnik"],
-        link: github("https://github.com/egonik-unlp/cinetica-Julia"),
+        links: &[github("https://github.com/egonik-unlp/cinetica-Julia")],
         layer: Layer::Works,
         question: None,
     },
@@ -617,7 +634,7 @@ pub const PROJECTS: &[Project] = &[
             "image_poster",
             "dashboard_ocr",
         ],
-        link: None,
+        links: &[],
         layer: Layer::Knows,
         question: Some(Question::Shelf),
     },
@@ -631,7 +648,7 @@ pub const PROJECTS: &[Project] = &[
         tech: &["Rust", "Qdrant", "OpenAI", "Ollama", "tokio"],
         ticks: &[],
         tail: &["rllm", "rllmz"],
-        link: github("https://github.com/egonik-unlp/lvv"),
+        links: &[github("https://github.com/egonik-unlp/lvv")],
         layer: Layer::Knows,
         question: Some(Question::Toolkit),
     },
@@ -652,7 +669,7 @@ pub const PROJECTS: &[Project] = &[
             "_eem_converter",
             "plotter_eem",
         ],
-        link: github("https://github.com/egonik-unlp/agilent_asp_parser"),
+        links: &[github("https://github.com/egonik-unlp/agilent_asp_parser")],
         layer: Layer::Knows,
         question: Some(Question::Instrument),
     },
@@ -667,7 +684,7 @@ pub const PROJECTS: &[Project] = &[
         tech: &["Rust", "tokio", "LangChain.js"],
         ticks: &[],
         tail: &["scrapping-conicet", "scrape_free_proxy", "dolar_historico"],
-        link: github("https://github.com/egonik-unlp/detect-open-realstate-apis"),
+        links: &[github("https://github.com/egonik-unlp/detect-open-realstate-apis")],
         layer: Layer::Knows,
         question: None,
     },
@@ -690,7 +707,7 @@ pub const PROJECTS: &[Project] = &[
             "go-albums",
             "google_fit",
         ],
-        link: None,
+        links: &[],
         layer: Layer::Knows,
         question: Some(Question::HearNext),
     },
@@ -713,7 +730,7 @@ pub const PROJECTS: &[Project] = &[
             "convert-ui",
             "spotify-to-youtube",
         ],
-        link: github("https://github.com/egonik-unlp/convert-invert"),
+        links: &[github("https://github.com/egonik-unlp/convert-invert")],
         layer: Layer::Runs,
         question: Some(Question::Collection),
     },
@@ -726,7 +743,7 @@ pub const PROJECTS: &[Project] = &[
         tech: &["Zig", "OAuth2", "ID3"],
         ticks: &[],
         tail: &[],
-        link: github("https://github.com/egonik-unlp/convert-songs"),
+        links: &[github("https://github.com/egonik-unlp/convert-songs")],
         layer: Layer::Runs,
         question: Some(Question::Collection),
     },
@@ -739,7 +756,7 @@ pub const PROJECTS: &[Project] = &[
         tech: &["Zig", "SQLite"],
         ticks: &[],
         tail: &[],
-        link: github("https://github.com/egonik-unlp/dump_ps"),
+        links: &[github("https://github.com/egonik-unlp/dump_ps")],
         layer: Layer::Runs,
         question: None,
     },
@@ -767,7 +784,7 @@ pub const PROJECTS: &[Project] = &[
             "envfiles",
             "import-lib",
         ],
-        link: github("https://github.com/egonik-unlp/toy-server"),
+        links: &[github("https://github.com/egonik-unlp/toy-server")],
         layer: Layer::Runs,
         question: None,
     },
@@ -848,10 +865,34 @@ mod tests {
             assert!(!p.name.es.is_empty(), "{} has no Spanish name", p.name.en);
             if p.ticks.iter().any(Tick::is_live) {
                 assert!(
-                    p.link.is_some(),
+                    !p.links.is_empty(),
                     "{} is marked live with no link",
                     p.name.en
                 );
+            }
+        }
+    }
+
+    /// A row offers a few ways in, not a link farm: three at most, each going
+    /// somewhere different, each labelled distinctly.
+    #[test]
+    fn links_stay_a_short_list() {
+        for p in PROJECTS {
+            assert!(
+                p.links.len() <= 3,
+                "{} has {} links — fold some into the tail",
+                p.name.en,
+                p.links.len()
+            );
+            for (i, l) in p.links.iter().enumerate() {
+                for other in &p.links[i + 1..] {
+                    assert_ne!(l.url, other.url, "{} repeats a url", p.name.en);
+                    assert_ne!(
+                        l.label.en, other.label.en,
+                        "{} has two links labelled \"{}\"",
+                        p.name.en, l.label.en
+                    );
+                }
             }
         }
     }
