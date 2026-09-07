@@ -1,0 +1,6 @@
+# https://egonik-unlp.github.io/robots.txt
+User-agent: *
+Disallow: /lensing-presentation/
+
+# Everything else is fair game.
+Allow: /
