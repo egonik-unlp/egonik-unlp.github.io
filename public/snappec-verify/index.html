@@ -1,0 +1,448 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Página sin enlazar: solo se llega con el link directo. Que no la indexe nadie. -->
+<meta name="robots" content="noindex, nofollow">
+<title>snappec-verify — descarga</title>
+<meta name="description" content="Binarios de snappec-verify para Linux y macOS.">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<style>
+@font-face { font-family: "Bricolage Grotesque"; src: url("/fonts/bricolage.woff2") format("woff2"); font-weight: 200 800; font-display: swap; }
+@font-face { font-family: "Hanken Grotesk"; src: url("/fonts/hanken.woff2") format("woff2"); font-weight: 300 800; font-display: swap; }
+@font-face { font-family: "Spline Sans Mono"; src: url("/fonts/spline-mono.woff2") format("woff2"); font-weight: 300 700; font-display: swap; }
+
+/* Los mismos tokens que style/main.scss. */
+:root {
+    --paper: oklch(0.965 0.018 92);
+    --paper-deep: oklch(0.925 0.026 88);
+    --ink: oklch(0.185 0.028 260);
+    --ink-soft: oklch(0.43 0.025 258);
+    --line: oklch(0.77 0.03 88);
+    --signal: oklch(0.69 0.18 47);
+    --signal-dark: oklch(0.49 0.16 40);
+    --blue: oklch(0.46 0.17 258);
+    --field: oklch(0.155 0.035 257);
+    --field-soft: oklch(0.225 0.044 257);
+    --on-field: oklch(0.96 0.015 90);
+    --on-field-soft: oklch(0.72 0.03 248);
+    --field-line: oklch(1 0 0 / 0.14);
+    --display: "Bricolage Grotesque", "Hanken Grotesk", sans-serif;
+    --body: "Hanken Grotesk", system-ui, sans-serif;
+    --mono: "Spline Sans Mono", ui-monospace, monospace;
+    --maxw: 1040px;
+    --gutter: clamp(1rem, 4vw, 3.75rem);
+    --ease: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+    margin: 0;
+    color: var(--ink);
+    background: var(--paper);
+    font: 400 clamp(1rem, .96rem + .18vw, 1.075rem)/1.58 var(--body);
+    -webkit-font-smoothing: antialiased;
+}
+h1, h2, h3 { margin: 0; font-family: var(--display); line-height: .98; letter-spacing: -.035em; text-wrap: balance; }
+p { margin: 0; }
+a { color: inherit; }
+code, pre, .mono { font-family: var(--mono); }
+:focus-visible { outline: 2px solid var(--signal); outline-offset: 3px; }
+.container { width: min(100%, var(--maxw)); margin-inline: auto; padding-inline: var(--gutter); }
+.visually-hidden { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+
+/* Cabecera oscura: el "field" del sitio. */
+.hero { color: var(--on-field); background: var(--field); border-bottom: 2px solid var(--signal); }
+.topbar { display: flex; justify-content: space-between; gap: 1rem; padding-block: 1.25rem; border-bottom: 1px solid var(--field-line); font: 500 .74rem var(--mono); letter-spacing: .04em; text-transform: uppercase; }
+.topbar .mark { color: var(--signal); font-weight: 700; }
+.topbar .muted { color: var(--on-field-soft); }
+.hero-body { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr); gap: clamp(2rem, 6vw, 5rem); padding-block: clamp(3rem, 8vw, 6rem); align-items: end; }
+.kicker { display: block; margin-bottom: 1.1rem; color: var(--signal); font: 600 .68rem var(--mono); letter-spacing: .12em; text-transform: uppercase; }
+.hero h1 { font-size: clamp(2.6rem, 1.6rem + 4.6vw, 5rem); font-weight: 680; overflow-wrap: anywhere; }
+.hero .lede { margin-top: 1.4rem; max-width: 46ch; color: var(--on-field-soft); font-size: clamp(1.05rem, .98rem + .3vw, 1.22rem); }
+.hero .lede em { color: var(--on-field); font-style: normal; }
+
+.panel { border-top: 2px solid var(--signal); border-bottom: 1px solid var(--field-line); padding-block: 1.1rem 1.4rem; }
+.status { display: flex; gap: .6rem; align-items: center; color: var(--on-field-soft); font: .72rem var(--mono); }
+.status .dot { flex: none; width: .5rem; height: .5rem; border-radius: 50%; background: var(--signal); box-shadow: 0 0 0 .25rem color-mix(in oklch, var(--signal) 20%, transparent); }
+.status[data-state="pending"] .dot { background: var(--on-field-soft); box-shadow: none; }
+.panel dl { margin: 1.25rem 0; }
+.panel dl div { display: grid; grid-template-columns: 5.5rem 1fr; gap: .75rem; padding-block: .6rem; border-top: 1px solid var(--field-line); }
+.panel dt { color: var(--on-field-soft); font: .68rem var(--mono); text-transform: uppercase; letter-spacing: .06em; padding-top: .1rem; }
+.panel dd { margin: 0; font: .8rem/1.45 var(--mono); overflow-wrap: anywhere; }
+
+.btn { display: inline-flex; gap: .8rem; align-items: center; padding: .85rem 1.15rem; border: 1px solid var(--field-line); color: inherit; background: none; font: 500 .78rem var(--mono); text-decoration: none; cursor: pointer; transition: transform .2s var(--ease), background .2s var(--ease), border-color .2s var(--ease); }
+.btn:hover { transform: translateY(-2px); border-color: var(--signal); }
+.btn-primary { color: var(--field); background: var(--signal); border-color: var(--signal); }
+.btn-primary:hover { background: var(--on-field); }
+.btn[aria-disabled="true"] { opacity: .45; pointer-events: none; }
+.btn .arrow { transition: transform .2s var(--ease); }
+.btn:hover .arrow { transform: translateY(2px); }
+.panel .hint { margin-top: .9rem; color: var(--on-field-soft); font: .7rem/1.5 var(--mono); }
+
+/* Secciones claras. */
+.section { padding-block: clamp(3.5rem, 8vw, 6rem); border-bottom: 1px solid var(--line); }
+.section-surface { background: var(--paper-deep); }
+.section-head { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: clamp(1.5rem, 6vw, 6rem); align-items: end; margin-bottom: clamp(2rem, 5vw, 3.5rem); }
+.section-title { font-size: clamp(2rem, 1.5rem + 2.4vw, 3.6rem); font-weight: 620; }
+.section-title::before { display: block; margin-bottom: 1rem; color: var(--signal-dark); font: 600 .68rem var(--mono); letter-spacing: .12em; content: attr(data-index) " /"; }
+.section-title .lit { color: var(--blue); font-style: italic; font-weight: 480; }
+.section-lede { max-width: 52ch; color: var(--ink-soft); }
+
+/* Tabla de binarios. */
+.table-wrap { overflow-x: auto; border-top: 1px solid var(--ink); }
+table { width: 100%; border-collapse: collapse; font: .8rem/1.4 var(--mono); }
+th { padding: .7rem .75rem .7rem 0; color: var(--ink-soft); font-size: .66rem; font-weight: 600; letter-spacing: .1em; text-align: left; text-transform: uppercase; border-bottom: 1px solid var(--line); }
+td { padding: .85rem .75rem .85rem 0; border-bottom: 1px solid var(--line); vertical-align: top; }
+tr[data-match="true"] td:first-child { box-shadow: inset 3px 0 0 var(--signal); padding-left: .75rem; }
+td a { color: var(--signal-dark); font-weight: 600; text-underline-offset: .2em; overflow-wrap: anywhere; }
+td .sum { display: inline-block; max-width: 18ch; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; vertical-align: bottom; color: var(--ink-soft); }
+.copy { padding: .15rem .45rem; border: 1px solid var(--line); color: var(--ink-soft); background: none; font: .66rem var(--mono); cursor: pointer; }
+.copy:hover { border-color: var(--signal); color: var(--ink); }
+.empty { padding: 1.5rem 0; color: var(--ink-soft); font: .82rem/1.6 var(--mono); }
+
+/* Bloques de comandos. */
+.steps { display: grid; gap: 2.25rem; margin: 0; padding: 0; list-style: none; counter-reset: step; }
+.steps > li { display: grid; grid-template-columns: 3rem minmax(0, 1fr); gap: 1rem; counter-increment: step; }
+.steps > li::before { content: counter(step, decimal-leading-zero); color: var(--signal-dark); font: 600 .78rem var(--mono); padding-top: .2rem; }
+.steps h3 { font-size: 1.35rem; font-weight: 620; letter-spacing: -.02em; }
+.steps p { margin-top: .5rem; max-width: 62ch; color: var(--ink-soft); }
+.steps p code, .reqs code { color: var(--ink); font-size: .88em; }
+.cmd { position: relative; margin: .9rem 0 0; }
+.cmd pre { margin: 0; padding: 1rem 4.5rem 1rem 1.1rem; overflow-x: auto; color: var(--on-field); background: var(--field); font-size: .82rem; line-height: 1.6; border-left: 2px solid var(--signal); }
+.cmd pre .c { color: var(--on-field-soft); }
+.cmd .copy { position: absolute; top: .65rem; right: .65rem; color: var(--on-field-soft); border-color: var(--field-line); }
+.cmd .copy:hover { color: var(--on-field); border-color: var(--signal); }
+
+.reqs { display: grid; grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr)); gap: 0 2rem; margin: 0 0 2.75rem; padding: 0; list-style: none; }
+.reqs li { padding-block: .8rem; border-top: 1px solid var(--line); }
+.reqs b { display: block; color: var(--ink-soft); font: 600 .66rem var(--mono); letter-spacing: .1em; text-transform: uppercase; }
+
+/* Leyenda de prongs. */
+.legend { margin: 0; border-top: 1px solid var(--ink); }
+.legend div { display: grid; grid-template-columns: 4.5rem 11rem minmax(0, 1fr); gap: 1rem; padding-block: 1rem; border-bottom: 1px solid var(--line); }
+.legend dt { color: var(--signal-dark); font: 600 .8rem var(--mono); }
+.legend dt span { display: block; color: var(--ink); font: 620 1.05rem var(--display); letter-spacing: -.01em; margin-top: .15rem; }
+.legend dd { margin: 0; color: var(--ink-soft); }
+.legend dd.name { color: var(--ink); font-family: var(--display); font-weight: 620; font-size: 1.1rem; }
+
+.footer { padding-block: 2rem 2.5rem; color: var(--ink-soft); font: .7rem/1.6 var(--mono); }
+.footer .container { display: flex; flex-wrap: wrap; justify-content: space-between; gap: .5rem 2rem; }
+
+.toast { position: fixed; left: 50%; bottom: 1.25rem; transform: translate(-50%, 1rem); padding: .55rem .9rem; color: var(--field); background: var(--signal); font: 600 .72rem var(--mono); opacity: 0; pointer-events: none; transition: opacity .2s var(--ease), transform .2s var(--ease); }
+.toast.show { opacity: 1; transform: translate(-50%, 0); }
+
+@media (max-width: 760px) {
+    .hero-body, .section-head { grid-template-columns: minmax(0, 1fr); align-items: start; }
+    .steps > li { grid-template-columns: minmax(0, 1fr); gap: .4rem; }
+    .legend div { grid-template-columns: 3.5rem minmax(0, 1fr); }
+    .empty code { overflow-wrap: anywhere; }
+    .cmd pre { padding-right: 1.1rem; }
+    .cmd .copy { position: static; margin-top: .45rem; color: var(--ink-soft); border-color: var(--line); }
+    .legend dd:not(.name) { grid-column: 2; }
+    th.col-sum, td.col-sum { display: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { transition: none !important; }
+}
+</style>
+</head>
+<body>
+
+<header class="hero">
+    <div class="container topbar">
+        <span><span class="mark">EG/</span> herramientas</span>
+        <span class="muted">linux · macos</span>
+    </div>
+    <div class="container hero-body">
+        <div>
+            <span class="kicker">CLI · Go · binario estático</span>
+            <h1>snappec-verify</h1>
+            <p class="lede">Verifica que lo que una spec afirma se sostenga en el sistema real. Convierte la spec en un contrato ratificado de invariantes y corre cinco prongs que intentan romperlo. <em>Los agentes proponen, el código decide, las personas ratifican.</em></p>
+        </div>
+        <div class="panel" aria-labelledby="release-status">
+            <p class="status" id="release-status" data-state="pending"><span class="dot" aria-hidden="true"></span><span id="status-text">Binarios en preparación</span></p>
+            <dl>
+                <div><dt>Versión</dt><dd id="meta-version">—</dd></div>
+                <div><dt>Commit</dt><dd id="meta-commit">—</dd></div>
+                <div><dt>Fecha</dt><dd id="meta-date">—</dd></div>
+                <div><dt>Tu equipo</dt><dd id="meta-platform">—</dd></div>
+            </dl>
+            <a class="btn btn-primary" id="primary-download" href="#descargas" aria-disabled="true"><span id="primary-label">Descargar</span> <span class="arrow" aria-hidden="true">↓</span></a>
+            <p class="hint" id="primary-hint">Todavía no hay binarios publicados en esta página.</p>
+        </div>
+    </div>
+</header>
+
+<main>
+    <section class="section" id="instalar" aria-labelledby="instalar-title">
+        <div class="container">
+            <div class="section-head">
+                <h2 class="section-title" id="instalar-title" data-index="01">Instalar en <span class="lit">un comando</span></h2>
+                <p class="section-lede">El script detecta sistema y arquitectura, descarga el binario, verifica el checksum y lo deja en <code>~/.local/bin</code>. No necesita Go ni root.</p>
+            </div>
+            <ol class="steps">
+                <li>
+                    <div>
+                        <h3>Con el script</h3>
+                        <div class="cmd"><pre><code id="cmd-install">curl -fsSL https://egonik-unlp.github.io/snappec-verify/install.sh | sh</code></pre><button class="copy" type="button" data-copy="cmd-install">copiar</button></div>
+                        <p>Otro destino: <code>BINDIR=/usr/local/bin</code> antes de <code>sh</code>. Una versión puntual: <code>SNAPPEC_VERIFY_VERSION=&lt;versión&gt;</code>.</p>
+                    </div>
+                </li>
+                <li>
+                    <div>
+                        <h3>A mano</h3>
+                        <p>Bajá el <code>.tar.gz</code> de tu plataforma desde la tabla de abajo, descomprimilo y poné el binario en el <code>PATH</code>.</p>
+                        <div class="cmd"><pre><code id="cmd-manual">tar -xzf snappec-verify_*.tar.gz
+install -m 0755 snappec-verify ~/.local/bin/
+snappec-verify --version</code></pre><button class="copy" type="button" data-copy="cmd-manual">copiar</button></div>
+                        <p>En macOS, un archivo bajado con el navegador queda en cuarentena y Gatekeeper no lo deja correr. Se la quitás con:</p>
+                        <div class="cmd"><pre><code id="cmd-xattr">xattr -d com.apple.quarantine ~/.local/bin/snappec-verify</code></pre><button class="copy" type="button" data-copy="cmd-xattr">copiar</button></div>
+                    </div>
+                </li>
+            </ol>
+        </div>
+    </section>
+
+    <section class="section section-surface" id="descargas" aria-labelledby="descargas-title">
+        <div class="container">
+            <div class="section-head">
+                <h2 class="section-title" id="descargas-title" data-index="02">Binarios</h2>
+                <p class="section-lede">Compilados con <code>CGO_ENABLED=0</code>: no dependen de libc ni de nada instalado. El adapter de Ruby viaja adentro del binario.</p>
+            </div>
+            <div class="table-wrap">
+                <table>
+                    <caption class="visually-hidden">Binarios por sistema y arquitectura</caption>
+                    <thead><tr><th scope="col">Sistema</th><th scope="col">Arquitectura</th><th scope="col">Archivo</th><th scope="col">Tamaño</th><th scope="col" class="col-sum">SHA-256</th></tr></thead>
+                    <tbody id="assets"></tbody>
+                </table>
+            </div>
+            <p class="empty" id="assets-empty">Todavía no hay binarios publicados. Cuando estén, aparecen acá con su checksum.</p>
+            <p class="empty" id="assets-checksums" hidden>Checksums de todos los archivos: <a href="latest/checksums.txt">checksums.txt</a>. Para verificar a mano: <code>sha256sum -c checksums.txt --ignore-missing</code> (en macOS, <code>shasum -a 256 -c</code>).</p>
+        </div>
+    </section>
+
+    <section class="section" id="empezar" aria-labelledby="empezar-title">
+        <div class="container">
+            <div class="section-head">
+                <h2 class="section-title" id="empezar-title" data-index="03">Llevarlo a <span class="lit">un proyecto</span></h2>
+                <p class="section-lede">En un proyecto Rails dockerizado con snappec, el bootstrap son dos comandos. El código de la app no se toca: lo de verify vive en <code>verification/</code> y <code>.claude/</code>.</p>
+            </div>
+            <ul class="reqs">
+                <li><b>Docker</b>Docker con Compose v2</li>
+                <li><b>Proyecto</b>Rails dockerizado, MySQL o Postgres</li>
+                <li><b>Agentes</b>Claude Code con snappec instalado</li>
+            </ul>
+            <ol class="steps">
+                <li>
+                    <div>
+                        <h3>Instalar verify en el repo</h3>
+                        <div class="cmd"><pre><code id="cmd-init">cd &lt;tu-proyecto&gt;
+snappec-verify init --snappec</code></pre><button class="copy" type="button" data-copy="cmd-init">copiar</button></div>
+                        <p>Deja los comandos <code>/verify:*</code>, los agentes y el hook que mantiene a los agentes fuera del contrato, los runs, el baseline y el bank. Sin snappec, <code>snappec-verify init</code> instala el modo standalone.</p>
+                    </div>
+                </li>
+                <li>
+                    <div>
+                        <h3>Bootstrap desde Claude Code</h3>
+                        <div class="cmd"><pre><code id="cmd-bootstrap">/verify:bootstrap</code></pre><button class="copy" type="button" data-copy="cmd-bootstrap">copiar</button></div>
+                        <p>Detecta compose, motor de base, servicio de app y el resto del <code>stack.yaml</code>. Pregunta solo lo ambiguo, escribe el binding y corre la conformance del adapter dentro del compose.</p>
+                    </div>
+                </li>
+                <li>
+                    <div>
+                        <h3>Ver dónde estás</h3>
+                        <div class="cmd"><pre><code id="cmd-status">snappec-verify status</code></pre><button class="copy" type="button" data-copy="cmd-status">copiar</button></div>
+                        <p>Cada testing set es una máquina de estados: <code>status</code> dice qué paso sigue y qué falta para darlo.</p>
+                    </div>
+                </li>
+            </ol>
+        </div>
+    </section>
+
+    <section class="section section-surface" id="prongs" aria-labelledby="prongs-title">
+        <div class="container">
+            <div class="section-head">
+                <h2 class="section-title" id="prongs-title" data-index="04">Cinco formas de <span class="lit">romperlo</span></h2>
+                <p class="section-lede">Cada invariante del contrato se chequea con un oráculo CEL de decimales exactos. Los prongs generan los casos; el resultado queda en records encadenados por hash.</p>
+            </div>
+            <dl class="legend">
+                <div><dt>P1</dt><dd class="name">Property</dd><dd>Generadores con semilla y shrinking de secuencias de operaciones.</dd></div>
+                <div><dt>P2</dt><dd class="name">Bank</dd><dd>Edge cases que alguien ya encontró, re-ejecutados en cada corrida.</dd></div>
+                <div><dt>P3</dt><dd class="name">Estático</dd><dd>Analyzers sobre el código, calibrados por proyecto, que rutean candidatos a los otros prongs.</dd></div>
+                <div><dt>P4</dt><dd class="name">Sandbox</dd><dd>La app en un compose con la red cercada, sondas de autorización y diff de la base.</dd></div>
+                <div><dt>P5</dt><dd class="name">Volumen</dd><dd>Carga y concurrencia con un scheduler determinístico; cada interleaving se puede repetir.</dd></div>
+            </dl>
+        </div>
+    </section>
+</main>
+
+<footer class="footer">
+    <div class="container">
+        <span>snappec-verify · <span id="footer-version">sin versión publicada</span></span>
+        <span>Página sin enlazar: compartila con el link directo.</span>
+    </div>
+</footer>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script>
+(function () {
+    "use strict";
+
+    var LABELS = { linux: "Linux", darwin: "macOS", amd64: "x86-64", arm64: "ARM64" };
+    var $ = function (id) { return document.getElementById(id); };
+
+    function formatSize(bytes) {
+        if (typeof bytes !== "number") return "—";
+        return (bytes / 1048576).toFixed(1) + " MB";
+    }
+
+    function toast(text) {
+        var el = $("toast");
+        el.textContent = text;
+        el.classList.add("show");
+        clearTimeout(toast.timer);
+        toast.timer = setTimeout(function () { el.classList.remove("show"); }, 1600);
+    }
+
+    function copyText(text) {
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+            navigator.clipboard.writeText(text).then(
+                function () { toast("Copiado"); },
+                function () { toast("No se pudo copiar"); }
+            );
+        } else {
+            toast("No se pudo copiar");
+        }
+    }
+
+    document.addEventListener("click", function (event) {
+        var button = event.target.closest("[data-copy], [data-copy-text]");
+        if (!button) return;
+        var text = button.hasAttribute("data-copy-text")
+            ? button.getAttribute("data-copy-text")
+            : $(button.getAttribute("data-copy")).textContent;
+        copyText(text);
+    });
+
+    // Sistema y arquitectura de quien mira. La arquitectura solo es confiable en
+    // Chromium (userAgentData); un Mac con Apple silicon se reporta como Intel en el UA.
+    function detectPlatform() {
+        var ua = navigator.userAgent || "";
+        var platform = (navigator.userAgentData && navigator.userAgentData.platform) || navigator.platform || "";
+        var os = null;
+        if (/mac/i.test(platform) || /Macintosh/.test(ua)) os = "darwin";
+        else if (/linux/i.test(platform) || /Linux/.test(ua)) os = "linux";
+        if (/Android/.test(ua)) os = null;
+        var result = { os: os, arch: null };
+        if (os === "linux" && /aarch64|arm64/i.test(ua + platform)) result.arch = "arm64";
+        else if (os === "linux" && /x86_64|amd64/i.test(ua + platform)) result.arch = "amd64";
+        if (!navigator.userAgentData || !navigator.userAgentData.getHighEntropyValues) {
+            return Promise.resolve(result);
+        }
+        return navigator.userAgentData.getHighEntropyValues(["architecture", "bitness"]).then(function (v) {
+            if (v.architecture === "arm") result.arch = "arm64";
+            else if (v.architecture === "x86" && v.bitness === "64") result.arch = "amd64";
+            return result;
+        }, function () { return result; });
+    }
+
+    function render(manifest, platform) {
+        var status = $("release-status");
+        status.setAttribute("data-state", "ready");
+        $("status-text").textContent = "Publicado · " + manifest.assets.length + " binarios";
+        $("meta-version").textContent = manifest.version;
+        $("meta-commit").textContent = manifest.commit || "—";
+        $("meta-date").textContent = manifest.date || "—";
+        $("footer-version").textContent = manifest.version;
+
+        var tbody = $("assets");
+        tbody.textContent = "";
+        manifest.assets.forEach(function (asset) {
+            var tr = document.createElement("tr");
+            var matches = platform.os === asset.os && (platform.arch === null || platform.arch === asset.arch);
+            tr.setAttribute("data-match", matches ? "true" : "false");
+
+            var cells = [LABELS[asset.os] || asset.os, LABELS[asset.arch] || asset.arch];
+            cells.forEach(function (text) {
+                var td = document.createElement("td");
+                td.textContent = text;
+                tr.appendChild(td);
+            });
+
+            var tdFile = document.createElement("td");
+            var link = document.createElement("a");
+            link.href = "latest/" + asset.file;
+            link.textContent = asset.file;
+            link.setAttribute("download", "");
+            tdFile.appendChild(link);
+            tr.appendChild(tdFile);
+
+            var tdSize = document.createElement("td");
+            tdSize.textContent = formatSize(asset.size);
+            tr.appendChild(tdSize);
+
+            var tdSum = document.createElement("td");
+            tdSum.className = "col-sum";
+            var sum = document.createElement("span");
+            sum.className = "sum";
+            sum.title = asset.sha256;
+            sum.textContent = asset.sha256;
+            var copy = document.createElement("button");
+            copy.type = "button";
+            copy.className = "copy";
+            copy.textContent = "copiar";
+            copy.setAttribute("data-copy-text", asset.sha256);
+            copy.setAttribute("aria-label", "Copiar SHA-256 de " + asset.file);
+            tdSum.appendChild(sum);
+            tdSum.appendChild(document.createTextNode(" "));
+            tdSum.appendChild(copy);
+            tr.appendChild(tdSum);
+
+            tbody.appendChild(tr);
+        });
+        $("assets-empty").hidden = true;
+        $("assets-checksums").hidden = false;
+
+        var exact = manifest.assets.filter(function (a) {
+            return a.os === platform.os && a.arch === platform.arch;
+        })[0];
+        var primary = $("primary-download");
+        if (exact) {
+            primary.href = "latest/" + exact.file;
+            primary.setAttribute("download", "");
+            primary.removeAttribute("aria-disabled");
+            $("primary-label").textContent = "Descargar para " + LABELS[exact.os] + " " + LABELS[exact.arch];
+            $("primary-hint").textContent = exact.file + " · " + formatSize(exact.size);
+        } else {
+            primary.href = "#descargas";
+            primary.removeAttribute("aria-disabled");
+            $("primary-label").textContent = "Elegir binario";
+            $("primary-hint").textContent = platform.os
+                ? "No pudimos detectar la arquitectura: elegí la tuya en la tabla."
+                : "No hay binario para este sistema: hay para Linux y macOS.";
+        }
+    }
+
+    detectPlatform().then(function (platform) {
+        var label = platform.os ? LABELS[platform.os] + (platform.arch ? " · " + LABELS[platform.arch] : " · arquitectura sin detectar") : "sin binario para este sistema";
+        $("meta-platform").textContent = label;
+
+        fetch("latest/manifest.json", { cache: "no-cache" })
+            .then(function (response) {
+                if (!response.ok) throw new Error(response.status);
+                return response.json();
+            })
+            .then(function (manifest) {
+                if (!manifest || !manifest.assets || !manifest.assets.length) return;
+                render(manifest, platform);
+            })
+            .catch(function () { /* Sin manifest todavía: queda el estado "en preparación". */ });
+    });
+})();
+</script>
+</body>
+</html>
