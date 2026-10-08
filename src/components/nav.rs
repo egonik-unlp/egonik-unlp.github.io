@@ -24,8 +24,8 @@ pub fn Nav(spanish: bool) -> impl IntoView {
                     <span class="brand-name">"field notes"</span>
                 </a>
                 <nav class="nav-links" aria-label="Primary">
-                    <a href="#work"><span>"01"</span> {work}</a>
                     <a href="#skills"><span>"02"</span> {stack}</a>
+                    <a href="#work"><span>"01"</span> {work}</a>
                     <a href="#research"><span>"03"</span> {research}</a>
                     <a href="#contact"><span>"04"</span> {contact}</a>
                     <a class="language-switch" href=switch_href lang=switch_lang>{switch_label}</a>
