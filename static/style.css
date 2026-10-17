@@ -143,39 +143,42 @@ main { display: flex; flex-direction: column; gap: 72px; padding-top: 48px; padd
 .more { margin-top: 14px; font-size: 15px; }
 
 /* Stack */
+#stack details {
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
 #stack summary {
   display: flex;
+  justify-content: space-between;
   align-items: baseline;
-  gap: 10px;
+  gap: 16px;
+  padding: 16px 0;
   cursor: pointer;
   list-style: none;
 }
 #stack summary::-webkit-details-marker { display: none; }
-#stack summary::before {
-  content: "+";
-  width: 1ch;
-  font-size: 24px;
-  color: var(--accent);
-}
-#stack details[open] summary::before { content: "−"; }
 #stack summary h2 { margin-bottom: 0; }
 #stack summary:focus-visible {
   outline: 2px solid var(--accent);
   outline-offset: 4px;
   border-radius: 2px;
 }
-.stack-groups { margin: 16px 0 0; }
-.stack-group {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 4px 32px;
-  padding: 14px 0;
-  border-top: 1px solid var(--line);
-}
-.stack-group:last-child { border-bottom: 1px solid var(--line); }
-.stack-group dt { flex: 1 1 200px; font-weight: 600; }
-.stack-group dd { flex: 999 1 480px; min-width: 0; margin: 0; display: flex; flex-direction: column; gap: 4px; }
-.also { font-size: 15px; color: var(--ink-soft); }
+.toggle { font-size: 15px; color: var(--accent); }
+.when-open { display: none; }
+#stack details[open] .when-open { display: inline; }
+#stack details[open] .when-closed { display: none; }
+.stack-groups { display: flex; flex-direction: column; gap: 14px; padding: 4px 0 22px; }
+.stack-group { display: flex; flex-wrap: wrap; gap: 6px 24px; }
+.stack-group h3 { flex: 0 0 160px; font-size: 15px; font-weight: 600; padding-top: 3px; }
+.chips { flex: 1 1 420px; min-width: 0; display: flex; flex-wrap: wrap; gap: 6px; }
+.chips ul { display: flex; flex-wrap: wrap; gap: 6px; margin: 0; padding: 0; list-style: none; font-size: 14px; }
+.chips li { border-radius: 4px; }
+.regular li { background: #e6efea; color: var(--accent-dark); padding: 2px 10px; }
+.also li { border: 1px solid #c9cec9; color: var(--ink-soft); padding: 1px 9px; }
+.legend { margin-top: 4px; font-size: 13px; color: var(--ink-soft); display: flex; flex-wrap: wrap; align-items: center; gap: 6px; }
+.key { display: inline-block; width: 12px; height: 12px; border-radius: 2px; }
+.key-regular { background: #e6efea; }
+.key-also { border: 1px solid #c9cec9; margin-left: 10px; }
 
 /* Research */
 .research-cols {
