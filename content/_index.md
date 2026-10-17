@@ -61,7 +61,7 @@ links = [
 name = "lvv"
 description = "A library for converting arbitrary structured data into vector embeddings. It supports configurable transformations, including LLM-assisted preprocessing, before the data enters an embedding or retrieval pipeline."
 image = "img/lvv.png"
-image_alt = "lvv configuration and output"
+image_alt = "The lvv logotype: the letters l, v, v in memory cells, with vector arrows over the v's"
 links = [
   { label = "repo", url = "https://github.com/egonik-unlp/lvv" },
 ]
