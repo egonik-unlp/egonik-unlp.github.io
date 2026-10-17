@@ -54,6 +54,23 @@
     <p class="more"><a href="{{ extra.github | safe }}">{{ trans(key="more_on_github", lang=lang) }}</a></p>
   </section>
 
+  <section id="stack" aria-labelledby="stack-title">
+    <details>
+      <summary><h2 id="stack-title">{{ trans(key="stack", lang=lang) }}</h2></summary>
+      <dl class="stack-groups">
+        {%- for group in extra.stack %}
+        <div class="stack-group">
+          <dt>{{ group.group }}</dt>
+          <dd>
+            <p>{{ group.regular | join(sep=", ") }}</p>
+            <p class="also">{{ trans(key="also_used", lang=lang) }}: {{ group.also | join(sep=", ") }}</p>
+          </dd>
+        </div>
+        {%- endfor %}
+      </dl>
+    </details>
+  </section>
+
   <section id="research" aria-labelledby="research-title">
     <h2 id="research-title">{{ trans(key="research", lang=lang) }}</h2>
     {%- for paragraph in extra.research.paragraphs %}

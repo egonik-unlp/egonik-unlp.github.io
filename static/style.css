@@ -142,6 +142,41 @@ main { display: flex; flex-direction: column; gap: 72px; padding-top: 48px; padd
 .aside { font-weight: 400; color: var(--ink-soft); }
 .more { margin-top: 14px; font-size: 15px; }
 
+/* Stack */
+#stack summary {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  cursor: pointer;
+  list-style: none;
+}
+#stack summary::-webkit-details-marker { display: none; }
+#stack summary::before {
+  content: "+";
+  width: 1ch;
+  font-size: 24px;
+  color: var(--accent);
+}
+#stack details[open] summary::before { content: "−"; }
+#stack summary h2 { margin-bottom: 0; }
+#stack summary:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 4px;
+  border-radius: 2px;
+}
+.stack-groups { margin: 16px 0 0; }
+.stack-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 32px;
+  padding: 14px 0;
+  border-top: 1px solid var(--line);
+}
+.stack-group:last-child { border-bottom: 1px solid var(--line); }
+.stack-group dt { flex: 1 1 200px; font-weight: 600; }
+.stack-group dd { flex: 999 1 480px; min-width: 0; margin: 0; display: flex; flex-direction: column; gap: 4px; }
+.also { font-size: 15px; color: var(--ink-soft); }
+
 /* Research */
 .research-cols {
   display: flex;

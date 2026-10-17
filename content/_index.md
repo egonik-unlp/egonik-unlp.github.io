@@ -107,6 +107,31 @@ url = "https://github.com/egonik-unlp/xrd_match"
 name = "MOFSocialNet.jl"
 description = "a Julia reproduction of the MOFSocialNet method (Jalali et al.) for graph-based analysis of metal-organic frameworks."
 url = "https://github.com/egonik-unlp/MOFSocialNet.jl"
+
+[[extra.stack]]
+group = "Languages"
+regular = ["Rust", "JavaScript / TypeScript", "Python", "Julia"]
+also = ["Zig", "Go", "OCaml"]
+
+[[extra.stack]]
+group = "ML & AI"
+regular = ["LangChain", "LangGraph", "Embeddings", "RAG", "PyTorch", "Deep learning"]
+also = ["Keras", "burn", "Qdrant", "Chroma", "LlamaIndex", "Flux.jl", "scikit-learn / XGBoost", "ONNX", "Langfuse"]
+
+[[extra.stack]]
+group = "Data"
+regular = ["PostgreSQL", "Mathematical modelling"]
+also = ["Redis", "Julia data ecosystem", "ETL pipelines", "pandas / polars", "Job queues", "Web scraping"]
+
+[[extra.stack]]
+group = "Systems & Web"
+regular = ["Axum", "Express", "tokio", "Diesel"]
+also = ["Actix Web", "Leptos", "Flask", "OpenTelemetry / Jaeger", "Multi-worker systems"]
+
+[[extra.stack]]
+group = "Infra & Platforms"
+regular = ["Linux", "Docker & Compose"]
+also = ["Windows", "macOS", "Cloudflare Workers", "Portainer", "AWS & GCP"]
 +++
 
 I'm a data engineer. Most of my work is development around data (analytics, mathematical modelling and testing), and a good part of it is building tools to probe and profile systems and the data they handle. When I verify a system, I start from the logic of what has to hold and build upward, from the API to the interface. My background is in scientific research, and I still work that way: I propose a model, test it, find where it falls short, and use that for the next iteration. I also teach two general chemistry courses at UNLP, and knowing the subject in more depth, at a lower level of abstraction than the course, helps me explain it.
