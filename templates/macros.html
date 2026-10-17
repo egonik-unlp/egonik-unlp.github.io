@@ -1,0 +1,79 @@
+{# Renders an image only when its file exists; a missing image renders nothing. #}
+{% macro image(path, alt, width, class) %}
+{%- set meta = get_image_metadata(path=path, allow_missing=true) -%}
+{%- if meta -%}
+{%- set img = resize_image(path=path, width=width * 2, op="fit_width", format="webp") -%}
+<img class="{{ class }}" src="{{ img.url | safe }}" width="{{ width }}" height="{{ img.height / 2 | round }}" alt="{{ alt }}" loading="lazy">
+{%- endif -%}
+{% endmacro image %}
+
+{% macro photo(path, alt, size) %}
+{%- set meta = get_image_metadata(path=path, allow_missing=true) -%}
+{%- if meta -%}
+{%- set img = resize_image(path=path, width=size * 2, height=size * 2, op="fill", format="webp") -%}
+<img class="photo" src="{{ img.url | safe }}" width="{{ size }}" height="{{ size }}" alt="{{ alt }}">
+{%- endif -%}
+{% endmacro photo %}
+
+{% macro links(items, name) %}
+<p class="links">
+{%- for link in items %}
+{%- if not loop.first %} · {% endif -%}
+<a href="{{ link.url | safe }}" aria-label="{{ link.label }}, {{ name }}">{{ link.label }}</a>
+{%- endfor -%}
+</p>
+{% endmacro links %}
+
+{% macro work(entry) %}
+<article class="entry">
+  <div class="entry-meta">
+    <h3>{{ entry.org }}</h3>
+    <p>{{ entry.role }} · {{ entry.period }}</p>
+  </div>
+  <div class="entry-body">
+    {%- for paragraph in entry.paragraphs %}
+    <p>{{ paragraph }}</p>
+    {%- endfor %}
+    {%- if entry.tech %}
+    <p class="tech">{{ entry.tech | join(sep=" · ") }}</p>
+    {%- endif %}
+  </div>
+</article>
+{% endmacro work %}
+
+{% macro project(item, lang) %}
+<article class="project">
+  {{ self::image(path=item.image, alt=item.image_alt, width=168, class="thumb") }}
+  <div class="project-body">
+    <h3>{{ item.name }}</h3>
+    <p>{{ item.description }}</p>
+    {{ self::links(items=item.links, name=item.name) }}
+    {%- if item.children %}
+    {%- for child in item.children %}
+    <div class="child">
+      {{ self::image(path=child.image, alt=child.image_alt, width=120, class="thumb thumb-small") }}
+      <div class="project-body">
+        <h4>{{ child.name }} <span class="aside">· {{ trans(key="built_with", lang=lang) }} {{ item.name }}</span></h4>
+        <p>{{ child.description }}</p>
+        {{ self::links(items=child.links, name=child.name) }}
+      </div>
+    </div>
+    {%- endfor %}
+    {%- endif %}
+  </div>
+</article>
+{% endmacro project %}
+
+{% macro publication(item, lang) %}
+<li>
+  <span class="year">{{ item.year }}</span>
+  <span><cite lang="en">{{ item.title }}</cite> <span class="venue">· {{ item.venue }}
+  {%- if item.kind == "chapter" %} ({{ trans(key="book_chapter", lang=lang) }})
+  {%- elif item.kind == "review" %} ({{ trans(key="review", lang=lang) }})
+  {%- endif %}
+  {%- if item.first_author and item.status == "submitted" %} · {{ trans(key="first_author", lang=lang) }}, {{ trans(key="submitted", lang=lang) }}
+  {%- elif item.first_author %} · {{ trans(key="first_author", lang=lang) }}
+  {%- elif item.status == "submitted" %} · {{ trans(key="submitted", lang=lang) }}
+  {%- endif %}</span></span>
+</li>
+{% endmacro publication %}

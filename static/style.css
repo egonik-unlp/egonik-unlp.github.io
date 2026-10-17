@@ -1,0 +1,187 @@
+:root {
+  --ink: #1b1d1c;
+  --ink-soft: #5d635f;
+  --line: #e3e5e3;
+  --accent: #1f5f4a;
+  --accent-dark: #123d2f;
+  --bg: #ffffff;
+  --font: system-ui, -apple-system, "Segoe UI", "Helvetica Neue", sans-serif;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font: 16px/1.6 var(--font);
+  overflow-wrap: break-word;
+}
+
+body > header, main, body > footer {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+h1, h2, h3, h4 { margin: 0; line-height: 1.2; }
+h2 { font-size: 28px; font-weight: 600; margin-bottom: 12px; }
+h3 { font-size: 18px; font-weight: 650; }
+h4 { font-size: 16px; font-weight: 650; }
+p { margin: 0; }
+ul { margin: 0; }
+
+a { color: var(--accent); text-underline-offset: 2px; }
+a:hover { color: var(--accent-dark); }
+a:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+cite { font-style: normal; }
+
+/* Header */
+.masthead {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 24px 36px;
+  padding-top: 64px;
+}
+.photo {
+  flex: 0 0 132px;
+  width: 132px;
+  height: 132px;
+  border-radius: 10px;
+  object-fit: cover;
+}
+.who {
+  flex: 1 1 420px;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.who h1 { font-size: 40px; font-weight: 600; }
+.headline { font-size: 18px; color: #3c413e; }
+.contact {
+  list-style: none;
+  padding: 0;
+  margin-top: 4px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 18px;
+  font-size: 15px;
+}
+.contact .cv {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  padding: 0 16px;
+  border-radius: 6px;
+  background: var(--accent);
+  color: #ffffff;
+  font-weight: 600;
+  text-decoration: none;
+}
+.contact .cv:hover { background: var(--accent-dark); color: #ffffff; }
+.contact .lang { color: var(--ink-soft); }
+
+/* Sections */
+main { display: flex; flex-direction: column; gap: 72px; padding-top: 48px; padding-bottom: 72px; }
+.profile { max-width: 760px; font-size: 18px; color: #2c302e; }
+.measure { max-width: 780px; }
+#research { display: flex; flex-direction: column; gap: 16px; }
+#research h2 { margin-bottom: 0; }
+
+/* Work */
+.entry {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 32px;
+  padding: 22px 0;
+  border-top: 1px solid var(--line);
+}
+.entry:last-of-type { border-bottom: 1px solid var(--line); }
+.entry-meta { flex: 1 1 200px; display: flex; flex-direction: column; gap: 2px; }
+.entry-meta p { font-size: 14px; color: var(--ink-soft); }
+.entry-body { flex: 999 1 480px; min-width: 0; display: flex; flex-direction: column; gap: 8px; }
+.tech { font-size: 14px; color: var(--ink-soft); }
+
+/* Projects */
+.project {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px 28px;
+  padding: 22px 0;
+  border-top: 1px solid var(--line);
+}
+.project:last-of-type { border-bottom: 1px solid var(--line); }
+.thumb {
+  flex: 0 0 168px;
+  width: 168px;
+  height: auto;
+  align-self: flex-start;
+  border-radius: 6px;
+  border: 1px solid var(--line);
+}
+.thumb-small { flex-basis: 120px; width: 120px; }
+.project-body { flex: 999 1 420px; min-width: 0; display: flex; flex-direction: column; gap: 6px; }
+.child {
+  margin-top: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 20px;
+}
+.child .project-body { flex-basis: 260px; font-size: 15px; }
+.links { font-size: 15px; }
+.aside { font-weight: 400; color: var(--ink-soft); }
+.more { margin-top: 14px; font-size: 15px; }
+
+/* Research */
+.research-cols {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 32px 48px;
+  margin-top: 8px;
+}
+.publications { flex: 3 1 460px; min-width: 0; display: flex; flex-direction: column; gap: 10px; }
+.lab { flex: 2 1 300px; min-width: 0; display: flex; flex-direction: column; gap: 10px; }
+.research-cols h3 { font-size: 17px; }
+.research-cols ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  font-size: 14px;
+}
+.publications li { display: flex; gap: 14px; }
+.year { flex: 0 0 38px; color: var(--ink-soft); }
+.venue { color: var(--ink-soft); }
+.lab a { font-weight: 600; }
+
+/* Footer */
+body > footer {
+  padding-top: 14px;
+  padding-bottom: 32px;
+  font-size: 13px;
+  color: var(--ink-soft);
+}
+body > footer::before {
+  content: "";
+  display: block;
+  border-top: 1px solid var(--line);
+  margin-bottom: 14px;
+}
+
+@media (max-width: 480px) {
+  .masthead { padding-top: 40px; }
+  .who h1 { font-size: 32px; }
+  h2 { font-size: 24px; }
+  main { gap: 56px; }
+}

@@ -1,0 +1,68 @@
+# Selected publications. Google Scholar is the source of truth:
+# https://scholar.google.com/citations?hl=en&user=0CAay5kAAAAJ
+# Titles stay in their original language on both pages.
+# kind: "article" | "chapter" | "review"; status: "published" | "submitted"
+
+[[publications]]
+year = 2026
+title = "Development of Metal-Organic Nanoparticles Based on Zr₆(μ₃-O)₄(μ₃-OH)₄ Clusters linked by Perylene-3,4,9,10-Tetracarboxylic Acid"
+venue = "ACS Catalysis"
+kind = "article"
+status = "published"
+first_author = false
+
+[[publications]]
+year = 2026
+title = "Excited-State Dynamics and Enhanced Singlet Oxygen Photosensitization in a Hf–TCPP Hybrid Material with Nanometer-Scale Structural Features"
+venue = "ACS Applied Nano Materials"
+kind = "article"
+status = "submitted"
+first_author = true
+
+[[publications]]
+year = 2022
+title = "Impact of protein conformational diversity on AlphaFold predictions"
+venue = "Bioinformatics"
+kind = "article"
+status = "published"
+first_author = false
+
+[[publications]]
+year = 2022
+title = "Incorporation of N and O into the Shell of Silicon Nanoparticles Offers Tunable Photoluminescence for Imaging Uses"
+venue = "ACS Applied Nano Materials"
+kind = "article"
+status = "published"
+first_author = false
+
+[[publications]]
+year = 2021
+title = "Environmentally Induced Changes of Commercial Carbon Nanotubes in Aqueous Suspensions"
+venue = "ACS Omega"
+kind = "article"
+status = "published"
+first_author = false
+
+[[publications]]
+year = 2021
+title = "Optimal Silicon-based nanomaterials for biological applications"
+venue = "Concepts and Design of Materials Nanoarchitectonics"
+kind = "chapter"
+status = "published"
+first_author = false
+
+[[publications]]
+year = 2020
+title = "Staphylococcus aureus biofilm eradication by the synergistic effect exerted by PEG-coated silicon dots immobilized in silica films and light irradiation"
+venue = "Nanotechnology"
+kind = "article"
+status = "published"
+first_author = true
+
+[[publications]]
+year = 2020
+title = "Current landscape of the spectroscopic and photochemical properties of β-carboline alkaloids in aqueous media"
+venue = "Journal of the Argentine Chemical Society"
+kind = "review"
+status = "published"
+first_author = false

@@ -1,5 +1,5 @@
 #!/bin/sh
-# Compila snappec-verify y lo deja en public/snappec-verify/ para que el workflow de Pages lo publique.
+# Compila snappec-verify y lo deja en static/snappec-verify/ para que el workflow de Pages lo publique.
 #
 #   scripts/publish-snappec-verify.sh <checkout de snappec-testing-harness> [directorio de salida]
 #
@@ -17,7 +17,7 @@ fail() { echo "publish: $*" >&2; exit 1; }
 [ $# -ge 1 ] || usage
 src="$(cd "$1" && pwd)"
 site="$(cd "$(dirname "$0")/.." && pwd)"
-out="${2:-$site/public/snappec-verify}"
+out="${2:-$site/static/snappec-verify}"
 module="gitlab.snappler.com/ai-lab/ai-kit/snappec-verify"
 
 [ -f "$src/cmd/snappec-verify/main.go" ] || fail "$src no parece un checkout de snappec-verify"

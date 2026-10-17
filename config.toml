@@ -1,0 +1,55 @@
+base_url = "https://egonik-unlp.github.io"
+title = "Eduardo Gonik"
+default_language = "en"
+
+compile_sass = false
+build_search_index = false
+generate_feeds = false
+
+[markdown]
+smart_punctuation = false
+
+[translations]
+data_engineer = "Data engineer · La Plata, Argentina"
+email = "Email"
+cv = "CV (PDF)"
+other_language = "Español"
+other_language_code = "es"
+profile = "Profile"
+work = "Work"
+projects = "Projects"
+research = "Research"
+publications = "Publications"
+scholar = "Google Scholar"
+lab_software = "Software from the lab"
+more_on_github = "More on GitHub"
+built_with = "built with"
+first_author = "first author"
+submitted = "submitted"
+book_chapter = "book chapter"
+review = "review"
+repository = "repository"
+
+[languages.es]
+title = "Eduardo Gonik"
+
+[languages.es.translations]
+data_engineer = "Ingeniero de datos · La Plata, Argentina"
+email = "Correo"
+cv = "CV (PDF)"
+other_language = "English"
+other_language_code = "en"
+profile = "Perfil"
+work = "Trabajo"
+projects = "Proyectos"
+research = "Investigación"
+publications = "Publicaciones"
+scholar = "Google Scholar"
+lab_software = "Software del laboratorio"
+more_on_github = "Más en GitHub"
+built_with = "hecho con"
+first_author = "primer autor"
+submitted = "enviado"
+book_chapter = "capítulo de libro"
+review = "revisión"
+repository = "repositorio"

@@ -1,72 +1,47 @@
-# Personal site — Eduardo Gonik
+# egonik-unlp.github.io
 
-A personal portfolio built as a full-stack **Rust** app: [Leptos](https://leptos.dev)
-(SSR + hydration) on an [Axum](https://github.com/tokio-rs/axum) server, built with
-[`cargo-leptos`](https://github.com/leptos-rs/cargo-leptos).
+Personal profile page of Eduardo Gonik, in English (`/`) and Spanish (`/es/`). It is a static site
+built with [Zola](https://www.getzola.org/) 0.22.1 and deployed to GitHub Pages by
+`.github/workflows/gh-pages-deploy.yml` on every push to `main`.
 
-## Requirements
+## Editing the content
 
-- Rust (stable) with the `wasm32-unknown-unknown` target
-- `cargo-leptos` (`cargo install cargo-leptos --locked`)
+| What | Where |
+|---|---|
+| Profile paragraph | body of `content/_index.md` (English) and `content/_index.es.md` (Spanish) |
+| Work, projects, research, lab software, links | `[extra]` front matter of the same two files |
+| Publications (shared by both languages) | `data/publications.toml` — Google Scholar is the source of truth |
+| Fixed labels ("Work", "CV (PDF)", …) | `[translations]` and `[languages.es.translations]` in `config.toml` |
+| Layout | `templates/index.html`, `templates/macros.html` |
+| Styles | `static/style.css` |
+| CV | `static/cv.pdf`, served at `/cv.pdf` |
 
-Both are already present on the dev machine.
+Both language files have the same structure; change them together.
 
-## Develop
+### Images
+
+Images live in `static/img/` and are referenced from the front matter (`photo`, `image`,
+`image_alt`). Zola resizes them at build time. A referenced image that does not exist is simply not
+shown, so an entry can declare its image before the file is added. Currently missing:
+`img/photo.jpg`, `img/lvv.png`, `img/convert-invert.png`.
+
+## Running it
 
 ```sh
-cargo leptos watch
+zola serve   # http://127.0.0.1:1111 with live reload
+zola build   # writes the site to public/
 ```
 
-Serves at http://127.0.0.1:3000 with live reload.
+Use Zola 0.22.x: 0.23 switched to Tera 2 and the templates use Tera 1 syntax.
 
-## Build & run (release)
+## Other content served from `static/`
 
-```sh
-cargo leptos build --release
-LEPTOS_SITE_ROOT=target/site ./target/release/website
-```
+- `static/lensing-presentation/` — the Lensing slide deck, at `/lensing-presentation/`.
+- `static/snappec-verify/` — an unlisted download page (`noindex`), its `install.sh` and release
+  tarballs. Publish a new version with:
 
-## Docker
+  ```sh
+  scripts/publish-snappec-verify.sh <snappec-testing-harness checkout>
+  ```
 
-```sh
-docker build -t eg-site .
-docker run --rm -p 3000:3000 eg-site
-```
-
-Deployable via Portainer on the home server (or any Docker host). Note: the SSR
-server is a running process — it can't be published to GitHub Pages as static files.
-
-The GitHub Pages workflow handles this by rendering the English (`/`) and Spanish
-(`/es`) routes during CI and publishing both HTML entry points with the hydration
-bundle and static assets. The legacy JSON resources remain available at
-`/assets/data/projects.json` and `/assets/data/works.json`.
-
-## Design
-
-Visual concept is **"Lensing field"** (light bending around mass). See
-[`PRODUCT.md`](PRODUCT.md) (strategy/brand) and [`DESIGN.md`](DESIGN.md) (tokens,
-type, motion). Key pieces:
-
-- **Fonts** are self-hosted variable woff2 in `public/fonts/` (Bricolage Grotesque /
-  Hanken Grotesk / Spline Sans Mono) — no external font requests.
-- **The hero canvas** (gravitational lensing) is `public/js/hero-lens.js`;
-  scroll-aware nav + reveals are `public/js/interactions.js`. Both are plain, static
-  assets loaded with `defer`; nothing runs in WASM.
-- All colors are OKLCH in `:root`; every text pair is verified ≥4.5:1 and every
-  animation has a `prefers-reduced-motion` fallback.
-
-## Editing content
-
-Almost everything lives in data + small components:
-
-- `src/data/projects.rs` — the project entries (title, tagline, description, tech, links).
-- `src/components/hero.rs` — name, headline, intro.
-- `src/components/skills.rs` — the skills / tech groups.
-- `src/components/research.rs` — publications + the "Research & scientific computing" thread.
-- `src/components/contact.rs` — contact links.
-- `style/main.scss` — design tokens, type and layout.
-
-## TODO
-
-- Add real **LinkedIn URL** in `src/components/contact.rs` (`LINKEDIN_URL`).
-- Add a profile photo / personal images (drop into `public/`, reference from `hero.rs`).
+  The script writes `versions/<version>/` and replaces `latest/` under `static/snappec-verify/`.
