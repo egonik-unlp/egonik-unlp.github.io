@@ -70,7 +70,7 @@ links = [
 name = "convert-invert"
 description = "A Rust engine that finds a matching audio file for each track in a playlist. A pool of workers searches, a judge step picks the right file among the candidates, and the state lives in Postgres and Redis. Runs are traced with OpenTelemetry in Jaeger, and a log analyzer compares each run against the tracked reliability issues, reporting retries, peer failures, stalled tasks and duplicate downloads. It runs on a home server."
 image = "img/convert-invert.png"
-image_alt = "A convert-invert run traced in Jaeger"
+image_alt = "A peer network with one search route highlighted to the peer that has the file"
 links = [
   { label = "repo", url = "https://github.com/egonik-unlp/convert-invert" },
 ]

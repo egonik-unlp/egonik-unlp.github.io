@@ -70,7 +70,7 @@ links = [
 name = "convert-invert"
 description = "Un motor en Rust que encuentra un archivo de audio para cada tema de una playlist. Un pool de workers busca, un paso de juez elige el archivo correcto entre los candidatos, y el estado vive en Postgres y Redis. Las corridas se trazan con OpenTelemetry en Jaeger, y un analizador de logs compara cada corrida con los problemas de confiabilidad registrados e informa reintentos, fallas de peers, tareas trabadas y descargas duplicadas. Corre en un servidor casero."
 image = "img/convert-invert.png"
-image_alt = "Una corrida de convert-invert trazada en Jaeger"
+image_alt = "Una red de pares con una ruta de búsqueda resaltada hasta el par que tiene el archivo"
 links = [
   { label = "repo", url = "https://github.com/egonik-unlp/convert-invert" },
 ]
