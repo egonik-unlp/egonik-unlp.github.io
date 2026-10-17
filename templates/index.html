@@ -13,7 +13,7 @@
   <link rel="alternate" hreflang="{{ t.lang }}" href="{{ t.permalink | safe }}">
   {%- endfor %}
   <link rel="icon" href="{{ get_url(path='favicon.svg') }}" type="image/svg+xml">
-  <link rel="stylesheet" href="{{ get_url(path='style.css') }}">
+  <link rel="stylesheet" href="{{ get_url(path='style.css', cachebust=true) | safe }}">
 </head>
 <body>
 <header class="masthead">
@@ -40,28 +40,23 @@
   </section>
 
   <section id="stack" aria-labelledby="stack-title">
-    <details>
-      <summary>
-        <h2 id="stack-title">{{ trans(key="stack", lang=lang) }}</h2>
-        <span class="toggle" aria-hidden="true"><span class="when-closed">{{ trans(key="show", lang=lang) }} ▾</span><span class="when-open">{{ trans(key="hide", lang=lang) }} ▴</span></span>
-      </summary>
-      <div class="stack-groups">
-        {%- for group in extra.stack %}
-        <div class="stack-group">
-          <h3>{{ group.group }}</h3>
-          <div class="chips">
-            <ul class="regular" aria-label="{{ trans(key='regular', lang=lang) }}">
-              {%- for tool in group.regular %}<li>{{ tool }}</li>{% endfor -%}
-            </ul>
-            <ul class="also" aria-label="{{ trans(key='also_used', lang=lang) }}">
-              {%- for tool in group.also %}<li>{{ tool }}</li>{% endfor -%}
-            </ul>
-          </div>
+    <h2 id="stack-title">{{ trans(key="stack", lang=lang) }}</h2>
+    <div class="stack-groups">
+      {%- for group in extra.stack %}
+      <div class="stack-group">
+        <h3>{{ group.group }}</h3>
+        <div class="chips">
+          <ul class="regular" aria-label="{{ trans(key='regular', lang=lang) }}">
+            {%- for tool in group.regular %}<li>{{ tool }}</li>{% endfor -%}
+          </ul>
+          <ul class="also" aria-label="{{ trans(key='also_used', lang=lang) }}">
+            {%- for tool in group.also %}<li>{{ tool }}</li>{% endfor -%}
+          </ul>
         </div>
-        {%- endfor %}
-        <p class="legend"><span class="key key-regular" aria-hidden="true"></span>{{ trans(key="regular", lang=lang) }} <span class="key key-also" aria-hidden="true"></span>{{ trans(key="also_used", lang=lang) }}</p>
       </div>
-    </details>
+      {%- endfor %}
+      <p class="legend"><span class="key key-regular" aria-hidden="true"></span>{{ trans(key="regular", lang=lang) }} <span class="key key-also" aria-hidden="true"></span>{{ trans(key="also_used", lang=lang) }}</p>
+    </div>
   </section>
 
   <section id="work" aria-labelledby="work-title">
