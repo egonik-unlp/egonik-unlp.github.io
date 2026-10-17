@@ -39,6 +39,31 @@
     {{ section.content | safe }}
   </section>
 
+  <section id="stack" aria-labelledby="stack-title">
+    <details>
+      <summary>
+        <h2 id="stack-title">{{ trans(key="stack", lang=lang) }}</h2>
+        <span class="toggle" aria-hidden="true"><span class="when-closed">{{ trans(key="show", lang=lang) }} ▾</span><span class="when-open">{{ trans(key="hide", lang=lang) }} ▴</span></span>
+      </summary>
+      <div class="stack-groups">
+        {%- for group in extra.stack %}
+        <div class="stack-group">
+          <h3>{{ group.group }}</h3>
+          <div class="chips">
+            <ul class="regular" aria-label="{{ trans(key='regular', lang=lang) }}">
+              {%- for tool in group.regular %}<li>{{ tool }}</li>{% endfor -%}
+            </ul>
+            <ul class="also" aria-label="{{ trans(key='also_used', lang=lang) }}">
+              {%- for tool in group.also %}<li>{{ tool }}</li>{% endfor -%}
+            </ul>
+          </div>
+        </div>
+        {%- endfor %}
+        <p class="legend"><span class="key key-regular" aria-hidden="true"></span>{{ trans(key="regular", lang=lang) }} <span class="key key-also" aria-hidden="true"></span>{{ trans(key="also_used", lang=lang) }}</p>
+      </div>
+    </details>
+  </section>
+
   <section id="work" aria-labelledby="work-title">
     <h2 id="work-title">{{ trans(key="work", lang=lang) }}</h2>
     {%- for entry in extra.work %}
@@ -52,23 +77,6 @@
     {{ macros::project(item=item, lang=lang) }}
     {%- endfor %}
     <p class="more"><a href="{{ extra.github | safe }}">{{ trans(key="more_on_github", lang=lang) }}</a></p>
-  </section>
-
-  <section id="stack" aria-labelledby="stack-title">
-    <details>
-      <summary><h2 id="stack-title">{{ trans(key="stack", lang=lang) }}</h2></summary>
-      <dl class="stack-groups">
-        {%- for group in extra.stack %}
-        <div class="stack-group">
-          <dt>{{ group.group }}</dt>
-          <dd>
-            <p>{{ group.regular | join(sep=", ") }}</p>
-            <p class="also">{{ trans(key="also_used", lang=lang) }}: {{ group.also | join(sep=", ") }}</p>
-          </dd>
-        </div>
-        {%- endfor %}
-      </dl>
-    </details>
   </section>
 
   <section id="research" aria-labelledby="research-title">
