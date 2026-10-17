@@ -23,7 +23,7 @@ Both language files have the same structure; change them together.
 Images live in `static/img/` and are referenced from the front matter (`photo`, `image`,
 `image_alt`). Zola resizes them at build time. A referenced image that does not exist is simply not
 shown, so an entry can declare its image before the file is added. Currently missing:
-`img/photo.jpg`, `img/lvv.png`, `img/convert-invert.png`.
+`img/photo.jpg`, `img/convert-invert.png`.
 
 ## Running it
 
