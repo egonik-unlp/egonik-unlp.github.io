@@ -1,0 +1,330 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Página sin enlazar: solo se llega con el link directo. Que no la indexe nadie. -->
+<meta name="robots" content="noindex, nofollow">
+<meta name="color-scheme" content="light dark">
+<title>snappec-verify — descarga</title>
+<meta name="description" content="Binarios de snappec-verify para Linux y macOS.">
+<style>
+:root {
+    --bg: #ffffff;
+    --fg: #1a1a1a;
+    --muted: #5f6368;
+    --border: #d9d9d9;
+    --code-bg: #f4f4f4;
+    --link: #0b57d0;
+    --accent: #0b57d0;
+    --accent-fg: #ffffff;
+    --mark: #fff4d6;
+}
+@media (prefers-color-scheme: dark) {
+    :root {
+        --bg: #161616;
+        --fg: #e8e8e8;
+        --muted: #a0a0a0;
+        --border: #3a3a3a;
+        --code-bg: #232323;
+        --link: #8ab4f8;
+        --accent: #8ab4f8;
+        --accent-fg: #111111;
+        --mark: #33300f;
+    }
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+    margin: 0;
+    color: var(--fg);
+    background: var(--bg);
+    font: 16px/1.6 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+}
+main { max-width: 760px; margin: 0 auto; padding: 2.5rem 16px 4rem; }
+h1 { margin: 0 0 .5rem; font-size: 2rem; line-height: 1.2; }
+h2 { margin: 2.75rem 0 .75rem; padding-bottom: .35rem; font-size: 1.3rem; border-bottom: 1px solid var(--border); }
+h3 { margin: 1.5rem 0 .4rem; font-size: 1.05rem; }
+p { margin: .5rem 0; }
+a { color: var(--link); }
+code, pre { font: .875rem/1.5 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; }
+p code, li code, td code { padding: .1rem .3rem; background: var(--code-bg); border-radius: 3px; overflow-wrap: anywhere; }
+.muted { color: var(--muted); }
+.visually-hidden { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+
+.release { margin: 1.5rem 0; padding: 1rem 1.1rem; border: 1px solid var(--border); border-radius: 6px; }
+.release dl { display: grid; grid-template-columns: max-content minmax(0, 1fr); gap: .2rem 1rem; margin: 0 0 1rem; }
+.release dt { color: var(--muted); }
+.release dd { margin: 0; overflow-wrap: anywhere; }
+.button { display: inline-block; padding: .55rem 1rem; color: var(--accent-fg); background: var(--accent); border-radius: 5px; font-weight: 600; text-decoration: none; }
+.button[aria-disabled="true"] { opacity: .45; pointer-events: none; }
+.release .hint { margin: .5rem 0 0; color: var(--muted); font-size: .9rem; overflow-wrap: anywhere; }
+
+.cmd { position: relative; margin: .6rem 0; }
+.cmd pre { margin: 0; padding: .75rem 4.5rem .75rem .9rem; overflow-x: auto; background: var(--code-bg); border-radius: 5px; }
+.copy { padding: .15rem .5rem; color: var(--muted); background: var(--bg); border: 1px solid var(--border); border-radius: 4px; font: .78rem system-ui, sans-serif; cursor: pointer; }
+.copy:hover { color: var(--fg); }
+.cmd .copy { position: absolute; top: .55rem; right: .55rem; }
+
+.table-wrap { overflow-x: auto; }
+table { width: 100%; border-collapse: collapse; font-size: .92rem; }
+th, td { padding: .5rem .6rem .5rem 0; text-align: left; vertical-align: top; border-bottom: 1px solid var(--border); }
+th { color: var(--muted); font-weight: 600; }
+tr[data-match="true"] td { background: var(--mark); }
+tr[data-match="true"] td:first-child { padding-left: .4rem; }
+td a { overflow-wrap: anywhere; }
+td .sum { display: inline-block; max-width: 14ch; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; vertical-align: bottom; color: var(--muted); font-family: ui-monospace, monospace; font-size: .82rem; }
+
+ul.plain { padding-left: 1.2rem; }
+ul.plain li { margin: .25rem 0; }
+
+footer { margin-top: 3rem; padding-top: 1rem; border-top: 1px solid var(--border); color: var(--muted); font-size: .85rem; }
+
+.toast { position: fixed; left: 50%; bottom: 1rem; transform: translateX(-50%); padding: .4rem .8rem; color: var(--bg); background: var(--fg); border-radius: 4px; font-size: .85rem; opacity: 0; pointer-events: none; transition: opacity .15s; }
+.toast.show { opacity: 1; }
+
+@media (max-width: 560px) {
+    .cmd pre { padding-right: .9rem; }
+    .cmd .copy { position: static; margin-top: .35rem; }
+    th.col-sum, td.col-sum { display: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+    .toast { transition: none; }
+}
+</style>
+</head>
+<body>
+<main>
+    <h1>snappec-verify</h1>
+    <p>Verifica que lo que una spec afirma se sostenga en el sistema real. Convierte la spec en un contrato ratificado de invariantes y corre cinco prongs que intentan romperlo. Los agentes proponen, el código decide, las personas ratifican.</p>
+
+    <section class="release" aria-labelledby="release-status">
+        <p id="release-status"><strong id="status-text">Binarios en preparación</strong></p>
+        <dl>
+            <dt>Versión</dt><dd id="meta-version">—</dd>
+            <dt>Commit</dt><dd id="meta-commit">—</dd>
+            <dt>Fecha</dt><dd id="meta-date">—</dd>
+            <dt>Tu equipo</dt><dd id="meta-platform">—</dd>
+        </dl>
+        <a class="button" id="primary-download" href="#binarios" aria-disabled="true"><span id="primary-label">Descargar</span></a>
+        <p class="hint" id="primary-hint">Todavía no hay binarios publicados en esta página.</p>
+    </section>
+
+    <h2 id="instalar">Instalar</h2>
+    <p>El script detecta sistema y arquitectura, descarga el binario, verifica el checksum y lo deja en <code>~/.local/bin</code>. No necesita Go ni root.</p>
+    <div class="cmd"><pre><code id="cmd-install">curl -fsSL https://egonik-unlp.github.io/snappec-verify/install.sh | sh</code></pre><button class="copy" type="button" data-copy="cmd-install">Copiar</button></div>
+    <p class="muted">Otro destino: <code>BINDIR=/usr/local/bin</code> antes de <code>sh</code>. Una versión puntual: <code>SNAPPEC_VERIFY_VERSION=&lt;versión&gt;</code>.</p>
+
+    <h3>A mano</h3>
+    <p>Bajá el <code>.tar.gz</code> de tu plataforma desde la tabla de abajo, descomprimilo y poné el binario en el <code>PATH</code>.</p>
+    <div class="cmd"><pre><code id="cmd-manual">tar -xzf snappec-verify_*.tar.gz
+install -m 0755 snappec-verify ~/.local/bin/
+snappec-verify --version</code></pre><button class="copy" type="button" data-copy="cmd-manual">Copiar</button></div>
+    <p>En macOS, un archivo bajado con el navegador queda en cuarentena y Gatekeeper no lo deja correr. Se la quitás con:</p>
+    <div class="cmd"><pre><code id="cmd-xattr">xattr -d com.apple.quarantine ~/.local/bin/snappec-verify</code></pre><button class="copy" type="button" data-copy="cmd-xattr">Copiar</button></div>
+
+    <h2 id="binarios">Binarios</h2>
+    <p>Compilados con <code>CGO_ENABLED=0</code>: no dependen de libc ni de nada instalado. El adapter de Ruby viaja adentro del binario.</p>
+    <div class="table-wrap">
+        <table>
+            <caption class="visually-hidden">Binarios por sistema y arquitectura</caption>
+            <thead><tr><th scope="col">Sistema</th><th scope="col">Arquitectura</th><th scope="col">Archivo</th><th scope="col">Tamaño</th><th scope="col" class="col-sum">SHA-256</th></tr></thead>
+            <tbody id="assets"></tbody>
+        </table>
+    </div>
+    <p class="muted" id="assets-empty">Todavía no hay binarios publicados. Cuando estén, aparecen acá con su checksum.</p>
+    <p class="muted" id="assets-checksums" hidden>Checksums de todos los archivos: <a href="latest/checksums.txt">checksums.txt</a>. Para verificar a mano: <code>sha256sum -c checksums.txt --ignore-missing</code> (en macOS, <code>shasum -a 256 -c</code>).</p>
+
+    <h2 id="empezar">Llevarlo a un proyecto</h2>
+    <p>En un proyecto Rails dockerizado con snappec, el bootstrap son dos comandos. El código de la app no se toca: lo de verify vive en <code>verification/</code> y <code>.claude/</code>.</p>
+    <p>Requisitos:</p>
+    <ul class="plain">
+        <li>Docker con Compose v2</li>
+        <li>Un proyecto Rails dockerizado, con MySQL o Postgres</li>
+        <li>Claude Code con snappec instalado</li>
+    </ul>
+
+    <h3>1. Instalar verify en el repo</h3>
+    <div class="cmd"><pre><code id="cmd-init">cd &lt;tu-proyecto&gt;
+snappec-verify init --snappec</code></pre><button class="copy" type="button" data-copy="cmd-init">Copiar</button></div>
+    <p>Deja los comandos <code>/verify:*</code>, los agentes y el hook que mantiene a los agentes fuera del contrato, los runs, el baseline y el bank. Sin snappec, <code>snappec-verify init</code> instala el modo standalone.</p>
+
+    <h3>2. Bootstrap desde Claude Code</h3>
+    <div class="cmd"><pre><code id="cmd-bootstrap">/verify:bootstrap</code></pre><button class="copy" type="button" data-copy="cmd-bootstrap">Copiar</button></div>
+    <p>Detecta compose, motor de base, servicio de app y el resto del <code>stack.yaml</code>. Pregunta solo lo ambiguo, escribe el binding y corre la conformance del adapter dentro del compose.</p>
+
+    <h3>3. Ver dónde estás</h3>
+    <div class="cmd"><pre><code id="cmd-status">snappec-verify status</code></pre><button class="copy" type="button" data-copy="cmd-status">Copiar</button></div>
+    <p>Cada testing set es una máquina de estados: <code>status</code> dice qué paso sigue y qué falta para darlo.</p>
+
+    <h2 id="prongs">Los prongs</h2>
+    <p>Cada invariante del contrato se chequea con un oráculo CEL de decimales exactos. Los prongs generan los casos; el resultado queda en records encadenados por hash.</p>
+    <ul class="plain">
+        <li><strong>P1 Property</strong>: generadores con semilla y shrinking de secuencias de operaciones.</li>
+        <li><strong>P2 Bank</strong>: edge cases que alguien ya encontró, re-ejecutados en cada corrida.</li>
+        <li><strong>P3 Estático</strong>: analyzers sobre el código, calibrados por proyecto, que rutean candidatos a los otros prongs.</li>
+        <li><strong>P4 Sandbox</strong>: la app en un compose con la red cercada, sondas de autorización y diff de la base.</li>
+        <li><strong>P5 Volumen</strong>: carga y concurrencia con un scheduler determinístico; cada interleaving se puede repetir.</li>
+    </ul>
+
+    <footer>snappec-verify · <span id="footer-version">sin versión publicada</span></footer>
+</main>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script>
+(function () {
+    "use strict";
+
+    var LABELS = { linux: "Linux", darwin: "macOS", amd64: "x86-64", arm64: "ARM64" };
+    var $ = function (id) { return document.getElementById(id); };
+
+    function formatSize(bytes) {
+        if (typeof bytes !== "number") return "—";
+        return (bytes / 1048576).toFixed(1) + " MB";
+    }
+
+    function toast(text) {
+        var el = $("toast");
+        el.textContent = text;
+        el.classList.add("show");
+        clearTimeout(toast.timer);
+        toast.timer = setTimeout(function () { el.classList.remove("show"); }, 1600);
+    }
+
+    function copyText(text) {
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+            navigator.clipboard.writeText(text).then(
+                function () { toast("Copiado"); },
+                function () { toast("No se pudo copiar"); }
+            );
+        } else {
+            toast("No se pudo copiar");
+        }
+    }
+
+    document.addEventListener("click", function (event) {
+        var button = event.target.closest("[data-copy], [data-copy-text]");
+        if (!button) return;
+        var text = button.hasAttribute("data-copy-text")
+            ? button.getAttribute("data-copy-text")
+            : $(button.getAttribute("data-copy")).textContent;
+        copyText(text);
+    });
+
+    // Sistema y arquitectura de quien mira. La arquitectura solo es confiable en
+    // Chromium (userAgentData); un Mac con Apple silicon se reporta como Intel en el UA.
+    function detectPlatform() {
+        var ua = navigator.userAgent || "";
+        var platform = (navigator.userAgentData && navigator.userAgentData.platform) || navigator.platform || "";
+        var os = null;
+        if (/mac/i.test(platform) || /Macintosh/.test(ua)) os = "darwin";
+        else if (/linux/i.test(platform) || /Linux/.test(ua)) os = "linux";
+        if (/Android/.test(ua)) os = null;
+        var result = { os: os, arch: null };
+        if (os === "linux" && /aarch64|arm64/i.test(ua + platform)) result.arch = "arm64";
+        else if (os === "linux" && /x86_64|amd64/i.test(ua + platform)) result.arch = "amd64";
+        if (!navigator.userAgentData || !navigator.userAgentData.getHighEntropyValues) {
+            return Promise.resolve(result);
+        }
+        return navigator.userAgentData.getHighEntropyValues(["architecture", "bitness"]).then(function (v) {
+            if (v.architecture === "arm") result.arch = "arm64";
+            else if (v.architecture === "x86" && v.bitness === "64") result.arch = "amd64";
+            return result;
+        }, function () { return result; });
+    }
+
+    function render(manifest, platform) {
+        $("status-text").textContent = "Publicado · " + manifest.assets.length + " binarios";
+        $("meta-version").textContent = manifest.version;
+        $("meta-commit").textContent = manifest.commit || "—";
+        $("meta-date").textContent = manifest.date || "—";
+        $("footer-version").textContent = manifest.version;
+
+        var tbody = $("assets");
+        tbody.textContent = "";
+        manifest.assets.forEach(function (asset) {
+            var tr = document.createElement("tr");
+            var matches = platform.os === asset.os && (platform.arch === null || platform.arch === asset.arch);
+            tr.setAttribute("data-match", matches ? "true" : "false");
+
+            [LABELS[asset.os] || asset.os, LABELS[asset.arch] || asset.arch].forEach(function (text) {
+                var td = document.createElement("td");
+                td.textContent = text;
+                tr.appendChild(td);
+            });
+
+            var tdFile = document.createElement("td");
+            var link = document.createElement("a");
+            link.href = "latest/" + asset.file;
+            link.textContent = asset.file;
+            link.setAttribute("download", "");
+            tdFile.appendChild(link);
+            tr.appendChild(tdFile);
+
+            var tdSize = document.createElement("td");
+            tdSize.textContent = formatSize(asset.size);
+            tr.appendChild(tdSize);
+
+            var tdSum = document.createElement("td");
+            tdSum.className = "col-sum";
+            var sum = document.createElement("span");
+            sum.className = "sum";
+            sum.title = asset.sha256;
+            sum.textContent = asset.sha256;
+            var copy = document.createElement("button");
+            copy.type = "button";
+            copy.className = "copy";
+            copy.textContent = "Copiar";
+            copy.setAttribute("data-copy-text", asset.sha256);
+            copy.setAttribute("aria-label", "Copiar SHA-256 de " + asset.file);
+            tdSum.appendChild(sum);
+            tdSum.appendChild(document.createTextNode(" "));
+            tdSum.appendChild(copy);
+            tr.appendChild(tdSum);
+
+            tbody.appendChild(tr);
+        });
+        $("assets-empty").hidden = true;
+        $("assets-checksums").hidden = false;
+
+        var exact = manifest.assets.filter(function (a) {
+            return a.os === platform.os && a.arch === platform.arch;
+        })[0];
+        var primary = $("primary-download");
+        primary.removeAttribute("aria-disabled");
+        if (exact) {
+            primary.href = "latest/" + exact.file;
+            primary.setAttribute("download", "");
+            $("primary-label").textContent = "Descargar para " + LABELS[exact.os] + " " + LABELS[exact.arch];
+            $("primary-hint").textContent = exact.file + " · " + formatSize(exact.size);
+        } else {
+            primary.href = "#binarios";
+            $("primary-label").textContent = "Elegir binario";
+            $("primary-hint").textContent = platform.os
+                ? "No pudimos detectar la arquitectura: elegí la tuya en la tabla."
+                : "No hay binario para este sistema: hay para Linux y macOS.";
+        }
+    }
+
+    detectPlatform().then(function (platform) {
+        $("meta-platform").textContent = platform.os
+            ? LABELS[platform.os] + (platform.arch ? " · " + LABELS[platform.arch] : " · arquitectura sin detectar")
+            : "sin binario para este sistema";
+
+        fetch("latest/manifest.json", { cache: "no-cache" })
+            .then(function (response) {
+                if (!response.ok) throw new Error(response.status);
+                return response.json();
+            })
+            .then(function (manifest) {
+                if (!manifest || !manifest.assets || !manifest.assets.length) return;
+                render(manifest, platform);
+            })
+            .catch(function () { /* Sin manifest todavía: queda el estado "en preparación". */ });
+    });
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,3 @@
+# https://egonik-unlp.github.io/robots.txt
+User-agent: *
+Allow: /

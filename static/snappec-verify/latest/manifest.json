@@ -1,0 +1,11 @@
+{
+  "version": "0.1.0",
+  "commit": "ccabe4b",
+  "date": "2026-10-08",
+  "assets": [
+    {"os": "linux", "arch": "amd64", "file": "snappec-verify_linux_amd64.tar.gz", "size": 9427383, "sha256": "fffad9be6f1961feb995b3fb27f2094d6efb15d79959e1e93c07f9f9f3eecc4b"},
+    {"os": "linux", "arch": "arm64", "file": "snappec-verify_linux_arm64.tar.gz", "size": 8443967, "sha256": "ef75e3f1ec5da739c79262adcadcb6bea20192e305f359e68660726e7b610ecc"},
+    {"os": "darwin", "arch": "amd64", "file": "snappec-verify_darwin_amd64.tar.gz", "size": 9614929, "sha256": "76dafb3e37c25d3b38dc34942fb8c752ca550b0b6160347290c23e3e1dff01d5"},
+    {"os": "darwin", "arch": "arm64", "file": "snappec-verify_darwin_arm64.tar.gz", "size": 8825513, "sha256": "9da64c5ac1d4c01587b1db58958526923055f9b8dd16dd879a4ca8cc41314893"}
+  ]
+}

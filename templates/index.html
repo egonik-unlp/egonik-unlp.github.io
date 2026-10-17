@@ -1,0 +1,85 @@
+{% import "macros.html" as macros %}
+{%- set extra = section.extra -%}
+{%- set pubs = load_data(path="data/publications.toml") -%}
+<!doctype html>
+<html lang="{{ lang }}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ section.title }}</title>
+  <meta name="description" content="{{ section.description }}">
+  <link rel="canonical" href="{{ section.permalink | safe }}">
+  {%- for t in section.translations %}
+  <link rel="alternate" hreflang="{{ t.lang }}" href="{{ t.permalink | safe }}">
+  {%- endfor %}
+  <link rel="icon" href="{{ get_url(path='favicon.svg') }}" type="image/svg+xml">
+  <link rel="stylesheet" href="{{ get_url(path='style.css') }}">
+</head>
+<body>
+<header class="masthead">
+  {{ macros::photo(path=extra.photo, alt=extra.photo_alt, size=132) }}
+  <div class="who">
+    <h1>Eduardo Gonik</h1>
+    <p class="headline">{{ trans(key="data_engineer", lang=lang) }}</p>
+    <ul class="contact">
+      <li><a href="mailto:{{ extra.email }}">{{ trans(key="email", lang=lang) }}</a></li>
+      <li><a href="{{ extra.github | safe }}">GitHub</a></li>
+      <li><a href="{{ extra.linkedin | safe }}">LinkedIn</a></li>
+      <li><a href="{{ extra.scholar | safe }}">{{ trans(key="scholar", lang=lang) }}</a></li>
+      <li><a class="cv" href="{{ get_url(path='cv.pdf') }}" type="application/pdf" download>{{ trans(key="cv", lang=lang) }}</a></li>
+      {%- for t in section.translations %}{% if t.lang != lang %}
+      <li><a class="lang" href="{{ t.permalink | safe }}" hreflang="{{ t.lang }}" lang="{{ t.lang }}">{{ trans(key="other_language", lang=lang) }}</a></li>
+      {%- endif %}{% endfor %}
+    </ul>
+  </div>
+</header>
+
+<main>
+  <section class="profile" aria-label="{{ trans(key='profile', lang=lang) }}">
+    {{ section.content | safe }}
+  </section>
+
+  <section id="work" aria-labelledby="work-title">
+    <h2 id="work-title">{{ trans(key="work", lang=lang) }}</h2>
+    {%- for entry in extra.work %}
+    {{ macros::work(entry=entry) }}
+    {%- endfor %}
+  </section>
+
+  <section id="projects" aria-labelledby="projects-title">
+    <h2 id="projects-title">{{ trans(key="projects", lang=lang) }}</h2>
+    {%- for item in extra.projects %}
+    {{ macros::project(item=item, lang=lang) }}
+    {%- endfor %}
+    <p class="more"><a href="{{ extra.github | safe }}">{{ trans(key="more_on_github", lang=lang) }}</a></p>
+  </section>
+
+  <section id="research" aria-labelledby="research-title">
+    <h2 id="research-title">{{ trans(key="research", lang=lang) }}</h2>
+    {%- for paragraph in extra.research.paragraphs %}
+    <p class="measure">{{ paragraph }}</p>
+    {%- endfor %}
+    <div class="research-cols">
+      <div class="publications">
+        <h3>{{ trans(key="publications", lang=lang) }} <span class="aside">· <a href="{{ extra.scholar | safe }}">{{ trans(key="scholar", lang=lang) }}</a></span></h3>
+        <ul>
+          {%- for item in pubs.publications %}
+          {{ macros::publication(item=item, lang=lang) }}
+          {%- endfor %}
+        </ul>
+      </div>
+      <div class="lab">
+        <h3>{{ trans(key="lab_software", lang=lang) }}</h3>
+        <ul>
+          {%- for tool in extra.lab_software %}
+          <li><a href="{{ tool.url | safe }}">{{ tool.name }}</a>{% if tool.note %} ({{ tool.note }}){% endif %} · {{ tool.description }}</li>
+          {%- endfor %}
+        </ul>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>Eduardo Gonik · 2026</footer>
+</body>
+</html>
