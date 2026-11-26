@@ -15,8 +15,9 @@ org = "Snappler"
 role = "Ingeniero de datos"
 period = "2025–2026"
 paragraphs = [
-  "En el AI Lab de Snappler construí pipelines de análisis de datos asincrónicos y en tiempo real, sistemas agénticos, tracing para aplicaciones de IA y búsqueda RAG.",
-  "Para el refactor de un cliente armé la verificación por capas: primero chequear la lógica del cambio desde primeros principios, después una sonda que corre las dos versiones de la API en paralelo sobre los mismos datos, y después una sonda para la interfaz. Las dos sondas también perfilan rendimiento y datos.",
+  "En el AI Lab de Snappler trabajé del lado de los datos en productos de IA. Mi proyecto principal fue un asistente inmobiliario con el que los clientes de una inmobiliaria hablaban por WhatsApp. Construí su analítica, en tiempo real y por lotes, para que el equipo pudiera ver cómo iban las conversaciones y cuáles terminaban en leads, y agregué tracing para poder inspeccionar cada llamada al modelo. Diseñé su búsqueda sobre las propiedades de la inmobiliaria y el mercado abierto, y la ajusté con experimentos. También armé la evaluación que medía la calidad del agente, para poder cambiar prompts y modelos y saber si el resultado mejoraba.",
+  "Hacia el final, la mayor parte de mi trabajo fue verificación. Para el refactor de un cliente armé la verificación por capas: primero chequear la lógica del cambio desde primeros principios, después una sonda que corre las dos versiones de la API en paralelo sobre los mismos datos, y después una sonda para la interfaz. Las dos sondas también perfilan rendimiento y datos. Después convertí ese enfoque en el módulo de verificación del kit de desarrollo guiado por specs de la empresa, para que otros proyectos pudieran chequear sus cambios de la misma manera.",
+  "También modelé datos de sensores de equipos industriales para un posible producto de analítica, y di una charla en Snappler que explicaba cómo funciona un modelo de lenguaje, armándolo desde cero.",
 ]
 
 [[extra.work]]
