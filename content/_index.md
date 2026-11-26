@@ -15,8 +15,9 @@ org = "Snappler"
 role = "Data engineer"
 period = "2025–2026"
 paragraphs = [
-  "In Snappler's AI Lab I built asynchronous and real-time data analysis pipelines, agentic systems, tracing for AI applications, and RAG search.",
-  "For a client's refactor, I built the verification in layers: first checking the logic of the change from first principles, then a probe that runs both versions of the API side by side on the same data, then a probe for the interface. Both probes also profile performance and data.",
+  "In Snappler's AI Lab I worked on the data side of AI products. My main project was a real-estate assistant that an agency's customers talked to over WhatsApp. I built its analytics, both real-time and batch, so the team could see how conversations went and which ones became leads, and added tracing so every model call could be inspected. I designed its search over the agency's listings and the open market and tuned it through experiments. I also built the evaluation that measured the agent's quality, so prompts and models could be changed and we knew whether the result got better.",
+  "Toward the end, most of my work was verification. For a client's refactor, I built the verification in layers: first checking the logic of the change from first principles, then a probe that runs both versions of the API side by side on the same data, then a probe for the interface. Both probes also profile performance and data. I then turned that approach into the verification module of the company's spec-driven development kit, so other projects could check their changes the same way.",
+  "I also modelled sensor data from industrial equipment for a prospective analytics product, and gave a talk at Snappler explaining how a language model works, built up from zero.",
 ]
 
 [[extra.work]]
