@@ -14,7 +14,7 @@ built with [Zola](https://www.getzola.org/) 0.22.1 and deployed to GitHub Pages 
 | Fixed labels ("Work", "CV (PDF)", …) | `[translations]` and `[languages.es.translations]` in `config.toml` |
 | Layout | `templates/index.html`, `templates/macros.html` |
 | Styles | `static/style.css` |
-| CV | `static/cv.pdf`, served at `/cv.pdf` |
+| CV | `static/cv.pdf` (English, `/cv.pdf`) and `static/cv.es.pdf` (Spanish, `/cv.es.pdf`), copied from project-cv `out/latex/industry.{en,es}.pdf`; the file each page links is `cv_file` in `config.toml` |
 
 Both language files have the same structure; change them together.
 

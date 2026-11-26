@@ -34,7 +34,7 @@ org = "Universidad Nacional de La Plata"
 role = "Teaching"
 period = "2016–present"
 paragraphs = [
-  "Teaching assistant in two general chemistry courses since 2016, and Chief of Practical Classes for the last year. The content is introductory, so most of the work goes into teaching resources. Knowing the subject in more depth, at a lower level of abstraction, helps the way I explain things.",
+  "Teaching assistant in two general chemistry courses since 2016, and twice Chief of Practical Classes, most recently from March 2025 to February 2026. The content is introductory, so most of the work goes into teaching resources. Knowing the subject in more depth, at a lower level of abstraction, helps the way I explain things.",
 ]
 
 [[extra.projects]]
@@ -77,7 +77,7 @@ links = [
 
 [extra.research]
 paragraphs = [
-  "My PhD in chemistry at UNLP (INIFTA) is on the design, development and characterization of nanosized metal-organic materials for photodynamic therapy. I studied how their structure relates to their photophysical and photochemical processes and dynamics, mainly through spectroscopy. The experimental work and most of the analysis are done, and I'm now writing the thesis. The work was funded by a CONICET doctoral fellowship at INTECH (2019–2024). Before that I completed a licentiate in biotechnology and molecular biology (2013–2018).",
+  "My PhD in chemistry at UNLP (INIFTA) is on the design, development and characterization of nanosized metal-organic materials for photodynamic therapy. I studied how their structure relates to their photophysical and photochemical processes and dynamics, mainly through spectroscopy. The experimental work and most of the analysis are done, and I'm now writing the thesis. The work was funded by a CONICET doctoral fellowship at INTECH (2019–2024). From October to December 2024 I was at the Department of Chemistry of the University of Turin on a Marie Skłodowska-Curie Staff Exchange secondment (PHENOCYCLES project). Before that I completed a licentiate in biotechnology and molecular biology (2013–2018).",
   "In 2023 I co-directed an undergraduate thesis on zirconium- and porphyrin-based materials for the photodegradation of emerging contaminants.",
 ]
 
@@ -114,24 +114,24 @@ regular = ["Rust", "JavaScript / TypeScript", "Python", "Julia"]
 also = ["Zig", "Go", "OCaml"]
 
 [[extra.stack]]
-group = "ML & AI"
-regular = ["LangChain", "LangGraph", "Embeddings", "RAG", "PyTorch", "Deep learning"]
-also = ["Keras", "burn", "Qdrant", "Chroma", "LlamaIndex", "Flux.jl", "scikit-learn / XGBoost", "ONNX", "Langfuse"]
+group = "ML, AI, DS"
+regular = ["LangChain", "LangGraph", "Embeddings", "RAG", "PyTorch", "Deep learning", "Mathematical modelling"]
+also = ["Keras", "Julia data ecosystem","burn", "Qdrant", "Chroma", "LlamaIndex", "Flux.jl", "scikit-learn / XGBoost", "ONNX", "Langfuse", "ETL Pipelines" ]
 
 [[extra.stack]]
-group = "Data"
-regular = ["PostgreSQL", "Mathematical modelling"]
-also = ["Redis", "Julia data ecosystem", "ETL pipelines", "pandas / polars", "Job queues", "Web scraping"]
+group = "Databases"
+regular = ["PostgreSQL"]
+also = ["Redis"  ]
 
 [[extra.stack]]
 group = "Systems & Web"
-regular = ["Axum", "Express", "tokio", "Diesel"]
-also = ["Actix Web", "Leptos", "Flask", "OpenTelemetry / Jaeger", "Multi-worker systems"]
+regular = ["Axum", "Express", "tokio", "Diesel", "Leptos"]
+also = ["Actix Web",  "Flask", "OpenTelemetry / Jaeger", "Multi-worker systems"]
 
 [[extra.stack]]
 group = "Infra & Platforms"
 regular = ["Linux", "Docker & Compose"]
-also = ["Windows", "macOS", "Cloudflare Workers", "Portainer", "AWS & GCP"]
+also = ["Windows", "macOS", "AWS & GCP"]
 +++
 
 I'm a data engineer. Most of my work is development around data (analytics, mathematical modelling and testing), and a good part of it is building tools to probe and profile systems and the data they handle. When I verify a system, I start from the logic of what has to hold and build upward, from the API to the interface. My background is in scientific research, and I still work that way: I propose a model, test it, find where it falls short, and use that for the next iteration. I also teach two general chemistry courses at UNLP, and knowing the subject in more depth, at a lower level of abstraction than the course, helps me explain it.

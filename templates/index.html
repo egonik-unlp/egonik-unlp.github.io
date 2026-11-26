@@ -26,7 +26,7 @@
       <li><a href="{{ extra.github | safe }}">GitHub</a></li>
       <li><a href="{{ extra.linkedin | safe }}">LinkedIn</a></li>
       <li><a href="{{ extra.scholar | safe }}">{{ trans(key="scholar", lang=lang) }}</a></li>
-      <li><a class="cv" href="{{ get_url(path='cv.pdf') }}" type="application/pdf" download>{{ trans(key="cv", lang=lang) }}</a></li>
+      <li><a class="cv" href="{{ get_url(path=trans(key="cv_file", lang=lang)) }}" type="application/pdf" download>{{ trans(key="cv", lang=lang) }}</a></li>
       {%- for t in section.translations %}{% if t.lang != lang %}
       <li><a class="lang" href="{{ t.permalink | safe }}" hreflang="{{ t.lang }}" lang="{{ t.lang }}">{{ trans(key="other_language", lang=lang) }}</a></li>
       {%- endif %}{% endfor %}

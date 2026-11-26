@@ -34,7 +34,7 @@ org = "Universidad Nacional de La Plata"
 role = "Docencia"
 period = "2016–actualidad"
 paragraphs = [
-  "Ayudante en dos cursos de Química General desde 2016, y Jefe de Trabajos Prácticos durante el último año. El contenido es introductorio, así que la mayor parte del trabajo está en los recursos didácticos. Conocer la materia con más profundidad, a un nivel de abstracción más bajo, me ayuda a explicar.",
+  "Ayudante en dos cursos de Química General desde 2016, y dos veces Jefe de Trabajos Prácticos, la última de marzo de 2025 a febrero de 2026. El contenido es introductorio, así que la mayor parte del trabajo está en los recursos didácticos. Conocer la materia con más profundidad, a un nivel de abstracción más bajo, me ayuda a explicar.",
 ]
 
 [[extra.projects]]
@@ -77,7 +77,7 @@ links = [
 
 [extra.research]
 paragraphs = [
-  "Mi doctorado en Química en la UNLP (INIFTA) trata sobre el diseño, desarrollo y caracterización de materiales metal-orgánicos de tamaño nanométrico para terapia fotodinámica. Estudié cómo su estructura se relaciona con sus procesos fotofísicos y fotoquímicos y con su dinámica, principalmente mediante espectroscopía. El trabajo experimental y la mayor parte del análisis están terminados, y ahora estoy escribiendo la tesis. Lo financió una beca doctoral de CONICET en INTECH (2019–2024). Antes me recibí de Licenciado en Biotecnología y Biología Molecular (2013–2018).",
+  "Mi doctorado en Química en la UNLP (INIFTA) trata sobre el diseño, desarrollo y caracterización de materiales metal-orgánicos de tamaño nanométrico para terapia fotodinámica. Estudié cómo su estructura se relaciona con sus procesos fotofísicos y fotoquímicos y con su dinámica, principalmente mediante espectroscopía. El trabajo experimental y la mayor parte del análisis están terminados, y ahora estoy escribiendo la tesis. Lo financió una beca doctoral de CONICET en INTECH (2019–2024). De octubre a diciembre de 2024 estuve en el Departamento de Química de la Universidad de Turín, con un intercambio Marie Skłodowska-Curie (proyecto PHENOCYCLES). Antes me recibí de Licenciado en Biotecnología y Biología Molecular (2013–2018).",
   "En 2023 codirigí una tesina de grado sobre materiales basados en zirconio y porfirinas para la fotodegradación de contaminantes emergentes.",
 ]
 
@@ -114,24 +114,24 @@ regular = ["Rust", "JavaScript / TypeScript", "Python", "Julia"]
 also = ["Zig", "Go", "OCaml"]
 
 [[extra.stack]]
-group = "ML e IA"
-regular = ["LangChain", "LangGraph", "Embeddings", "RAG", "PyTorch", "Deep learning"]
-also = ["Keras", "burn", "Qdrant", "Chroma", "LlamaIndex", "Flux.jl", "scikit-learn / XGBoost", "ONNX", "Langfuse"]
+group = "ML, IA y ciencia de datos"
+regular = ["LangChain", "LangGraph", "Embeddings", "RAG", "PyTorch", "Deep learning", "Modelado matemático"]
+also = ["Keras", "Ecosistema de datos de Julia", "burn", "Qdrant", "Chroma", "LlamaIndex", "Flux.jl", "scikit-learn / XGBoost", "ONNX", "Langfuse", "Pipelines ETL"]
 
 [[extra.stack]]
-group = "Datos"
-regular = ["PostgreSQL", "Modelado matemático"]
-also = ["Redis", "Ecosistema de datos de Julia", "Pipelines ETL", "pandas / polars", "Colas de trabajos", "Web scraping"]
+group = "Bases de datos"
+regular = ["PostgreSQL"]
+also = ["Redis"]
 
 [[extra.stack]]
 group = "Sistemas y web"
-regular = ["Axum", "Express", "tokio", "Diesel"]
-also = ["Actix Web", "Leptos", "Flask", "OpenTelemetry / Jaeger", "Sistemas multi-worker"]
+regular = ["Axum", "Express", "tokio", "Diesel", "Leptos"]
+also = ["Actix Web", "Flask", "OpenTelemetry / Jaeger", "Sistemas multi-worker"]
 
 [[extra.stack]]
 group = "Infraestructura y plataformas"
 regular = ["Linux", "Docker y Compose"]
-also = ["Windows", "macOS", "Cloudflare Workers", "Portainer", "AWS y GCP"]
+also = ["Windows", "macOS", "AWS y GCP"]
 +++
 
 Soy ingeniero de datos. La mayor parte de mi trabajo es desarrollo alrededor de datos (analítica, modelado matemático y testing), y buena parte consiste en construir herramientas para sondear y perfilar sistemas y los datos que manejan. Cuando verifico un sistema, parto de la lógica de lo que tiene que cumplirse y construyo hacia arriba, de la API a la interfaz. Mi formación es en investigación científica y sigo trabajando de esa forma: propongo un modelo, lo pruebo, encuentro dónde falla y uso eso para la siguiente iteración. También doy clases en dos cursos de Química General en la UNLP, y conocer la materia con más profundidad, a un nivel de abstracción más bajo que el del curso, me ayuda a explicarla.
